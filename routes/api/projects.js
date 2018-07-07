@@ -3,6 +3,7 @@ const projectController = require('../../controllers/projectController');
 
 // Matches with '/api/projects'
 router.route('/')
+
     .get(projectController.returnJSON)
     .post(projectController.create);
 
@@ -13,5 +14,6 @@ router.route('/')
 //     .get(projectController.findById)
 //     .put(projectController.update)
 //     .delete(projectController.remove);
+
 
 module.exports = router;
