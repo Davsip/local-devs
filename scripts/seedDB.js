@@ -6,9 +6,6 @@ mongoose.Promise = global.Promise;
 
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost/localdevs',
-  {
-    useMongoClient: true
-  }
 );
 
 // ********************************************************
@@ -16,17 +13,23 @@ mongoose.connect(
 // ********************************************************
 const projectSeed = [
   {
-    title: 'The Dead Zone',
-    author: 'Stephen King',
-    synopsis:
-      'A number-one national best seller about a man who wakes up from a five-year coma able to see people',
-    date: new Date(Date.now())
+    name: 'Local Devs',
+    desc: 'In this project we will be build a platform that allows local freelance developers the opportunity to apply for and work on real world applications posted by local companies.',
+    locationZip: 75219,
+    budget: 10000,
+    img: null,
+    reqSkills: [ 'React', 'MongoDB', 'Express', 'Node' ],
+    seLed: true,
+    startDate: new Date('July 1, 2018 03:24:00'),
+    compDate: new Date('July 18, 2018 06:24:00'),
+    compPerc: 0,
+    teamMembers: null
   }
 ];
 
-db.Projects
+db.Project
   .remove({})
-  .then(() => db.Projects.collection.insertMany(projectSeed))
+  .then(() => db.Project.collection.insertMany(projectSeed))
   .then(data => {
     console.log(data.insertedIds.length + ' records inserted!');
     process.exit(0);
