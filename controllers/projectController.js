@@ -2,6 +2,9 @@ const db = require('../models');
 
 // Defining methods for the projectController
 module.exports = {
+  returnJSON: function(req, res) {
+      res.status(200).json( 'api/projects route works' );
+  },
   findAll: function(req, res) {
     db.Project
       .find(req.query)
