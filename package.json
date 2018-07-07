@@ -25,9 +25,10 @@
   "homepage": "https://github.com/Davsip/local-devs#readme",
   "devDependencies": {
     "concurrently": "^3.6.0",
-    "nodemon": "^1.17.5"    
+    "nodemon": "^1.17.5"
   },
   "dependencies": {
+    "auth0-js": "^9.6.1",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
