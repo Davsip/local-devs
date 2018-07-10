@@ -1,23 +1,37 @@
 import React, { Component } from 'react';
-import '../../App.css';
-import logo from '../../logo.svg';
 
 class Home extends Component {
-
-    render () {
-
-        return (
-            <div className="App">
-              <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <h1 className="App-title">Welcome to React</h1>
-              </header>
-              <p className="App-intro">
-                To get started, edit <code>src/App.js</code> and save to reload.
-              </p>
-            </div>
-        );
-    }
+  login() {
+    this.props.auth.login();
+  }
+  render() {
+    const { isAuthenticated } = this.props.auth;
+    return (
+      <div className="container">
+        {
+          isAuthenticated() && (
+              <h4>
+                You are logged in!
+              </h4>
+            )
+        }
+        {
+          !isAuthenticated() && (
+              <h4>
+                You are not logged in! Please{' '}
+                <a
+                  style={{ cursor: 'pointer' }}
+                  onClick={this.login.bind(this)}
+                >
+                  Log In
+                </a>
+                {' '}to continue.
+              </h4>
+            )
+        }
+      </div>
+    );
+  }
 }
 
 export default Home;
