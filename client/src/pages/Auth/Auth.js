@@ -67,7 +67,7 @@ export default class Auth {
 
   getAccessToken() {
     const accessToken = localStorage.getItem('access_token');
-    console.log(accessToken);
+    // console.log(accessToken);
     if (!accessToken) {
       throw new Error('No Access Token found');
     }
@@ -78,7 +78,7 @@ export default class Auth {
     let accessToken = this.getAccessToken();
     this.auth0.client.userInfo(accessToken, (err, profile) => {
       if (profile) {
-        // console.log(profile);
+        console.log(profile);
         this.userProfile = profile;
       }
       cb(err, profile);

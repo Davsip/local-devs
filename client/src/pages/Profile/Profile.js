@@ -1,25 +1,52 @@
 import React, { Component } from 'react';
 import { Panel, ControlLabel, Glyphicon } from 'react-bootstrap';
+import axios from 'axios';
 // import './Profile.css';
 
 class Profile extends Component {
+
+  state = {
+    profile: {}
+  };
   
   componentWillMount() {
-    this.setState({ profile: {} });
+
+    this.setState({ 
+      profile: {} 
+    });
+
     const { userProfile, getProfile } = this.props.auth;
+
     if (!userProfile) {
       getProfile((err, profile) => {
         this.setState({ profile });
-      });
+
+        console.log(`---- profile sub ${profile.sub} ------`);
+
+        axios.get('/api/users/' + profile.sub)
+          .then( res => {
+              console.log(`profile view res.data.length = ${res.data.length}`);
+    
+              if ( res.data.length === 0 ) {
+                console.log(`dlafkjdkajfda`);
+                console.log(profile);
+                axios.post('/api/users', profile)
+                  .then( res => console.log(res));
+              } else {
+                console.log(`setting profile state`);
+                // this.setState({ profile: res });
+              }
+            });
+          })
+
     } else {
       this.setState({ profile: userProfile });
     }
+
   }
 
   render() {
     const { profile } = this.state;
-
-    console.log(profile);
 
     return (
       <div className="container">

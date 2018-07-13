@@ -18,6 +18,8 @@ module.exports = {
       .then(dbProject => res.json(dbProject))
       .catch(err => res.status(422).json(err));
   },
+
+  // edit Project object to match Project Schema
   create: function(req, res) {
     const Project = {
       _id: req.body._id,

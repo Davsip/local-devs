@@ -21,9 +21,10 @@ const projectSeed = [
     reqSkills: [ 'React', 'MongoDB', 'Express', 'Node' ],
     seLed: true,
     startDate: new Date('July 1, 2018 03:24:00'),
-    compDate: new Date('July 18, 2018 06:24:00'),
+    duration: 11,
     compPerc: 0,
-    teamMembers: null
+    teamMembers: null,
+    teamApplicants: null
   }
 ];
 
