@@ -23,14 +23,31 @@ module.exports = {
   // edit Project object to match Project Schema
   create: function(req, res) {
     const Project = {
-      _id: req.body._id,
-      title: req.body.headline.main,
-      url: req.body.web_url
+      name: req.body.name,
+      desc: req.body.desc,
+      locationZip: req.body.locationZip,
+      budget: req.body.budget,
+      img: req.body.img,
+      reqSkills: req.body.reqSkills,
+      seLed: req.body.seLed,
+      startDate: req.body.startDate,
+      duration: req.body.duration,
+      compPerc: req.body.compPerc,
+      teamMembers: req.body.teamMembers,
+      teamApplicants: req.body.teamApplicants
     };
+
     db.Project
-      .create(Project)
-      .then(dbProject => res.json(dbProject))
-      .catch(err => res.status(422).json(err));
+      .create(Project, (err, dbProject) => {
+        if (err) {
+          return res.status(422).json(err);
+        }
+
+        console.log(`project added: ${dbProject}`);
+        res.json(dbProject);
+
+      })
+
   },
   update: function(req, res) {
     db.Project
