@@ -17,6 +17,7 @@ const projectSchema = new Schema({
     teamApplicants: [ String ] // Array of Applicant User ID's for Project
   });
 
+
 const Project = mongoose.model('Project', projectSchema);
 
 module.exports = Project;
