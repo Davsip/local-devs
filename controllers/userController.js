@@ -39,7 +39,7 @@ module.exports = {
   // Edit User Object to match User Schema
   // Initial user creation based on Auth0 user profile
   create: function(req, res) {
-    const User = {
+    const newUser = {
       email: req.body.email,
       given_name: req.body.given_name,
       family_name: req.body.family_name,
@@ -54,18 +54,17 @@ module.exports = {
       technologies: req.body.technologies,
       experience_desc: req.body.experience_desc,
       bio_desc: req.body.bio_desc,
-      isProfileCompleted: req.body.isProfileCompleted
     };
 
     console.log(`----------
     At userController Create Method
     ----------`);
     // console.log(req.body);
-    console.log(User);
+    console.log(newUser);
     // res.json('at userController Create Method');
 
     db.User
-      .create(User)
+      .create(newUser)
       .then(dbUser => {
         console.log(`user added`);
         res.json(dbUser)
