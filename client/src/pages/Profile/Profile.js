@@ -34,7 +34,7 @@ class Profile extends Component {
                   .then( res => console.log(res));
               } else {
                 console.log(`setting profile state`);
-                this.setState({ profile: res });
+                this.setState({ profile: res.data[0] });
               }
             });
           })
