@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Navbar, Button } from 'react-bootstrap';
+
+// put landing / home page css in App.css
 import './App.css';
+
+// import Navigation from "./components/Navigation"
 
 class App extends Component {
   goTo(route) {
@@ -20,6 +24,13 @@ class App extends Component {
 
     return (
       <div>
+
+        {/* <Navigation /> */}
+        {/* all other landing / home page codes goes below here */}
+        {/* remove navbar code below as needed */}
+        {/* isAuthenticated() returns true or false, true if authenticated, false if not */}
+        {/* use that to render certain features */}
+        {/* i.e. user logo dropdown login / signup, log out / mydashboard */}
         <Navbar fluid>
           <Navbar.Header>
             <Navbar.Brand>
