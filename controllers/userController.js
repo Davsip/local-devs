@@ -64,12 +64,15 @@ module.exports = {
     // res.json('at userController Create Method');
 
     db.User
-      .create(newUser)
-      .then(dbUser => {
-        console.log(`user added`);
-        res.json(dbUser)
+      .create(newUser, (err, dbUser ) => { 
+        if (err) {
+          return res.status(422).json(err);
+        }
+
+        console.log(`user added: ${dbUser}`);
+        res.json(dbUser);
+        
       })
-      .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
     db.User

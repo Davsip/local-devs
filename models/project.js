@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const projectSchema = new Schema({
-    _id: { type: Schema.Types.ObjectId, required: true },
+    // _id: { type: Schema.Types.ObjectId },
     name: { type: String, required: true },
     desc: { type: String, required: true },
     locationZip: { type: String, required: true },
@@ -15,7 +15,7 @@ const projectSchema = new Schema({
     compPerc: { type: Number, default: 0 },
     teamMembers: [ String ], // Array of Accepted Team Member User ID's 
     teamApplicants: [ String ] // Array of Applicant User ID's for Project
-  }, { _id: false });
+  });
 
 const Project = mongoose.model('Project', projectSchema);
 
