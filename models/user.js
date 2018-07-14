@@ -9,7 +9,6 @@ const userSchema = new Schema({
     picture: { type: String },
     gender: { type: String },
     nickname: { type: String },
-    user_id: { type: String, required: true },
     isAdmin: { type: Boolean, default: false },
     zip: { type: String },
     phone: { type: String },

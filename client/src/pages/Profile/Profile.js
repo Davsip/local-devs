@@ -21,9 +21,9 @@ class Profile extends Component {
       getProfile((err, profile) => {
         this.setState({ profile });
 
-        console.log(`---- profile sub ${profile.sub} ------`);
+        console.log(`---- profile sub ${profile.email} ------`);
 
-        axios.get('/api/users/' + profile.sub)
+        axios.get('/api/users/' + profile.email)
           .then( res => {
               console.log(`profile view res.data.length = ${res.data.length}`);
     

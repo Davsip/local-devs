@@ -23,7 +23,7 @@ module.exports = {
     console.log(`----------\nAt userController Find Method\n----------`);
 
     db.User
-      .find( { 'user_id': req.params.id }, (err, found) => {
+      .find( { 'email': req.params.id }, (err, found) => {
 
         if ( err ){
           console.log(`user controller err = ${err}`);
