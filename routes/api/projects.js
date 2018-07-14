@@ -3,8 +3,8 @@ const projectController = require('../../controllers/projectController');
 
 // Matches with '/api/projects'
 router.route('/')
-
-    .get(projectController.returnJSON)
+    //.get(projectController.returnJSON)
+    .get(projectController.findAll)
     .post(projectController.create);
 
 // router.get('/', (req, res) => res.json( 'projects works' ));

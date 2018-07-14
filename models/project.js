@@ -4,9 +4,18 @@ const Schema = mongoose.Schema;
 const projectSchema = new Schema({
 
     _id: { type: Schema.Types.ObjectId, required: true },
-    title: { type: String, required: true },
-    url: { type: String, required: true },
-    date: { type: Date, default: Date.now }
+    name: { type: String, required: true },
+    desc: { type: String, required: true },
+    locationZip: { type: String, required: true },
+    budget: { type: Number, required: true },
+    img: { type: String, required: false },
+    reqSkills: [ String ], // Array of required skills
+    seLed: { type: Boolean, required: true },
+    startDate: { type: Date, required: true },
+    duration: { type: Number, required: true },
+    compPerc: { type: Number, default: 0 },
+    teamMembers: [ String ], // Array of Accepted Team Member User ID's 
+    teamApplicants: [ String ] // Array of Applicant User ID's for Project
   }, { _id: false });
 
 
