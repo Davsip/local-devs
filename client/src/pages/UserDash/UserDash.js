@@ -8,6 +8,18 @@ class UserDash extends Component {
     profile: {},
     projects: []
   };
+
+  goTo(route) {
+    this.props.history.replace(`/${route}`)
+  }
+
+  login() {
+    this.props.auth.login();
+  }
+
+  logout() {
+    this.props.auth.logout();
+  }
   
   componentWillMount() {
 
@@ -58,10 +70,94 @@ class UserDash extends Component {
 
   render() {
     const { profile } = this.state;
+    const { isAuthenticated } = this.props.auth;
 
     return (
 
     <React.Fragment>
+
+        { isAuthenticated() && (
+            // {/* Nav bar */}
+            <nav className="navbar navbar-expand-lg fixed-top" id="mainNav">
+            <div className="hire-tab">
+                <a className="navbar-brand text-nav" href="#">Hire Locals</a>
+            </div>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="nav-tabs">
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav mr-auto">
+                        <li>
+                            <div className="dropdown icon-tab ">
+                                <button className="btn btn-secondary dropdown-togglen text-nav " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <i className="fas fa-user-alt"></i>
+                                </button>
+                                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a className="dropdown-item" onClick={this.logout.bind(this)}>Log Out</a>
+                                    <a className="dropdown-item" href="#">My Dashboard</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </nav>
+        )}
+
+        { !isAuthenticated() && (
+            //   <!-- Nav bar  -->
+            <nav className=" navbar navbar-expand-lg fixed-top" id="mainNav">
+                <div className="hire-tab">
+                    <a className="navbar-brand text-nav" href="#">Hire Locals</a>
+                </div>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="nav-tabs">
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav mr-auto">
+                            <li>
+                                <div className="post-tab">
+                                    <a className="nav-link text-nav" href="#portfolio">Post Projects</a>
+                                </div>                       
+                            </li>
+                            <li>
+                                <div className="work-tab">
+                                    <a className="nav-link text-nav" href="#">How it Works
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="browse-tab">
+                                    <a className="nav-link text-nav" href="#">Browse Jobs
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="social-tab">
+                                    <a className="nav-link text-nav" href="#">Social
+                                    </a>
+                                </div>
+                            </li>
+                            <li>        
+                                <div className="dropdown icon-tab ">
+                                    <button className="btn btn-secondary dropdown-togglen text-nav" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <i className="fas fa-user-alt"></i>
+                                    </button>
+                                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a className="dropdown-item" onClick={this.login.bind(this)}>Log in</a>
+                                        <a className="dropdown-item" onClick={this.login.bind(this)}>Sign up</a>
+                                    </div>
+                                </div>        
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        )}
         
         {/* <!-- Incomplete Profile Warning --> */}
         <div className="alert alert-warning profile-incomplete" role="alert">
