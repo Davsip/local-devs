@@ -194,10 +194,17 @@ div#team-info div.row {
   padding: 10px;
 }
 
+button#submit-new-project {
+  margin: 50px auto 100px auto;
+}
+button#update-project {
+  margin: 30px auto auto auto;
+}
+
 /* Not sure if this is going to affect anything else!!!!!!!!!!! */
 .row {
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: 0!important;
+  margin-right: 0!important;
 }
 
 ul.nav-pills {
@@ -249,7 +256,7 @@ button.btn-sm {
 /* Increase size of modal from 500 to 700px */
 @media (min-width: 576px) {
   .modal-dialog {
-    max-width: 700px;
+    max-width: 700px!important;
   }
 }
 

@@ -1,6 +1,5 @@
-
 // Modal script
-$('#projectModal').on('shown.bs.modal', function (e) {
+$(document).on('shown.bs.modal','#projectModal', function (e) {
     e.preventDefault();
 
     // Grab reference to anchor tag clicked
@@ -87,4 +86,58 @@ $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 });
 
+
+// Clone applicant to team
+$('.applicant-move').on('click', (e) => {
+    e.preventDefault();
+
+    // Set target
+    const el = e.currentTarget.parentNode.parentNode;
+
+    // Clone target
+    let cln = el.cloneNode(true);
+
+    // Change dropdown class
+    cln.childNodes[3].childNodes[1].setAttribute('class', 'dropdown-item member-remove')
+
+    // Change dropdown option text
+    cln.childNodes[3].childNodes[1].innerHTML = 'Remove From Team';
+
+    // Change class to remove 'show'
+    cln.childNodes[3].setAttribute('class', 'dropdown-menu');
+
+    // copy to team
+    $('div#team-members').append(cln);
+});
+
+// Remove member from team
+$(document).on('click', 'a.member-remove', (evt) => {
+    evt.preventDefault();
+    
+    // remove element
+    evt.currentTarget.parentNode.parentNode.remove();
+
+});
+
+$(document).on('click', 'a.pstage', (evt) => {
+
+    evt.preventDefault();
+
+    // get clicked link value
+    const newVal = evt.currentTarget.id;
+
+    // get current status value
+    const currVal = evt.currentTarget.parentNode.parentNode.childNodes[1].innerHTML;
+
+    // change clicked link value and id to currVal
+    evt.currentTarget.id = currVal;
+    evt.currentTarget.innerHTML = currVal;
+
+    // change curr status to newVal (status)
+    evt.currentTarget.parentNode.parentNode.childNodes[1].innerHTML = newVal;
+
+
+
+
+});
 

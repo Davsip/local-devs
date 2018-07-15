@@ -236,7 +236,7 @@ class UserDash extends Component {
         </section>
 
         {/* <!-- Project Modal - Loads Dynamic Content --> */}
-        <div className="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="projectModal" aria-hidden="true">
+        <div className="modal fade" id="projectModal" tabIndex="-1" role="dialog" aria-labelledby="projectModal" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered" role="document">
 
                 {/* <!-- Header --> */}
