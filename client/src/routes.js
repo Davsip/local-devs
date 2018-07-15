@@ -21,7 +21,7 @@ export const makeMainRoutes = () => {
   return (
       <Router history={history}>
         <div>
-          <Route path="/" render={(props) => <App auth={auth} {...props} />} />
+          <Route exact path="/" render={(props) => <App auth={auth} {...props} />} />
           <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
           <Route path="/callback" render={(props) => {
             handleAuthentication(props);
@@ -29,7 +29,7 @@ export const makeMainRoutes = () => {
           }}/>
           <Route path="/api/projects" component={ProjectsAPI} />
           <Route path="/profile" render={(props) => <Profile auth={auth} {...props} />} />
-          <Route path="/myDashboard" render={(props) => <UserDash auth={auth} {...props} />} />
+          <Route exact path="/myDashboard" render={(props) => <UserDash auth={auth} {...props} />} />
         </div>
       </Router>
   );

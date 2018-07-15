@@ -30,45 +30,88 @@ class App extends Component {
         {/* isAuthenticated() returns true or false, true if authenticated, false if not */}
         {/* use that to render certain features */}
         {/* i.e. user logo dropdown login / signup, log out / mydashboard */}
+
+        { isAuthenticated() && (
+            // {/* Nav bar */}
+            <nav className="navbar navbar-expand-lg fixed-top" id="mainNav">
+            <div className="hire-tab">
+                <a className="navbar-brand text-nav" href="#">Hire Locals</a>
+            </div>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="nav-tabs">
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav mr-auto">
+                        <li>
+                            <div className="dropdown icon-tab ">
+                                <button className="btn btn-secondary dropdown-togglen text-nav " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <i className="fas fa-user-alt"></i>
+                                </button>
+                                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a className="dropdown-item" onClick={this.logout.bind(this)}>Log Out</a>
+                                    <a className="dropdown-item" href="#">My Dashboard</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </nav>
+        )}
+
         { !isAuthenticated() && (
-          <Navbar fluid>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="#">Auth0 - React</a>
-            </Navbar.Brand>
-            <Button
-              bsStyle="primary"
-              className="btn-margin"
-              onClick={this.goTo.bind(this, 'home')}
-            >
-              Home
-            </Button>
-            {
-              !isAuthenticated() && (
-                  <Button
-                    id="qsLoginBtn"
-                    bsStyle="primary"
-                    className="btn-margin"
-                    onClick={this.login.bind(this)}
-                  >
-                    Log In
-                  </Button>
-                )
-            }
-            {
-              isAuthenticated() && (
-                  <Button
-                    id="qsLogoutBtn"
-                    bsStyle="primary"
-                    className="btn-margin"
-                    onClick={this.logout.bind(this)}
-                  >
-                    Log Out
-                  </Button>
-                )
-            }
-          </Navbar.Header>
-        </Navbar>
+            //   <!-- Nav bar  -->
+            <nav className=" navbar navbar-expand-lg fixed-top" id="mainNav">
+                <div className="hire-tab">
+                    <a className="navbar-brand text-nav" href="#">Hire Locals</a>
+                </div>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="nav-tabs">
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav mr-auto">
+                            <li>
+                                <div className="post-tab">
+                                    <a className="nav-link text-nav" href="#portfolio">Post Projects</a>
+                                </div>                       
+                            </li>
+                            <li>
+                                <div className="work-tab">
+                                    <a className="nav-link text-nav" href="#">How it Works
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="browse-tab">
+                                    <a className="nav-link text-nav" href="#">Browse Jobs
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="social-tab">
+                                    <a className="nav-link text-nav" href="#">Social
+                                    </a>
+                                </div>
+                            </li>
+                            <li>        
+                                <div className="dropdown icon-tab ">
+                                    <button className="btn btn-secondary dropdown-togglen text-nav" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <i className="fas fa-user-alt"></i>
+                                    </button>
+                                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a className="dropdown-item" onClick={this.login.bind(this)}>Log in</a>
+                                        <a className="dropdown-item" onClick={this.login.bind(this)}>Sign up</a>
+                                    </div>
+                                </div>        
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         )}
 
 
@@ -112,7 +155,7 @@ class App extends Component {
                     </p>
                 </div>
                 <div className="col-md-5 col-lg-4 ">
-                    <img class="icons-work " src="./assets/images/icons/get-paid.png " alt="Get Paid" />
+                    <img className="icons-work " src="./assets/images/icons/get-paid.png " alt="Get Paid" />
                     <br />
                     <br />
                     <p className="text-justify">The developer will get paid per project or sections of the project. Each day you will submit a quick
@@ -135,7 +178,7 @@ class App extends Component {
                             <h5 className="card-title">AD Web App</h5>
                             <p className="card-text">Four developers needed for an eleven month project.</p>
                             <p className="card-text" id="techNeeded">C#, HTML, JavaScript, CSS, JQuery, Angular</p>
-                            <a href="#" class="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-desc="Client needs clean, dynamic Active Directory personnel resource site.  This is an eleven month project and the team will consist of four developers. Client expects developers to have great teamwork and communication skills. Weekly deliverables are expected."
+                            <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-desc="Client needs clean, dynamic Active Directory personnel resource site.  This is an eleven month project and the team will consist of four developers. Client expects developers to have great teamwork and communication skills. Weekly deliverables are expected."
                                 data-team="4" data-time="11mo" data-title="Active Directory Web Application">View Details / Apply</a>
                         </div>
                     </div>
@@ -157,7 +200,7 @@ class App extends Component {
                             <h5 className="card-title">Website Redesign</h5>
                             <p className="card-text">Five developers needed for a seven month project.</p>
                             <p className="card-text" id="techNeeded">JavaScript, React, HTML, Bootstrap, Node</p>
-                            <a href="#" class="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-desc="For this project, five developers will be working with one of our Solutions Experts to redesign the client's current website for mobility.  This project is expected to take seven months.  Need to be able to work well in a team.  Weekly deliverables are expected."
+                            <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-desc="For this project, five developers will be working with one of our Solutions Experts to redesign the client's current website for mobility.  This project is expected to take seven months.  Need to be able to work well in a team.  Weekly deliverables are expected."
                                 data-team="5" data-time="7mo" data-title="Website Redesign">View Details / Apply</a>
                         </div>
                     </div>
@@ -170,7 +213,7 @@ class App extends Component {
                             <h5 className="card-title">Company ReBranding</h5>
                             <p className="card-text">Two graphic design experts needed for a three month project.</p>
                             <p className="card-text" id="techNeeded">Photoshop, Illustrator</p>
-                            <a href="#" class="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-desc="Client is looking for two graphics design experts for company re-branding. Your team will work directly with the client to discuss culture and history of the company to come up with a clean design.  This project will be three months."
+                            <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-desc="Client is looking for two graphics design experts for company re-branding. Your team will work directly with the client to discuss culture and history of the company to come up with a clean design.  This project will be three months."
                                 data-team="2" data-time="3mo" data-title="Company ReBranding">View Details / Apply</a>
                         </div>
                     </div>
@@ -181,7 +224,7 @@ class App extends Component {
                             <h5 className="card-title">Accounting System</h5>
                             <p className="card-text">Seven developers needed for an eleven month project.</p>
                             <p className="card-text" id="techNeeded">Java, MySQL, CSS, JavaScript, JQuery, Bootstrap</p>
-                            <a href="#" class="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-desc="For this project, you'll work with seven other developers and a Solutions Expert to overhaul our client's current accounting system.  This project will last eleven months and will require a good amount of collaboration.  Excellent written and oral communication required.  Weekly deliverables will be required."
+                            <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-desc="For this project, you'll work with seven other developers and a Solutions Expert to overhaul our client's current accounting system.  This project will last eleven months and will require a good amount of collaboration.  Excellent written and oral communication required.  Weekly deliverables will be required."
                                 data-team="7" data-time="11mo" data-title="Accounting Systems Build">View Details / Apply</a>
                         </div>
                     </div>
@@ -192,7 +235,7 @@ class App extends Component {
                             <h5 className="card-title">Customer Feedback Site</h5>
                             <p className="card-text">Two developers needed for a five month project.</p>
                             <p className="card-text" id="techNeeded">Python, MongoDB, Angular, HTML, Bootstrap, Sass</p>
-                            <a href="#" class="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-desc="Our client is wanting two developers to create a customer feedback site.  This project will take 5 months."
+                            <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-desc="Our client is wanting two developers to create a customer feedback site.  This project will take 5 months."
                                 data-team="2" data-time="5mo" data-title="Customer Feedback Site">View Details / Apply</a>
                         </div>
                     </div>
@@ -212,7 +255,7 @@ class App extends Component {
             <hr className="star-dark mb-6 " />
             <div className="row ">
                 <div className="col-sm-5 col-md-4 col-lg-4">
-                    <img class="icons-work " src="./assets/images/icons/meet-dev.png" alt="Meet Dev" />
+                    <img className="icons-work " src="./assets/images/icons/meet-dev.png" alt="Meet Dev" />
                     <br />
                     <br />
                     <p className="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat recusandae quaerat soluta sapiente beatae?
@@ -239,7 +282,7 @@ class App extends Component {
         </div>
     </div>
   {/*   <!-- Project Modal - Loads Dynamic Content --> */}
-    <div className="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="projectModal" aria-hidden="true">
+    <div className="modal fade" id="projectModal" tabIndex="-1" role="dialog" aria-labelledby="projectModal" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered" role="document">
 
            {/*  <!-- Header --> */}
@@ -302,7 +345,7 @@ class App extends Component {
             <h2 className="text-center text-uppercase text-secondary mb-0">Post your Project</h2>
             <hr className="star-dark mb-5" />
             <div className="row">
-                <div class="col-lg-8 mx-auto">
+                <div className="col-lg-8 mx-auto">
                   {/*  <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. --> */}
                   {/*  <form name="sentMessage" id="contactForm" novalidate="novalidate">
@@ -356,37 +399,6 @@ class App extends Component {
             </h5>
         </div>
     </div>
-
-        { isAuthenticated() && (
-          // {/* Nav bar */}
-          <nav className="navbar navbar-expand-lg fixed-top" id="mainNav">
-          <div className="hire-tab">
-              <a className="navbar-brand text-nav" href="#">Hire Locals</a>
-          </div>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="nav-tabs">
-              <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul className="navbar-nav mr-auto">
-                      <li>
-                          <div className="dropdown icon-tab ">
-                              <button className="btn btn-secondary dropdown-togglen text-nav " type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                  aria-haspopup="true" aria-expanded="false">
-                                  <i className="fas fa-user-alt"></i>
-                              </button>
-                              <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                  <a className="dropdown-item" href="#">Log in</a>
-                                  <a className="dropdown-item" href="#">Sign up</a>
-                                  <a className="dropdown-item" href="#">My Dashboard</a>
-                              </div>
-                          </div>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-          </nav>
-        )}
         
       </div>
     );
