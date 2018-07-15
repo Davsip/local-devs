@@ -14,7 +14,9 @@ const projectSchema = new Schema({
     duration: { type: Number, required: true },
     compPerc: { type: Number, default: 0 },
     teamMembers: [ String ], // Array of Accepted Team Member User ID's 
-    teamApplicants: [ String ] // Array of Applicant User ID's for Project
+    teamApplicants: [ String ], // Array of Applicant User ID's for Project
+    projectStage: { type: String, default: 'pending'},
+    teamSize: { type: Number }
   });
 
 
