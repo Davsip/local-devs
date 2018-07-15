@@ -276,3 +276,7 @@ div#team-info div.row {
   background: none;
   box-shadow: none !important;
 }
+
+.btn-margin {
+  margin: 7px 3px;
+}

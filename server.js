@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const routes = require('./routes');
 const app = express();
 const PORT = process.env.PORT || 3001;
+mongoose.Promise = global.Promise;
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,8 +20,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
-    process.env.MONGODB_URI ||
-    'mongodb://localhost/localdevs'
+    process.env.MONGODB_URI || 'mongodb://localhost/localdevs'
 );
 
 // Start the API server
