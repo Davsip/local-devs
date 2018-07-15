@@ -16,6 +16,7 @@ const userSchema = new Schema({
     technologies: [ String ],
     experience_desc: { type: String },
     bio_desc: { type: String },
+    title: { type: String },
     isProfileCompleted: { type: Boolean, default: false }
   });
 
