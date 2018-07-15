@@ -7,6 +7,7 @@ import Auth from './pages/Auth/Auth';
 import history from './history';
 import ProjectsAPI from './pages/projectsAPI';
 import Profile from './pages/Profile/Profile';
+import UserDash from './pages/UserDash/UserDash';
 
 const auth = new Auth();
 
@@ -28,6 +29,7 @@ export const makeMainRoutes = () => {
           }}/>
           <Route path="/api/projects" component={ProjectsAPI} />
           <Route path="/profile" render={(props) => <Profile auth={auth} {...props} />} />
+          <Route path="/myDashboard" render={(props) => <UserDash auth={auth} {...props} />} />
         </div>
       </Router>
   );
