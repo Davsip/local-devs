@@ -1,18 +1,31 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import API from '../../utils/API';
 
 class UserDash extends Component {
 
   state = {
-    profile: {}
+    profile: {},
+    projects: []
   };
   
   componentWillMount() {
 
     this.setState({ 
-      profile: {} 
+      profile: {},
+      projects: [] 
     });
 
+    // Get projects from Projects API
+    API.getSavedProjects().then( res => {
+        console.log (res.data);
+
+        this.setState({
+            projects: res.data
+        })
+    })
+
+    // Get user profile from Auth0 API
     const { userProfile, getProfile } = this.props.auth;
 
     if (!userProfile) {
