@@ -250,7 +250,7 @@ button.btn-link:hover {
 }
 
 button.btn-sm {
-  margin: 5px auto;
+  margin: 5px 5px!important;
 }
 
 /* Increase size of modal from 500 to 700px */
