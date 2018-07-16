@@ -40,31 +40,30 @@ class AdminDash extends Component {
     // Get user profile from Auth0 API
     const { userProfile, getProfile } = this.props.auth;
 
-    // if (!userProfile) {
-    //   getProfile((err, profile) => {
-    //     this.setState({ profile });
+    if (!userProfile) {
+      getProfile((err, profile) => {
+        this.setState({ profile });
 
-    //     console.log(`---- profile sub ${profile.email} ------`);
+        console.log(`---- profile sub ${profile.email} ------`);
 
-    //     axios.get('/api/users/' + profile.email)
-    //       .then( res => {
-    //           console.log(`profile view res.data.length = ${res.data.length}`);
+        axios.get('/api/users/' + profile.email)
+          .then( res => {
+              console.log(`profile view res.data.length = ${res.data.length}`);
     
-    //           if ( res.data.length === 0 ) {
-    //             console.log(`dlafkjdkajfda`);
-    //             console.log(profile);
-    //             axios.post('/api/users', profile)
-    //               .then( res => console.log(res));
-    //           } else {
-    //             console.log(`setting profile state`);
-    //             this.setState({ profile: res.data[0] });
-    //           }
-    //         });
-    //       })
+              if ( res.data.length === 0 ) {
+                console.log(profile);
+                axios.post('/api/users', profile)
+                  .then( res => console.log(res));
+              } else {
+                console.log(`setting profile state`);
+                this.setState({ profile: res.data[0] });
+              }
+            });
+          })
 
-    // } else {
-    //   this.setState({ profile: userProfile });
-    // }
+    } else {
+      this.setState({ profile: userProfile });
+    }
 
   }
 
