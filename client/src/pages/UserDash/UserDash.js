@@ -72,6 +72,10 @@ class UserDash extends Component {
     const { profile } = this.state;
     const { isAuthenticated } = this.props.auth;
 
+    console.log('--- component will mount ---');
+    console.log(this.state.profile);
+    console.log(this.state.profile.technologies);
+
     return (
 
     <React.Fragment>
@@ -331,10 +335,90 @@ class UserDash extends Component {
                     {/* <!-- My Profile --> */}
                     <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="contact-tab">
                         {/* <!-- Begin Profile --> */}
-                        <div className="jumbotron jumbotron-fluid">
+                        {/* <div className="jumbotron jumbotron-fluid">
                             <div className="container">
                                 <h1 className="display-4">My Profile!!!</h1>
                                 <p className="lead">Check Me Out!</p>
+                            </div>
+                        </div> */}
+
+                        {/* <!-- Begin Profile --> */}
+
+                        <div className="container">
+                            <img className="img-fluid mb-1 d-block mx-auto img-logo" src={ profile.picture || './assets/images/icons/male-icon.png'} alt="Profile" style={{width: 80 + 'px'}}/>
+                            <h4 className="text-center text-uppercase text-secondary "></h4>
+
+                            {/* Set Default to Local Devs User */}
+                            <h5 className="text-center text-secondary ">{ profile.title || 'Local Devs User'}</h5>
+                        </div>
+
+
+                        {/* <!-- Profile section  --> */}
+                        <div className="container">
+                            <div className="col-md-12">
+                                <div className=" jumbotron jumbotron-fluid profile-section ">
+                                    <div className="container ">
+                                        <h1 className="display-4 ">My Bio</h1>
+                                        <p className="lead">
+                                            { 
+                                                profile.bio_desc ||
+                                                "Help companies understand who you are. Complete your profile and tell us about yourself."               
+                                            }
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row ">
+                            <div className="col-md-6 col-lg-4 ">
+                                <div className="card profile-section " style={{width: 18 + 'rem'}}>
+                                    <div className="card-body ">
+                                        <h5 className="card-title ">Skill Sets</h5>
+                                        <p className="card-text ">
+                                            {
+                                                "Some quick example text to build on the card title and make up the bulk of the card's content."
+                                            }
+                                        </p>
+                                        <a href="# " className="btn btn-primary ">Edit</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-6 col-lg-4 ">
+                                <div className="card profile-section " style={{width: 18 + 'rem'}}>
+                                    <div className="card-body ">
+                                        <h5 className="card-title ">Experience</h5>
+                                        <p className="card-text ">
+                                            {
+                                                profile.experience_desc ||
+                                                "Some quick example text to build on the card title and make up the bulk of the card's content."                         
+                                            }
+                                        </p>
+                                        <a href="# " className="btn btn-primary ">Edit</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-6 col-lg-4 ">
+                                <div className="card profile-section " style={{width: 18 + 'rem'}}>
+                                    <div className="card-body ">
+                                        <h5 className="card-title ">Contact</h5>
+                                        <p className="card-text ">
+                                            {
+                                                `Email: ${profile.email}`
+                                            }
+                                        </p>
+                                        <p className="card-text ">
+                                            {
+                                                `Phone: ${profile.phone || 'Not Provided'}`
+                                            }
+                                        </p>
+                                        <p className="card-text ">
+                                            {
+                                                `Zip: ${profile.zip || 'Not Provided'}`
+                                            }
+                                        </p>
+                                        <a href="# " className="btn btn-primary ">Edit</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         {/* <!-- End Profile --> */}

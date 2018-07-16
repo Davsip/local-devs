@@ -492,4 +492,7 @@ button.btn-secondary {
   border: 1px solid #ff7f50 !important;
 }
 
-
+.profile-section {
+  background-color: #ccc;
+  padding: 1.25rem;
+}
