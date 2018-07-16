@@ -40,7 +40,7 @@ const projectSeed = [
     duration: 5,
     compPerc: 0,
     teamMembers: [ 'jcwarner@gmail.com', 'baber9@gmail.com' ],
-    teamApplicants: null,
+    teamApplicants: [ 'jcwarner@gmail.com', 'baber9@gmail.com' ],
     projectStage: 'started',
     teamSize: 2
   },
@@ -56,7 +56,7 @@ const projectSeed = [
     duration: 11,
     compPerc: 0,
     teamMembers: null,
-    teamApplicants: null,
+    teamApplicants: [ 'jcwarner@gmail.com', 'baber9@gmail.com' ],
     projectStage: 'pending',
     teamSize: 4
   },
