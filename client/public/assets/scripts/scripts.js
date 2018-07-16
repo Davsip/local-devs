@@ -88,26 +88,36 @@ $(function () {
 
 
 // Clone applicant to team
-$('.applicant-move').on('click', (e) => {
+$(document).on('click', '.applicant-move', (e) => {
     e.preventDefault();
 
-    // Set target
-    const el = e.currentTarget.parentNode.parentNode;
+    // get name on clicked element
+    const name = e.currentTarget.parentNode.parentNode.children[0].innerHTML
 
-    // Clone target
-    let cln = el.cloneNode(true);
+    // grab number of elements with clicked user in team members (if 0 then add, 1 = already present)
+    const numEls = $('#team-members').find(`button:contains(${name})`).length;
 
-    // Change dropdown class
-    cln.childNodes[3].childNodes[1].setAttribute('class', 'dropdown-item member-remove')
+    // only add user to team if not present
+    if (numEls === 0) {
 
-    // Change dropdown option text
-    cln.childNodes[3].childNodes[1].innerHTML = 'Remove From Team';
+        // Set target
+        const el = e.currentTarget.parentNode.parentNode;
 
-    // Change class to remove 'show'
-    cln.childNodes[3].setAttribute('class', 'dropdown-menu');
+        // Clone target
+        let cln = el.cloneNode(true);
 
-    // copy to team
-    $('div#team-members').append(cln);
+        // Change dropdown class
+        cln.childNodes[1].childNodes[0].setAttribute('class', 'dropdown-item member-remove')
+
+        // Change dropdown option text
+        cln.childNodes[1].childNodes[0].innerHTML = 'Remove From Team';
+
+        // Change class to remove 'show'
+        cln.childNodes[1].setAttribute('class', 'dropdown-menu');
+
+        // copy to team
+        $('div#team-members').append(cln);
+    }
 });
 
 // Remove member from team
