@@ -129,6 +129,7 @@ $(document).on('click', 'a.member-remove', (evt) => {
 
 });
 
+// Project Stage Change from Admin Dashboard
 $(document).on('click', 'a.pstage', (evt) => {
 
     evt.preventDefault();
@@ -137,17 +138,14 @@ $(document).on('click', 'a.pstage', (evt) => {
     const newVal = evt.currentTarget.id;
 
     // get current status value
-    const currVal = evt.currentTarget.parentNode.parentNode.childNodes[1].innerHTML;
+    const currVal = evt.currentTarget.parentNode.parentNode.childNodes[0].innerHTML;
 
     // change clicked link value and id to currVal
     evt.currentTarget.id = currVal;
     evt.currentTarget.innerHTML = currVal;
 
     // change curr status to newVal (status)
-    evt.currentTarget.parentNode.parentNode.childNodes[1].innerHTML = newVal;
-
-
-
+    evt.currentTarget.parentNode.parentNode.childNodes[0].innerHTML = newVal;
 
 });
 
