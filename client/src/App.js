@@ -59,7 +59,7 @@ class App extends Component {
             // {/* Nav bar */}
             <nav className="navbar navbar-expand-lg fixed-top" id="mainNav">
             <div className="hire-tab">
-                <a className="navbar-brand text-nav" href="#">Hire Local</a>
+                <a className="navbar-brand text-nav" href="/">Hire Local</a>
             </div>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -69,13 +69,13 @@ class App extends Component {
                     <ul className="navbar-nav mr-auto">
                         <li>
                             <div className="dropdown icon-tab ">
-                                <button className="btn btn-secondary dropdown-togglen text-nav " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                <button className="btn btn-secondary dropdown-togglen text-nav logged-in" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
                                     <i className="fas fa-user-alt"></i>
                                 </button>
                                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a className="dropdown-item" onClick={this.logout.bind(this)}>Log Out</a>
-                                    <a className="dropdown-item" href="#">My Dashboard</a>
+                                    <a className="dropdown-item" href="/myDashboard">My Dashboard</a>
                                 </div>
                             </div>
                         </li>
@@ -89,7 +89,7 @@ class App extends Component {
             //   <!-- Nav bar  -->
             <nav className=" navbar navbar-expand-lg fixed-top" id="mainNav">
                 <div className="hire-tab">
-                    <a className="navbar-brand text-nav" href="#">Hire Local</a>
+                    <a className="navbar-brand text-nav" href="/">Hire Local</a>
                 </div>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -129,7 +129,7 @@ class App extends Component {
 
                             <li>        
                                 <div className="dropdown icon-tab ">
-                                    <button className="btn btn-secondary dropdown-togglen text-nav" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                    <button className="btn btn-secondary dropdown-togglen text-nav not-logged-in" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">
                                         <i className="fas fa-user-alt"></i>
                                     </button>
