@@ -201,7 +201,7 @@ class UserDash extends Component {
                             {
                                 projects.map( (project, index) => {
                                     if ( project.teamMembers != null ){
-                                        if ( project.teamMembers.includes(profile.email) ) {
+                                        if ( project.teamMembers.includes(profile.email) && project.projectStage === 'started' ) {
                                         
                                             return (
                                             <div className="col-md-6 col-lg-4" key={index} data-id={project.sub}>
@@ -233,7 +233,7 @@ class UserDash extends Component {
                             {                                
                                 projects.map( (project, index) => {
                                     if (project.teamApplicants != null){
-                                        if (project.teamApplicants.includes(profile.email)) {
+                                        if ( project.teamApplicants.includes(profile.email) && project.projectStage === 'pending' ) {
                                                                                     
                                             return (
                                                 <div className="col-md-6 col-lg-4" key={index} data-id={project.sub}>
