@@ -1,20 +1,15 @@
 import React, { Component } from "react";
 import { Navbar, Button } from "react-bootstrap";
-<<<<<<< HEAD
+
 import API from "./utils/API";
 
 // put landing / home page css in App.css
 import "./App.css";
-=======
+
 
 // put landing / home page css in App.css
-<<<<<<< HEAD
 import "./App.css";
 
-=======
-import './App.css';
->>>>>>> 47eed409ac8c6a4f61e0e584717e764b7c65174a
->>>>>>> fdf5227568225792a1777a7c68387eff610e5b18
 // import Navigation from "./components/Navigation"
 
 class App extends Component {
