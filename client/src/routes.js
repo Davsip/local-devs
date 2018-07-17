@@ -7,6 +7,8 @@ import Auth from './pages/Auth/Auth';
 import history from './history';
 import ProjectsAPI from './pages/projectsAPI';
 import Profile from './pages/Profile/Profile';
+import UserDash from './pages/UserDash/UserDash';
+import AdminDash from './pages/AdminDash/AdminDash';
 
 const auth = new Auth();
 
@@ -20,7 +22,7 @@ export const makeMainRoutes = () => {
   return (
       <Router history={history}>
         <div>
-          <Route path="/" render={(props) => <App auth={auth} {...props} />} />
+          <Route exact path="/" render={(props) => <App auth={auth} {...props} />} />
           <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
           <Route path="/callback" render={(props) => {
             handleAuthentication(props);
@@ -28,6 +30,8 @@ export const makeMainRoutes = () => {
           }}/>
           <Route path="/api/projects" component={ProjectsAPI} />
           <Route path="/profile" render={(props) => <Profile auth={auth} {...props} />} />
+          <Route exact path="/myDashboard" render={(props) => <UserDash auth={auth} {...props} />} />
+          <Route exact path="/adminDashboard" render ={(props) => <AdminDash auth={auth} {...props} />} />
         </div>
       </Router>
   );
