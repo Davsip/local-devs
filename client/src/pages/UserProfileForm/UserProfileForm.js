@@ -190,7 +190,7 @@ class UserProfileForm extends Component {
 {/* Begin Form */}
   <div className="apply-form">
     <div className="container">
-      <h2 className="text-center text-uppercase text-secondary mb-0">Sign up</h2>
+      <h2 className="text-center text-uppercase text-secondary mb-0">User Profile</h2>
       <hr className="star-dark mb-5" />
       <div className="row">
         <div className="col-lg-8 mx-auto">
