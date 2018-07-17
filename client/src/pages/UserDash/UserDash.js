@@ -370,11 +370,8 @@ class UserDash extends Component {
                                         <h5 className="card-title ">Experience</h5>
                                         <p className="card-text ">
                                             {
-                                                profile.technologies == null ? '-' : profile.technologies.join(', ') 
-
-                                                ||
-                                            
-                                                'No skills listed.  Please update your profile.'
+                                                profile.experience_desc ||
+                                                "Some quick example text to build on the card title and make up the bulk of the card's content."                         
                                             }
                                         </p>
                                         <a href="# " className="btn btn-primary ">Edit</a>
