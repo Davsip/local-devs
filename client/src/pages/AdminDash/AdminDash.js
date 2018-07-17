@@ -171,7 +171,7 @@ class AdminDash extends Component {
             <ul className="navbar-nav mr-auto">
                 <li>
                     <div className="dropdown icon-tab ">
-                        <button className="btn btn-secondary dropdown-togglen text-nav " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        <button className="btn btn-secondary dropdown-togglen text-nav logged-in" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <i className="fas fa-user-alt"></i>
                         </button>
@@ -224,7 +224,7 @@ class AdminDash extends Component {
                 </li>
                 <li>        
                     <div className="dropdown icon-tab ">
-                        <button className="btn btn-secondary dropdown-togglen text-nav" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        <button className="btn btn-secondary dropdown-togglen text-nav not-logged-in" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <i className="fas fa-user-alt"></i>
                         </button>
