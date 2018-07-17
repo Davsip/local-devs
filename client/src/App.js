@@ -101,9 +101,13 @@ class App extends Component {
           // {/* Nav bar */}
           <nav className="navbar navbar-expand-lg fixed-top" id="mainNav">
             <div className="hire-tab">
+
               <a className="navbar-brand text-nav" href="#">
                 Hire Locals
               </a>
+
+                <a className="navbar-brand text-nav" href="#">Hire Local</a>
+
             </div>
             <button
               className="navbar-toggler"
@@ -155,6 +159,7 @@ class App extends Component {
           </nav>
         )}
 
+<<
         {!isAuthenticated() && (
           //   <!-- Nav bar  -->
           <nav className=" navbar navbar-expand-lg fixed-top" id="mainNav">
@@ -184,6 +189,63 @@ class App extends Component {
                       <a className="nav-link text-nav" href="#portfolio">
                         Post Projects
                       </a>
+=======
+        { !isAuthenticated() && (
+            //   <!-- Nav bar  -->
+            <nav className=" navbar navbar-expand-lg fixed-top" id="mainNav">
+                <div className="hire-tab">
+                    <a className="navbar-brand text-nav" href="#">Hire Local</a>
+                </div>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="nav-tabs">
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav mr-auto">
+                        <li>
+                            <div className="work-tab">
+                                    <a className="nav-link text-nav" href="#howitworks">How it Works
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="browse-tab">
+                                    <a className="nav-link text-nav" href="#projects">Browse Projects
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="social-tab">
+                                    <a className="nav-link text-nav" href="#social">Social
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="post-tab">
+                                    <a className="nav-link text-nav" href="#mission">Mission</a>
+                                </div>                       
+                            </li>
+                            <li>
+                                <div className="post-tab">
+                                    <a className="nav-link text-nav" href="#portfolio">Post Projects</a>
+                                </div>                       
+                            </li>
+
+
+                            <li>        
+                                <div className="dropdown icon-tab ">
+                                    <button className="btn btn-secondary dropdown-togglen text-nav" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <i className="fas fa-user-alt"></i>
+                                    </button>
+                                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a className="dropdown-item" onClick={this.login.bind(this)}>Log in</a>
+                                        <a className="dropdown-item" onClick={this.login.bind(this)}>Sign up</a>
+                                    </div>
+                                </div>        
+                            </li>
+                        </ul>
+
                     </div>
                   </li>
                   <li>
@@ -265,12 +327,19 @@ class App extends Component {
           </div>
         </div>
 
+
         {/* <!-- SECTION 2 / HOW IT WORKS --> */}
         <div className="section-2">
           <div className="container">
             <h2 className="text-center text-uppercase text-secondary">
               How it Works
             </h2>
+
+    {/* <!-- SECTION 2 / HOW IT WORKS --> */}
+    <div className="howitworks" id="howitworks">
+        <div className="container">
+            <h2 className="text-center text-uppercase text-secondary">How it Works</h2>
+
             <hr className="star-dark mb-6" />
             <div className="row ">
               <div className="col-sm-5 col-md-4 col-lg-4">
@@ -324,12 +393,21 @@ class App extends Component {
           </div>
         </div>
 
+
         {/* <!-- SECTION 3 PROJECTS --> */}
         <div className="portfolio" id="portfolio">
           <div className="container">
             <h2 className="text-center text-uppercase text-secondary mb-0">
               Projects
             </h2>
+
+    </div>
+    
+    {/* <!-- SECTION 3 PROJECTS --> */}
+    <div className="projects" id="projects">
+        <div className="container">
+            <h2 className="text-center text-uppercase text-secondary mb-0">Projects</h2>
+
             <hr className="star-dark mb-5" />
             <div className="row">
               {/* <!-- Avail Projs Content --> */}
@@ -373,6 +451,7 @@ class App extends Component {
             </div>
           </div>
         </div>
+
         <br />
         <br />
         <br />
@@ -382,6 +461,16 @@ class App extends Component {
             <h2 className="text-center text-uppercase text-secondary">
               Social
             </h2>
+
+    </div>
+<br />
+<br />
+<br />
+ {/* <!-- SECTION 5- SOCIAL  --> */}
+    <div className="social" id="social">
+        <div className="container">
+            <h2 className="text-center text-uppercase text-secondary">Social</h2>
+
             <hr className="star-dark mb-6 " />
             <div className="row ">
               <div className="col-sm-5 col-md-4 col-lg-4">
@@ -561,12 +650,19 @@ class App extends Component {
           </div>
         </div>
 
+
         {/* <!-- Mission section -->  */}
         <div className="portfolio" id="portfolio">
           <div className="container">
             <h2 className="text-center text-uppercase text-secondary mb-0">
               Mission
             </h2>
+
+{/* <!-- Mission section -->  */}
+    <div className="portfolio" id="mission">
+        <div className="container">
+            <h2 className="text-center text-uppercase text-secondary mb-0">Mission</h2>
+
             <hr className="star-dark mb-6" />
             <blockquote class="blockquote">
               Local Devs was founded on strong values, integrity, communication
@@ -578,12 +674,11 @@ class App extends Component {
             </blockquote>
           </div>
         </div>
-<<<<<<< HEAD
-=======
+
+
     </div>
         
->>>>>>> 47eed409ac8c6a4f61e0e584717e764b7c65174a
->>>>>>> fdf5227568225792a1777a7c68387eff610e5b18
+
       </div>
     );
   }

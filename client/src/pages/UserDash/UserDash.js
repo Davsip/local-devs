@@ -80,7 +80,7 @@ class UserDash extends Component {
             // {/* Nav bar */}
             <nav className="navbar navbar-expand-lg fixed-top" id="mainNav">
             <div className="hire-tab">
-                <a className="navbar-brand text-nav" href="#">Hire Locals</a>
+                <a className="navbar-brand text-nav" href="#">Hire Local</a>
             </div>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
