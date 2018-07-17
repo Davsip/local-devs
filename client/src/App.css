@@ -159,6 +159,7 @@ hr.star-dark:after {
 .section-1 {
   padding: 5rem 0;
   background-color: rgba(24, 188, 156, 0.9);
+  height: 100vh;
 }
 
 .howitworks {
