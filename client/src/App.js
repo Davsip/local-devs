@@ -97,29 +97,36 @@ class App extends Component {
                 <div className="nav-tabs">
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mr-auto">
-                            <li>
-                                <div className="post-tab">
-                                    <a className="nav-link text-nav" href="#portfolio">Post Projects</a>
-                                </div>                       
-                            </li>
-                            <li>
-                                <div className="work-tab">
-                                    <a className="nav-link text-nav" href="#">How it Works
+                        <li>
+                            <div className="work-tab">
+                                    <a className="nav-link text-nav" href="#howitworks">How it Works
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div className="browse-tab">
-                                    <a className="nav-link text-nav" href="#">Browse Jobs
+                                    <a className="nav-link text-nav" href="#projects">Browse Projects
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div className="social-tab">
-                                    <a className="nav-link text-nav" href="#">Social
+                                    <a className="nav-link text-nav" href="#social">Social
                                     </a>
                                 </div>
                             </li>
+                            <li>
+                                <div className="post-tab">
+                                    <a className="nav-link text-nav" href="#mission">Mission</a>
+                                </div>                       
+                            </li>
+                            <li>
+                                <div className="post-tab">
+                                    <a className="nav-link text-nav" href="#portfolio">Post Projects</a>
+                                </div>                       
+                            </li>
+
+
                             <li>        
                                 <div className="dropdown icon-tab ">
                                     <button className="btn btn-secondary dropdown-togglen text-nav" type="button" id="dropdownMenuButton" data-toggle="dropdown"
@@ -155,7 +162,7 @@ class App extends Component {
     </div>
 
     {/* <!-- SECTION 2 / HOW IT WORKS --> */}
-    <div className="section-2">
+    <div className="howitworks" id="howitworks">
         <div className="container">
             <h2 className="text-center text-uppercase text-secondary">How it Works</h2>
             <hr className="star-dark mb-6" />
@@ -191,7 +198,7 @@ class App extends Component {
     </div>
     
     {/* <!-- SECTION 3 PROJECTS --> */}
-    <div className="portfolio" id="portfolio">
+    <div className="projects" id="projects">
         <div className="container">
             <h2 className="text-center text-uppercase text-secondary mb-0">Projects</h2>
             <hr className="star-dark mb-5" />
@@ -227,7 +234,7 @@ class App extends Component {
 <br />
 <br />
  {/* <!-- SECTION 5- SOCIAL  --> */}
-    <div className="section-5">
+    <div className="social" id="social">
         <div className="container">
             <h2 className="text-center text-uppercase text-secondary">Social</h2>
             <hr className="star-dark mb-6 " />
@@ -367,7 +374,7 @@ class App extends Component {
     </div>
 
 {/* <!-- Mission section -->  */}
-    <div className="portfolio" id="portfolio">
+    <div className="portfolio" id="mission">
         <div className="container">
             <h2 className="text-center text-uppercase text-secondary mb-0">Mission</h2>
             <hr className="star-dark mb-6" />
