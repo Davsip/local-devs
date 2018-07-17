@@ -496,3 +496,8 @@ button.btn-secondary {
   background-color: #ccc;
   padding: 1.25rem;
 }
+
+/* Jason Added */
+.tab-content {
+  margin-bottom: 50px!important;
+}
