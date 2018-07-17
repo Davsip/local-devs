@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { Navbar, Button } from 'react-bootstrap';
 // import API from '../../utils.API'
 // import './App.css';
@@ -6,14 +7,55 @@ import { Navbar, Button } from 'react-bootstrap';
 
 
 
-class UserProfileForm extends Component {
+//Capturing Form data
 
-  constructor (props) {
-      super(props);
-      this.state = {
-          inputvalue: ''
-      }
-      this.handleChange = this.handleChange.bind(this);
+class UserProfileForm extends Component {
+  constructor() {
+    super();
+    this.state = {
+      fname: '',
+      lname: '',
+      email: '',
+    };
+  }
+
+  onChange = (e) => {
+    // Because we named the inputs to match their corresponding values in state, it's
+    // super easy to update the state
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
+  onSubmit = (e) => {
+    e.preventDefault();
+    // get our form data out of state
+    const { fullname,
+            email,
+            phone,
+            password,
+            passwordval,
+            webdev,
+            mobiledev,
+            beginner,
+            intermediate,
+            expert,
+            background, 
+          } = this.state;
+
+    axios.post('/', { fullname,
+                      email,
+                      phone,
+                      password,
+                      passwordval,
+                      webdev,
+                      mobiledev,
+                      beginner,
+                      intermediate,
+                      expert,
+                      background, 
+       })
+      .then((result) => {
+        //access the results here....
+      });
   }
 
   state = {
@@ -44,6 +86,18 @@ class UserProfileForm extends Component {
 
     const { profile, projects } = this.state;
     const { isAuthenticated } = this.props.auth;
+    const { fullname,
+            email,
+            phone,
+            password,
+            passwordval,
+            webdev,
+            mobiledev,
+            beginner,
+            intermediate,
+            expert,
+            background,
+           } = this.state;
 
     return (
 
@@ -142,71 +196,72 @@ class UserProfileForm extends Component {
       <div className="row">
         <div className="col-lg-8 mx-auto">
           <div className="App">
-            <form name="sentMessage" id="contactForm" novalidate="novalidate" onSubmit={this.handleSubmit.bind(this)}>
+
+            <form name="sentMessage" id="contactForm" novalidate="novalidate" method="POST" action="https://formspree.io/se.localdevs@gmail.com" >
               <div className="control-group">
                 <div className="form-group floating-label-form-group controls mb-0 pb-2"> 
                   <label className="label">Local Devs Name:  </label>
-                  <input className="form-control" id="name" type="text" onfocus="value=''" required="required" data-validation-required-message="Please enter your name." value={this.state.inputvalue} onChange={this.handleChange}/>
+                  <input className="form-control" id="name" type="text" onfocus="value=''" required="required" data-validation-required-message="Please enter your name." name="fullname" value={fullname} onChange={this.onChange}  />
                 </div>
               </div>
               <div className="control-group">
                 <div className="form-group floating-label-form-group controls mb-0 pb-2">    
                   <label className="label">Email Address:  </label>
-                  <input type="email" className="form-control" id="email" value="Email Address" onfocus="value=''" required="required" data-validation-required-message="Please enter your email address." value={this.state.inputvalue} onChange={this.handleChange}/>
+                  <input type="email" className="form-control" id="email" value="Email Address" onfocus="value=''" required="required" data-validation-required-message="Please enter your email address." name="email" value={email} onChange={this.onChange} />
                 </div>
               </div>
               <div className="control-group">
                 <div className="form-group floating-label-form-group controls mb-0 pb-2">    
                   <label className="label">Phone Number:  </label>
-                  <input type="text" className="form-control" id="phone-number" onfocus="value=''" required="required" data-validation-required-message="Please enter your phone number." value={this.state.inputvalue} onChange={this.handleChange}/>
+                  <input type="text" className="form-control" id="phone-number" onfocus="value=''" required="required" data-validation-required-message="Please enter your phone number." name="phone" value={phone} onChange={this.onChange} />
                 </div>
               </div>
               <div className="control-group">
                 <div className="form-group floating-label-form-group controls mb-0 pb-2">
                   <label className="label">Password:  </label>
-                  <input className="form-control" id="email" type="email" onfocus="value=''" required="required" data-validation-required-message="Please enter your password." value={this.state.inputvalue} onChange={this.handleChange}/>
+                  <input className="form-control" id="email" type="email" onfocus="value=''" required="required" data-validation-required-message="Please enter your password." name="password" value={password} onChange={this.onChange} />
                 </div>
               </div>
               <div className="control-group">
                 <div className="form-group floating-label-form-group controls mb-0 pb-2">
                   <label className="label">Re enter Password:  </label>
-                  <input className="form-control" id="email" type="email" onfocus="value=''" required="required" data-validation-required-message="Please re-enter your password." value={this.state.inputvalue} onChange={this.handleChange}/>
+                  <input className="form-control" id="email" type="email" onfocus="value=''" required="required" data-validation-required-message="Please re-enter your password." name="passwordval" value={passwordval} onChange={this.onChange} />
                 </div>
               </div>
               <div className="control-group">
               <div className="form-group floating-label-form-group controls mb-0 pb-2">
                 <label className="label">What are the main types of services you offer?</label>
                 <label className="checkbox-container">Web Development
-                  <input type="checkbox" name="skill" value="web-dev" value={this.state.inputvalue} onChange={this.handleChange}/>
+                  <input type="checkbox" name="webdev" value={webdev} onChange={this.onChange} />
                   <span className="checkmark"></span>
                 </label>
                 <label className="checkbox-container">Mobile Development
-                  <input type="checkbox" name="skill" value="mobile-dev" value={this.state.inputvalue} onChange={this.handleChange}/>
+                  <input type="checkbox" name="mobiledev" value={mobiledev} onChange={this.onChange} />
                   <span className="checkmark"></span>
                 </label>
                 <label className="checkbox-container">Software Development
-                  <input type="checkbox" name="skill" value="software-dev" value={this.state.inputvalue} onChange={this.handleChange}/>
+                  <input type="checkbox" name="softwaredev" value={mobiledev} onChange={this.onChange} />
                   <span className="checkmark"></span>
                 </label>
                 <p className="help-block text-danger"></p>
                   <label className="label">What is your level of experience?</label>
                   <label className="radio-container">Beginner
-                    <input type="radio" name="radio" value={this.state.inputvalue} onChange={this.handleChange}/>
+                    <input type="radio" name="skill" value={beginner} onChange={this.onChange} />
                     <span className="radio-checkmark"></span>
                   </label>
                   <label className="radio-container">Intermediate
-                    <input type="radio" name="radio" value={this.state.inputvalue} onChange={this.handleChange}/>
+                    <input type="radio" name="skill" value={intermediate} onChange={this.onChange} />
                     <span className="radio-checkmark"></span>
                   </label>
                   <label className="radio-container">Expert
-                    <input type="radio" name="radio" value={this.state.inputvalue} onChange={this.handleChange}/>
+                    <input type="radio" name="skill" value={expert} onChange={this.onChange} />
                     <span className="radio-checkmark"></span>
                   </label>
                   <p className="help-block text-danger"></p>
                   <div className="control-group">
                     <div className="form-group floating-label-form-group controls mb-0 pb-2">
                       <label className="label">Describe your background</label>
-                      <textarea className="form-control" rows="5" id="comment"></textarea>
+                      <textarea className="form-control" rows="5" id="comment" name="background" value={background} onChange={this.onChange}></textarea>
                       <p className="help-block text-danger"></p>
                     </div>
                   </div>
