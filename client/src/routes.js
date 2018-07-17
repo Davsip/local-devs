@@ -9,6 +9,7 @@ import ProjectsAPI from './pages/projectsAPI';
 import Profile from './pages/Profile/Profile';
 import UserDash from './pages/UserDash/UserDash';
 import AdminDash from './pages/AdminDash/AdminDash';
+import UserProfileForm from './pages/UserProfileForm/UserProfileForm';
 
 const auth = new Auth();
 
@@ -32,6 +33,7 @@ export const makeMainRoutes = () => {
           <Route path="/profile" render={(props) => <Profile auth={auth} {...props} />} />
           <Route exact path="/myDashboard" render={(props) => <UserDash auth={auth} {...props} />} />
           <Route exact path="/adminDashboard" render ={(props) => <AdminDash auth={auth} {...props} />} />
+          <Route exact path="/userProfileForm" render ={(props) => <UserProfileForm auth={auth} {...props} />} />
         </div>
       </Router>
   );
