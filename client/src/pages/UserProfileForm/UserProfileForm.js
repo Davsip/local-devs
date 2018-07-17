@@ -199,7 +199,7 @@ class UserProfileForm extends Component {
             <form name="sentMessage" id="contactForm" novalidate="novalidate" method="POST" action="https://formspree.io/se.localdevs@gmail.com" >
               <div className="control-group">
                 <div className="form-group floating-label-form-group controls mb-0 pb-2"> 
-                  <label className="label">Local Devs Name:  </label>
+                  <label className="label">Full Name:  </label>
                   <input className="form-control" id="name" type="text" onfocus="value=''" required="required" data-validation-required-message="Please enter your name." name="fullname" value={fullname} onChange={this.onChange}  />
                 </div>
               </div>
