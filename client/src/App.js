@@ -393,10 +393,8 @@ class App extends Component {
         <div className="container">
             <h2 className="text-center text-uppercase text-secondary mb-0">Mission</h2>
             <hr className="star-dark mb-6" />
-            <h5>Local Devs company was founded on strong values; Integrity, Communication and Passion. We are not just another
-                company, Local Devs was created by passionate developers who believe that each project is unique and deserves
-                the best of us. Our mission is to connect new and experienced local developers with the best projects.
-            </h5>
+            <blockquote class="blockquote">Local Devs was founded on strong values, integrity, communication and passion. We are not just another freelance company. Our company was created by passionate developers who believe that each project is unique and deserves a team setting to inspire the very passion that we possess. Our ultimate goal and mission is to connect local developers to quality projects.
+            </blockquote>
         </div>
     </div>
         
