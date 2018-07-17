@@ -122,7 +122,6 @@ class UserProfileForm extends Component {
                                 </button>
                                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a className="dropdown-item" onClick={this.login.bind(this)}>Log in</a>
-                                    <a className="dropdown-item" onClick={this.login.bind(this)}>Sign up</a>
                                 </div>
                             </div>        
                         </li>

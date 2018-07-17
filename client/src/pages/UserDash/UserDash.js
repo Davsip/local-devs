@@ -161,7 +161,7 @@ class UserDash extends Component {
         
         {/* <!-- Incomplete Profile Warning --> */}
         <div className="alert alert-warning profile-incomplete" role="alert">
-            This is a friendly reminder to complete your profile. <a href="./user_profile_form.html" className="alert-link">Click here to get started.</a>
+            This is a friendly reminder to complete your profile. <a href="./userProfileForm" className="alert-link">Click here to get started.</a>
             <button type="button" className="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -329,7 +329,7 @@ class UserDash extends Component {
                             <div className="col-md-12">
                                 <div className=" jumbotron jumbotron-fluid profile-section ">
                                     <div className="container ">
-                                        <a id="profile-edit" href='/editProfile'>[Edit Profile]</a>
+                                        <a id="profile-edit" href='/userProfileForm'>[Edit Profile]</a>
                                         <h1 className="display-4 ">My Bio</h1>
                                         <p className="lead">
                                             { 
