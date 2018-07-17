@@ -34,7 +34,9 @@ module.exports = {
       duration: req.body.duration,
       compPerc: req.body.compPerc,
       teamMembers: req.body.teamMembers,
-      teamApplicants: req.body.teamApplicants
+      teamApplicants: req.body.teamApplicants,
+      projectStage: req.body.projectStage,
+      teamSize: req.body.teamSize
     };
 
     db.Project
