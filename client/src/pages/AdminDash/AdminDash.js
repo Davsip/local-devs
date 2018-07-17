@@ -161,7 +161,7 @@ class AdminDash extends Component {
 // {/* Nav bar */}
 <nav className="navbar navbar-expand-lg fixed-top" id="mainNav">
     <div className="hire-tab">
-        <a className="navbar-brand text-nav">Hire Locals</a>
+        <a className="navbar-brand text-nav" href="/">Hire Local</a>
     </div>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -177,7 +177,7 @@ class AdminDash extends Component {
                         </button>
                         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a className="dropdown-item" onClick={this.logout.bind(this)}>Log Out</a>
-                            <a className="dropdown-item">My Dashboard</a>
+                            <a className="dropdown-item" href="/myDashboard">My Dashboard</a>
                         </div>
                     </div>
                 </li>
@@ -191,7 +191,7 @@ class AdminDash extends Component {
 //   <!-- Nav bar  -->
 <nav className=" navbar navbar-expand-lg fixed-top" id="mainNav">
     <div className="hire-tab">
-        <a className="navbar-brand text-nav">Hire Locals</a>
+        <a className="navbar-brand text-nav" href="/">Hire Local</a>
     </div>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
