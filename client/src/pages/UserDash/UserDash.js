@@ -377,11 +377,21 @@ class UserDash extends Component {
                             <div className="col-md-6 col-lg-4 ">
                                 <div className="card profile-section " style={{width: 18 + 'rem'}}>
                                     <div className="card-body ">
-                                        <h5 className="card-title ">Skill Sets</h5>
+                                        <h5 className="card-title ">Skill Set</h5>
                                         <p className="card-text ">
-                                            {
-                                                "Some quick example text to build on the card title and make up the bulk of the card's content."
-                                            }
+                                            <span>
+                                                {
+                                                    
+                                                    // profile.technologies != '' ? profile.technologies : 'no tech'
+                                                    
+                                                    profile.technologies == null ? '-' : profile.technologies.join(', ') 
+
+                                                    ||
+                                                
+                                                    'No skills listed.  Please update your profile.'
+                                                }   
+                                                
+                                            </span>
                                         </p>
                                         <a href="# " className="btn btn-primary ">Edit</a>
                                     </div>
