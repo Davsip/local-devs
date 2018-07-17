@@ -1,9 +1,20 @@
 import React, { Component } from "react";
 import { Navbar, Button } from "react-bootstrap";
+<<<<<<< HEAD
 import API from "./utils/API";
 
 // put landing / home page css in App.css
 import "./App.css";
+=======
+
+// put landing / home page css in App.css
+<<<<<<< HEAD
+import "./App.css";
+
+=======
+import './App.css';
+>>>>>>> 47eed409ac8c6a4f61e0e584717e764b7c65174a
+>>>>>>> fdf5227568225792a1777a7c68387eff610e5b18
 // import Navigation from "./components/Navigation"
 
 class App extends Component {
@@ -39,8 +50,12 @@ class App extends Component {
   }
 
   render() {
+
     const { isAuthenticated } = this.props.auth;
     const { projects } = this.state;
+
+    //const { isAuthenticated } = this.props.auth;
+
 
     return (
       <div>
@@ -50,6 +65,42 @@ class App extends Component {
         {/* isAuthenticated() returns true or false, true if authenticated, false if not */}
         {/* use that to render certain features */}
         {/* i.e. user logo dropdown login / signup, log out / mydashboard */}
+
+        <Navbar fluid>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a href="#">Auth0 - React</a>
+            </Navbar.Brand>
+            <Button
+              bsStyle="primary"
+              className="btn-margin"
+              onClick={this.goTo.bind(this, "home")}
+            >
+              Home
+            </Button>
+            {!isAuthenticated() && (
+              <Button
+                id="qsLoginBtn"
+                bsStyle="primary"
+                className="btn-margin"
+                onClick={this.login.bind(this)}
+              >
+                Log In
+              </Button>
+            )}
+            {isAuthenticated() && (
+              <Button
+                id="qsLogoutBtn"
+                bsStyle="primary"
+                className="btn-margin"
+                onClick={this.logout.bind(this)}
+              >
+                Log Out
+              </Button>
+            )}
+          </Navbar.Header>
+        </Navbar>
+
 
         {isAuthenticated() && (
           // {/* Nav bar */}
@@ -532,6 +583,12 @@ class App extends Component {
             </blockquote>
           </div>
         </div>
+<<<<<<< HEAD
+=======
+    </div>
+        
+>>>>>>> 47eed409ac8c6a4f61e0e584717e764b7c65174a
+>>>>>>> fdf5227568225792a1777a7c68387eff610e5b18
       </div>
     );
   }
