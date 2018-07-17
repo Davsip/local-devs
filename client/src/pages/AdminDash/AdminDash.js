@@ -443,10 +443,6 @@ class AdminDash extends Component {
                         </div>
                         {/* <!-- End Technologies Checkboxes --> */}
                         <div className="form-group">
-                            <label for="exampleFormControlTextarea1">Brief Project Description</label>
-                            <textarea className="form-control description" id="brief-description" rows="2"></textarea>
-                        </div>
-                        <div className="form-group">
                             <label for="exampleFormControlTextarea1">Full Project Description</label>
                             <textarea className="form-control description" id="full-description" rows="5" name="desc" onChange={this.handleInputChange}></textarea>
                         </div>
