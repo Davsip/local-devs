@@ -21,39 +21,6 @@ class UserDash extends Component {
     this.props.auth.logout();
   }
 
-//   popProjectModal(stage) {
-
-//     const { projects } = this.state;
-
-//     console.log('--- at pop project modal ---');
-//     console.log( projects );
-//     console.log('--- end pop project modal ---');
-
-//     projects.map( project => {
-
-//         if (project.projectStage === stage) {
-  
-//             return (
-//             <div className="col-md-6 col-lg-4" id={project.sub}>
-//                 <div className="card" style={{width: 18 + 'rem'}}>
-//                     <div className="card-body">
-//                         <h5 className="card-title">{project.name}</h5>
-//                         <p className="card-text">{project.desc.substring(0,50)}</p>
-//                         {/* <p className="card-text">{project.desc}</p> */}
-//                         <p className="card-text" id="techNeeded">{project.reqSkills.join(', ')}</p>
-//                         <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-desc={project.desc}
-//                         data-team={project.teamSize} data-time={project.duration + 'mo'} data-title={project.name}>View Details / Apply</a>
-//                     </div>
-//                 </div>
-//             </div>
-//             )                      
-
-//         }
-        
-//     })
-
-//   }
-  
   componentWillMount() {
 
     this.setState({ 

@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import { Navbar, Button } from 'react-bootstrap';
+import API from './utils/API';
 
 // put landing / home page css in App.css
 import './App.css';
 // import Navigation from "./components/Navigation"
 
 class App extends Component {
+
+  state = {
+    projects: []
+  };
+
   goTo(route) {
     this.props.history.replace(`/${route}`)
   }
@@ -18,8 +24,26 @@ class App extends Component {
     this.props.auth.logout();
   }
 
+  componentWillMount() {
+
+    this.setState({ 
+      projects: [] 
+    });
+
+    // Get projects from Projects API
+    API.getSavedProjects().then( res => {
+        console.log (res.data);
+
+        this.setState({
+            projects: res.data
+        })
+    })    
+
+  }
+
   render() {
     const { isAuthenticated } = this.props.auth;
+    const { projects } = this.state;
 
     return (
       <div>
@@ -172,75 +196,29 @@ class App extends Component {
             <h2 className="text-center text-uppercase text-secondary mb-0">Projects</h2>
             <hr className="star-dark mb-5" />
             <div className="row">
-                <div className="col-md-6 col-lg-4">
-                    <div className="card">
-                        <div className="card-body">
-                            <h5 className="card-title">AD Web App</h5>
-                            <p className="card-text">Four developers needed for an eleven month project.</p>
-                            <p className="card-text" id="techNeeded">C#, HTML, JavaScript, CSS, JQuery, Angular</p>
-                            <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-desc="Client needs clean, dynamic Active Directory personnel resource site.  This is an eleven month project and the team will consist of four developers. Client expects developers to have great teamwork and communication skills. Weekly deliverables are expected."
-                                data-team="4" data-time="11mo" data-title="Active Directory Web Application">View Details / Apply</a>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-6 col-lg-4">
-                    <div className="card">
-                        <div className="card-body">
-                            <h5 className="card-title">Tuition System</h5>
-                            <p className="card-text">Two developers needed for a five month project.</p>
-                            <p className="card-text" id="techNeeded">JavaScript, Handlebars, HTML, Bootstrap, CSS, Node, MongoDB</p>
-                            <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-desc="On this project, you'll be working with our Solutions Expert.  Client needs a user-friendly tuition reimbursement system.  This is an five month project and the team will consist of two developers. Weekly deliverables are expected."
-                                data-team="2" data-time="5mo" data-title="Tuition Reimbursement System">View Details / Apply</a>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-6 col-lg-4">
-                    <div className="card">
-                        <div className="card-body">
-                            <h5 className="card-title">Website Redesign</h5>
-                            <p className="card-text">Five developers needed for a seven month project.</p>
-                            <p className="card-text" id="techNeeded">JavaScript, React, HTML, Bootstrap, Node</p>
-                            <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-desc="For this project, five developers will be working with one of our Solutions Experts to redesign the client's current website for mobility.  This project is expected to take seven months.  Need to be able to work well in a team.  Weekly deliverables are expected."
-                                data-team="5" data-time="7mo" data-title="Website Redesign">View Details / Apply</a>
-                        </div>
-                    </div>
-
-
-                </div>
-                <div className="col-md-6 col-lg-4">
-                    <div className="card">
-                        <div className="card-body">
-                            <h5 className="card-title">Company ReBranding</h5>
-                            <p className="card-text">Two graphic design experts needed for a three month project.</p>
-                            <p className="card-text" id="techNeeded">Photoshop, Illustrator</p>
-                            <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-desc="Client is looking for two graphics design experts for company re-branding. Your team will work directly with the client to discuss culture and history of the company to come up with a clean design.  This project will be three months."
-                                data-team="2" data-time="3mo" data-title="Company ReBranding">View Details / Apply</a>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-6 col-lg-4">
-                    <div className="card">
-                        <div className="card-body">
-                            <h5 className="card-title">Accounting System</h5>
-                            <p className="card-text">Seven developers needed for an eleven month project.</p>
-                            <p className="card-text" id="techNeeded">Java, MySQL, CSS, JavaScript, JQuery, Bootstrap</p>
-                            <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-desc="For this project, you'll work with seven other developers and a Solutions Expert to overhaul our client's current accounting system.  This project will last eleven months and will require a good amount of collaboration.  Excellent written and oral communication required.  Weekly deliverables will be required."
-                                data-team="7" data-time="11mo" data-title="Accounting Systems Build">View Details / Apply</a>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-6 col-lg-4">
-                    <div className="card">
-                        <div className="card-body">
-                            <h5 className="card-title">Customer Feedback Site</h5>
-                            <p className="card-text">Two developers needed for a five month project.</p>
-                            <p className="card-text" id="techNeeded">Python, MongoDB, Angular, HTML, Bootstrap, Sass</p>
-                            <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-desc="Our client is wanting two developers to create a customer feedback site.  This project will take 5 months."
-                                data-team="2" data-time="5mo" data-title="Customer Feedback Site">View Details / Apply</a>
-                        </div>
-                    </div>
-
-
+                {/* <!-- Avail Projs Content --> */}
+                <div className='row'>
+                    {
+                        projects.map( (project, index) => {
+                            if (project.projectStage === 'pending') {
+                      
+                                return (
+                                <div className="col-md-6 col-lg-4" key={index} data-id={project.sub}>
+                                    <div className="card" style={{width: 18 + 'rem'}}>
+                                        <div className="card-body">
+                                            <h5 className="card-title">{project.name}</h5>
+                                            <p className="card-text">{project.desc.substring(0,50)}...</p>
+                                            <p className="card-text" id="techNeeded">{project.reqSkills.join(', ')}</p>
+                                            <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-desc={project.desc}
+                                            data-team={project.teamSize} data-time={project.duration + 'mo'} data-title={project.name}>View Details / Apply</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                )                     
+                    
+                            }                                    
+                        })
+                    }
                 </div>
             </div>
         </div>
