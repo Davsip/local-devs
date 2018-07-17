@@ -156,6 +156,14 @@ hr.star-dark:after {
 
 /* BRYAN ADDED */
 
+a#profile-edit {
+  font-size: 12px;
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  color: #777;
+}
+
 /* Fixed Card Height */
 div.card {
   height: 300px;

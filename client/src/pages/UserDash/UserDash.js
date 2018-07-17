@@ -329,6 +329,7 @@ class UserDash extends Component {
                             <div className="col-md-12">
                                 <div className=" jumbotron jumbotron-fluid profile-section ">
                                     <div className="container ">
+                                        <a id="profile-edit" href='/editProfile'>[Edit Profile]</a>
                                         <h1 className="display-4 ">My Bio</h1>
                                         <p className="lead">
                                             { 
@@ -360,7 +361,7 @@ class UserDash extends Component {
                                                 
                                             </span>
                                         </p>
-                                        <a href="# " className="btn btn-primary ">Edit</a>
+                                        {/* <a href="# " className="btn btn-primary ">Edit</a> */}
                                     </div>
                                 </div>
                             </div>
@@ -370,11 +371,11 @@ class UserDash extends Component {
                                         <h5 className="card-title ">Experience</h5>
                                         <p className="card-text ">
                                             {
-                                                profile.experience_desc ||
-                                                "Some quick example text to build on the card title and make up the bulk of the card's content."                         
+                                                profile.experience_desc == null ? 'No experience available. Please update your profile.' : profile.experience_desc 
+                                                
                                             }
                                         </p>
-                                        <a href="# " className="btn btn-primary ">Edit</a>
+                                        {/* <a href="# " className="btn btn-primary ">Edit</a> */}
                                     </div>
                                 </div>
                             </div>
@@ -397,7 +398,7 @@ class UserDash extends Component {
                                                 `Zip: ${profile.zip || 'Not Provided'}`
                                             }
                                         </p>
-                                        <a href="# " className="btn btn-primary ">Edit</a>
+                                        {/* <a href="# " className="btn btn-primary ">Edit</a> */}
                                     </div>
                                 </div>
                             </div>
