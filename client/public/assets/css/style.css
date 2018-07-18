@@ -259,10 +259,6 @@ a.nav-dashboard {
   color: #777;
 }
 
-div.profile-incomplete {
-  margin-top: 100px;
-  margin-bottom: -70px;
-}
 
 /* Admin Dashboard Card */
 
@@ -301,7 +297,7 @@ button.btn-sm {
 
 /* Dashboard Styles */
 section.dashboard {
-  margin-top: 150px;
+  margin-top: 100px;
 }
 
 /* END BRYAN ADDED */
