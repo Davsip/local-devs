@@ -448,13 +448,26 @@ class App extends Component {
                 >
                   Close
                 </button>
-                <button
-                  type="button"
-                  className="btn btn-primary"
-                  id="applyButton"
-                >
-                  Apply
-                </button>
+                { !isAuthenticated() && 
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    id="applyButton"
+                    disabled
+                  >
+                    Apply
+                  </button>
+                }
+                { isAuthenticated() &&
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    id="applyButton"
+                  >
+                    Apply
+                  </button>
+                }
+                
               </div>
             </div>
             {/*   <!-- End Content --> */}
