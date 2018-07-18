@@ -409,22 +409,12 @@ class ProjectForm extends Component {
 
 {/* <!-- ******************* END POST PROJECT FORM *************************** --> */}
 
-
-
-              <div id="success"></div>
-                <div className="form-group">
-                  <button type="submit" className="btn btn-primary btn-xl" id="sendMessageButton">Go!</button>
-                </div>
-
           </div>
         </div>
       </div>
     </div>
   </div>
-    
-    
-    
-    
+
     </React.Fragment>
      
     );
