@@ -188,12 +188,7 @@ class App extends Component {
                 <br />
                 <br />
                 <p className="text-justify">
-                  Companies and individuals post projects to out site.{" "}
-                  <b>Local Devs</b> will create a team of developers for each
-                  project and the technologies need it. The developer can choose
-                  the technology that wants to work with an easy quick apply
-                  form.The Solution's Expert Manager will contact the developer
-                  for setting up an interview.
+                  Clients, wheather a Company or Individual, can post projects to our platform for review by our Solution Experts. <b>Local Devs</b> can then apply to join a team responsible for developing the full scope of each project. With our easy, quick apply form, <b>Local Devs</b> have the opportunity to choose their preferred technologies and tell us why they are a perfect fit for the project. Our Solution Experts take it from there, contacting the developer for setting  up an interview and providing more information about the project.
                 </p>
               </div>
               <div className="col-md-5 col-lg-4">
@@ -205,10 +200,7 @@ class App extends Component {
                 <br />
                 <br />
                 <p className="text-justify">
-                  The developer will have a deadine for each project. You can
-                  either work remote or work on our open space offices, with a
-                  great team in a healthy environment. It will not be just work.
-                  It will be fun to work.
+                  Once accepted to the project, our Solution Experts will connect the <b>Local Devs</b> and provide an in-depth review of the Client’s project. <b>Local  Devs</b> will be there from design to deployment, meeting all deliverables throughout the duration of the project. <b>Local Devs</b> can either work remote or work in our open space offices. With a great team in a healthy environment, our goal is to provide quality projects and experiences for local developers. 
                 </p>
               </div>
               <div className="col-md-5 col-lg-4 ">
@@ -220,10 +212,7 @@ class App extends Component {
                 <br />
                 <br />
                 <p className="text-justify">
-                  The developer will get paid per project or sections of the
-                  project. Each day you will submit a quick update on your job
-                  thru github or your personal dashboard. Also will be always in
-                  contact with the team and the The Solution's Expert Manager .{" "}
+                  <b>Local Devs</b> will get paid as they complete sections of each project. Manage your own time, take on more projects, earn more money. The opportunities are endless. Our Solution Experts are here to make sure we always have meaningful projects for <b>Local Devs</b>. It will not be just work. It will be fun to work.
                 </p>
               </div>
             </div>
@@ -299,12 +288,11 @@ class App extends Component {
                 <br />
                 <br />
                 <p className="text-justify">
-                  Science Says Small Talk Is Good For Your Brain! Socializing
-                  with people is a very healthy habit. Frequent socialisation is
-                  exceedingly important in maintaining quality of life.
-                   Interact with colleagues that speak the same language,
-                  exchange ideas, learn, advice, relax. Check calendar for
-                  weekly activities.
+                  Socializing twith people is a very healthy habit.
+                  Frequent socialisation is exceedingly important in maintaining
+                  quality of life.  Interact with colleagues that speak the same
+                  language, exchange ideas, learn, advice, relax. Check calendar
+                  for weekly activities.
                 </p>
               </div>
               <div className="col-md-5 col-lg-4 ">
@@ -403,13 +391,26 @@ class App extends Component {
                 >
                   Close
                 </button>
-                <button
-                  type="button"
-                  className="btn btn-primary"
-                  id="applyButton"
-                >
-                  Apply
-                </button>
+                { !isAuthenticated() && 
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    id="applyButton"
+                    disabled
+                  >
+                    Apply
+                  </button>
+                }
+                { isAuthenticated() &&
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    id="applyButton"
+                  >
+                    Apply
+                  </button>
+                }
+                
               </div>
             </div>
             {/*   <!-- End Content --> */}
@@ -419,8 +420,6 @@ class App extends Component {
         <br />
         <br />
         <br />
-        
-
         {/* <!-- Mission section -->  */}
         <div className="portfolio" id="mission">
           <div className="container">
