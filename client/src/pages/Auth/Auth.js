@@ -1,6 +1,7 @@
 import history from '../../history';
 import auth0 from 'auth0-js';
 import { AUTH_CONFIG } from './auth0-variables';
+import axios from 'axios';
 
 export default class Auth {
   auth0 = new auth0.WebAuth({
@@ -32,7 +33,7 @@ export default class Auth {
         this.setSession(authResult);
         history.replace('/mydashboard');
       } else if (err) {
-        history.replace('/mydashboard');
+        history.replace('/');
         console.log(err);
         alert(`Error: ${err.error}. Check the console for further details.`);
       }
@@ -69,13 +70,18 @@ export default class Auth {
     const accessToken = localStorage.getItem('access_token');
     // console.log(accessToken);
     if (!accessToken) {
-      throw new Error('No Access Token found');
+      // throw new Error('No Access Token found');
+      axios.get('/');
+      history.replace('/');
     }
     return accessToken;
   }
 
   getProfile(cb) {
     let accessToken = this.getAccessToken();
+
+    console.log(accessToken);
+    if ( accessToken != null ) {
     this.auth0.client.userInfo(accessToken, (err, profile) => {
       if (profile) {
         console.log(profile);
@@ -83,5 +89,6 @@ export default class Auth {
       }
       cb(err, profile);
     });
+    }
   }
 }
