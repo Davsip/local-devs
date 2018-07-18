@@ -6,6 +6,10 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 mongoose.Promise = global.Promise;
 
+// heroku reqs
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'client', 'build')));
+
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -22,6 +26,11 @@ app.use(routes);
 mongoose.connect(
     process.env.MONGODB_URI || 'mongodb://localhost/localdevs'
 );
+
+// heroku reqs
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
 
 // Start the API server
 app.listen(PORT, () =>
