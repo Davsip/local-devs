@@ -459,7 +459,7 @@ class UserDash extends Component {
                     </div>
                     <div className="modal-footer">
                         <button type="button" className="btn btn-secondary modal-close" data-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary disabled" data-toggle="tooltip" data-placement="top" id="applyButton" title="Please sign-up/login to Apply">Apply</button>
+                        <button type="button" className="btn btn-primary" data-toggle="tooltip" data-placement="top" id="applyButton" title="Please sign-up/login to Apply">Apply</button>
                     </div>
                 </div>
                 {/* <!-- End Content --> */}
