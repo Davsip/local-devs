@@ -83,12 +83,11 @@ class UserProfileForm extends Component {
 
       { isAuthenticated() && (
         // {/* Nav bar */}
-        <nav className="navbar navbar-expand-lg fixed-top" id="mainNav">
-        <div className="hire-tab">
-            <a className="navbar-brand text-nav" href="/">Hire Local</a>
-        </div>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#" aria-expanded="false" aria-label="Toggle navigation">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-light" id="mainNav">
+          <a className="navbar-brand d-flex w-30 mr-auto" href="/">Hire Local</a>
+          <button className="navbar-toggler logged-in" type="button" data-toggle="collapse" data-target="#navbarNav">
             <span className="navbar-toggler-icon"></span>
+<<<<<<< HEAD
         </button>
         <div className="nav-tabs">
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -107,12 +106,39 @@ class UserProfileForm extends Component {
                     </li>
                 </ul>
             </div>
+=======
+          </button>
+          <div className="collapse navbar-collapse w-100" id="navbarNav">
+            <ul className="navbar-nav ml-auto justify-content-end">
+            <li>
+              <div className="navbar-nav-link">
+                <a className="nav-link text-nav" href="/ProjectForm">Submit Project</a>
+              </div>
+            </li>
+            <li>
+              <div className="dropdown icon-tab">
+                <button className="btn btn-secondary dropdown-toggle text-nav logged-in" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i className="fas fa-user-alt"></i>
+                </button>
+                <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                  <a className="dropdown-item" onClick={this.logout.bind(this)}>
+                  Log Out
+                  </a>
+                  <a className="dropdown-item" href="/myDashboard">
+                  My Dashboard
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+>>>>>>> 5e2f811a03bbcde8f0dffa3db075b8a28529ae22
         </div>
-        </nav>
+      </nav>
     )}
 
     { !isAuthenticated() && (
         //   <!-- Nav bar  -->
+<<<<<<< HEAD
         <nav className=" navbar navbar-expand-lg fixed-top" id="mainNav">
             <div className="hire-tab">
                 <a className="navbar-brand text-nav" href="/">Hire Locals</a>
@@ -159,8 +185,34 @@ class UserProfileForm extends Component {
                             </div>        
                         </li>
                     </ul>
+=======
+        <nav className="navbar navbar-expand-lg navbar-dark bg-light" id="mainNav">
+          <a className="navbar-brand d-flex w-30 mr-auto" href="/">Hire Local</a>
+          <button className="navbar-toggler not-logged-in" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse w-100" id="navbarNav">
+            <ul className="navbar-nav ml-auto justify-content-end">
+              <li>
+                <div className="navbar-nav-link">
+                  <a className="nav-link text-nav" href="/ProjectForm">Submit Project</a>
                 </div>
-            </div>
+              </li>
+              <li>
+                <div className="dropdown icon-tab">
+                  <button className="btn btn-secondary dropdown-toggle text-nav not-logged-in" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i className="fas fa-user-alt"></i>
+                  </button>
+                  <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <a className="dropdown-item" onClick={this.login.bind(this)}>
+                    Log In
+                    </a>
+                  </div>
+>>>>>>> 5e2f811a03bbcde8f0dffa3db075b8a28529ae22
+                </div>
+              </li>
+            </ul>
+          </div>
         </nav>
     )}
 
