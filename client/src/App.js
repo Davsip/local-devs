@@ -236,7 +236,7 @@ class App extends Component {
         </div>
 
         {/* <!-- SECTION 2 / HOW IT WORKS --> */}
-        <div className="howitworks" id="howitworks">
+        {/* <div className="howitworks" id="howitworks">
           <div className="container">
             <h2 className="text-center text-uppercase text-secondary">
               How it Works
@@ -291,7 +291,113 @@ class App extends Component {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+
+        <section className="section-2">
+          <div className="container">
+            <h2 className="text-center text-uppercase text-secondary ">
+              How it Works
+            </h2>
+            <hr className="star-dark mb-6" />
+            <div className="row">
+              <div className="col-sm-6 col-md-6 col-lg-6 ">
+                <div className="media">
+                  <div className="media-left media-middle">
+                    <img
+                      className="icon-how"
+                      src="./assets/images/icons/apply-icon.png"
+                      alt="Code Browser"
+                    />
+                  </div>
+                  <div className="media-body">
+                    <h4 className="media-heading">Are you a Developer?</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Deleniti neque quam at, exercitationem maiores explicabo
+                      veniam beatae voluptatum consequatur. Temporibus magni
+                      nulla corporis eaque non ducimus quod quia fugit error!
+                    </p>
+                  </div>
+                </div>
+
+                <div className="media">
+                  <div className="media-left media-middle">
+                    <img
+                      className="icon-how"
+                      src="./assets/images/icons/code-browser.png"
+                      alt="Code Browser"
+                    />
+                  </div>
+                  <div className="media-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Deleniti neque quam at, exercitationem maiores explicabo
+                      veniam beatae voluptatum consequatur. Temporibus magni
+                      nulla corporis eaque non ducimus quod quia fugit error!
+                    </p>
+                  </div>
+                </div>
+
+                <div className="media">
+                  <div className="media-left media-middle">
+                    <img
+                      className="icon-how"
+                      src="./assets/images/icons/code-browser.png"
+                      alt="Code Browser"
+                    />
+                  </div>
+                  <div className="media-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Deleniti neque quam at, exercitationem maiores explicabo
+                      veniam beatae voluptatum consequatur. Temporibus magni
+                      nulla corporis eaque non ducimus quod quia fugit error!
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-sm-6 col-md-6 col-lg-6 ">
+                <div className="media">
+                  <div className="media-left media-middle" />
+                  <div className="media-body">
+                    <h4 className="media-heading">Are you a Company?</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Deleniti neque quam at, exercitationem maiores explicabo
+                      veniam beatae voluptatum consequatur. Temporibus magni
+                      nulla corporis eaque non ducimus quod quia fugit error!
+                    </p>
+                  </div>
+                </div>
+
+                <div className="media">
+                  <div className="media-left media-middle" />
+                  <div className="media-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Deleniti neque quam at, exercitationem maiores explicabo
+                      veniam beatae voluptatum consequatur. Temporibus magni
+                      nulla corporis eaque non ducimus quod quia fugit error!
+                    </p>
+                  </div>
+                </div>
+
+                <div className="media">
+                  <div className="media-left media-middle" />
+                  <div className="media-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Deleniti neque quam at, exercitationem maiores explicabo
+                      veniam beatae voluptatum consequatur. Temporibus magni
+                      nulla corporis eaque non ducimus quod quia fugit error!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* <!-- SECTION 3 PROJECTS --> */}
         <div className="projects" id="projects">
