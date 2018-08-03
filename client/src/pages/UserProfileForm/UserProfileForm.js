@@ -8,6 +8,18 @@ class UserProfileForm extends Component {
 
     state = {
       profile: {},
+      given_name: '',
+      family_name: '',
+      picture: '',
+      nickname: '',
+      zip: '',
+      phone: '',
+      experience_level: '',
+      technologies: [],
+      experience_desc: '',
+      bio_desc: '',
+      title: '',
+      isProfileCompleted: false
     };
 
     goTo(route) {
@@ -25,15 +37,64 @@ class UserProfileForm extends Component {
     handleInputChange = event => {
       const { name, value } = event.target;
 
-      this.setState({
-          [name]: value    
-      })
+      if ( name === 'technology' ) {
+  
+        this.tempSkills.push(value);
+
+        this.setState({
+            technologies: this.tempSkills
+        })
+
+        console.log(this.state.technologies);
+
+      } else {
+        this.setState({
+            [name]: value    
+        })
+
+        console.log([name] + ': ' + value);
+      }
+
     };
   
     handleFormSubmit = event => {
       event.preventDefault();
+
+      let updateUser = {
+        given_name: this.state.given_name,
+        family_name: this.state.family_name,
+        picture: this.state.picture,
+        nickname: this.state.nickname,
+        zip: this.state.zip,
+        phone: this.state.phone,
+        experience_level: this.state.experience_level,
+        technologies: this.state.technologies,
+        experience_desc: this.state.experience_desc,
+        bio_desc: this.state.bio_desc,
+        title: this.state.title,
+        isProfileCompleted: true
+      }
+
+      console.log('--- updating user profile ---');
+      console.log(updateUser);
+      console.log('-----------------------------');
+
+      this.setState({
+        given_name: '',
+        family_name: '',
+        picture: '',
+        nickname: '',
+        zip: '',
+        phone: '',
+        experience_level: '',
+        technologies: [],
+        experience_desc: '',
+        bio_desc: '',
+        title: '',
+        isProfileCompleted: false
+      })
   
-      alert('need to handle user update here & in user controller')  
+      // alert('need to handle user update here & in user controller')  
     };
 
     componentWillMount() {
@@ -166,79 +227,85 @@ class UserProfileForm extends Component {
         <label for="FormControlInput1">First Name</label>
         <input type="text" 
                className="form-control" 
-               id="title"
+               id="given-name"
                name="given_name"
-               value={this.state.given_name}
+               value={this.state.given_name || profile.given_name}
                onChange={this.handleInputChange} 
         />
     </div>
     <div className="form-group">
-        <label for="FormControlInput1">Budget</label>
+        <label for="FormControlInput1">Last Name</label>
         <input type="text" 
                className="form-control" 
-               id="budget"
-               name="budget"
-               value={this.state.budget}
+               id="family-name"
+               name="family_name"
+               value={this.state.family_name || profile.family_name}
+               onChange={this.handleInputChange} 
+        />
+    </div>
+    <div className="form-group">
+        <label for="FormControlInput1">Hosted Picture Link</label>
+        <input type="text" 
+               className="form-control" 
+               id="picture"
+               name="picture"
+               value={this.state.picture || profile.picture}
                onChange={this.handleInputChange}
         />
     </div>
     <div className="form-group">
-        <label for="FormControlInput1">Location Zip Code</label>
+        <label for="FormControlInput1">Nickname</label>
         <input type="text"
                className="form-control"
-               id="location"
-               name="locationZip"
-               value={this.state.locationZip}
+               id="nickname"
+               name="nickname"
+               value={this.state.nickname || profile.nickname}
                onChange={this.handleInputChange}
         />
     </div>
     <div className="form-group">
-        <label for="FormControlInput1">Start Date (mm/dd/yyyy)</label>
+        <label for="FormControlInput1">Location Zip</label>
         <input type="text"
                className="form-control"
-               id="start-date"
-               name="startDate"
-               value={this.state.startDate}
+               id="zip"
+               name="zip"
+               value={this.state.zip || profile.zip}
                onChange={this.handleInputChange}
         />
     </div>
     <div className="form-group">
-        <label for="FormControlInput1">Team Size</label>
+        <label for="FormControlInput1">Phone Number</label>
         <input type="text"
                className="form-control"
-               id="team-size"
-               name="teamSize"
-               value={this.state.teamSize}
+               id="phone"
+               name="phone"
+               value={this.state.phone || profile.phone}
                onChange={this.handleInputChange}
         />
     </div>
     <div className="form-group">
-        <label>Duration</label>
+        <label for="FormControlInput1">Industry Position Title</label>
+        <input type="text"
+               className="form-control"
+               id="title"
+               name="title"
+               value={this.state.title || profile.title}
+               onChange={this.handleInputChange}
+        />
+    </div>
+    <div className="form-group">
+        <label>Overall Experience Level</label>
         <select className="form-control"
-                id="duration"
-                name="duration"
-                value={this.state.duration}
+                id="experience-level"
+                name="experience_level"
+                value={this.state.experience_level || profile.experience_level}
                 onChange={this.handleInputChange}
         >
-            <option selected>Choose Duration...</option>
-            <option value="3">3 Months</option>
-            <option value="5">5 Months</option>
-            <option value="7">7 Months</option>
-            <option value="8">8 Months</option>
-            <option value="11">11 Months</option>
-            <option value="18">18 Months</option>
+            <option selected>Choose Experience...</option>
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="expert">Expert</option>
         </select>
-    </div>
-    <div className="form-group">
-        <label>SE Led</label><br />
-        <div className="form-check form-check-inline seled">
-            <input className="form-check-input" type="radio" name="seLed" id="seledTrue" value="true" onChange={this.handleInputChange} />
-            <label className="form-check-label" for="inlineRadio1">True</label>
-        </div>
-        <div className="form-check form-check-inline seled">
-            <input className="form-check-input" type="radio" name="seLed" id="seledFalse" value="false" onChange={this.handleInputChange} />
-            <label className="form-check-label" for="inlineRadio2">False</label>
-        </div>
     </div>
     {/* <!-- Technologies Checkboxes --> */}
     <div className="form-group">
@@ -331,8 +398,12 @@ class UserProfileForm extends Component {
     </div>
     {/* <!-- End Technologies Checkboxes --> */}
     <div className="form-group">
-        <label for="exampleFormControlTextarea1">Full Project Description</label>
-        <textarea className="form-control description" id="full-description" rows="5" name="desc" onChange={this.handleInputChange}></textarea>
+        <label for="exampleFormControlTextarea1">Experience Description</label>
+        <textarea className="form-control description" id="experience-desc" rows="5" value={this.state.experience_desc || profile.experience_desc} name="experience_desc" onChange={this.handleInputChange}></textarea>
+    </div>
+    <div className="form-group">
+        <label for="exampleFormControlTextarea1">Brief Profile Bio</label>
+        <textarea className="form-control description" id="bio-desc" rows="5" value={this.state.bio_desc || profile.bio_desc} name="bio_desc" onChange={this.handleInputChange}></textarea>
     </div>
     <button type="button" className="btn btn-primary btn-lg" id="submit-new-project" onClick={this.handleFormSubmit} >Submit Project</button>
 </form>
