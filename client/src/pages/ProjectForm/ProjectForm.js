@@ -14,7 +14,7 @@ class ProjectForm extends Component {
 
     state = {
       profile: {},
-      projects: [],
+      projects: [], //is this needed?
       name: '',
       desc: '',
       locationZip: null,
@@ -84,6 +84,24 @@ class ProjectForm extends Component {
             // reset all form values to default
             // reset all project state values to default
             this.tempSkills = [];
+            
+            this.setState({
+                name: '',
+                desc: '',
+                locationZip: null,
+                budget: null,
+                img: null,
+                reqSkills: [],
+                seLed: true,
+                startDate: null,
+                duration: null,
+                compPerc: null,
+                teamMembers: [],
+                teamApplicants: [],
+                projectStage: 'pending',
+                teamSize: null 
+            })
+
   
   
             alert('Project succesfully added to database.');
@@ -384,22 +402,12 @@ class ProjectForm extends Component {
 
 {/* <!-- ******************* END POST PROJECT FORM *************************** --> */}
 
-
-
-              <div id="success"></div>
-                <div className="form-group">
-                  <button type="submit" className="btn btn-primary btn-xl" id="sendMessageButton">Go!</button>
-                </div>
-
           </div>
         </div>
       </div>
     </div>
   </div>
-    
-    
-    
-    
+
     </React.Fragment>
      
     );
