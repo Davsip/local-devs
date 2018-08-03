@@ -202,7 +202,6 @@ class App extends Component {
                       </a>
                       <a
                         className="dropdown-item"
-                        href="/userProfileForm"
                         onClick={this.login.bind(this)}
                       >
                         Sign Up
