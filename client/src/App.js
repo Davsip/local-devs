@@ -367,13 +367,7 @@ class App extends Component {
                 />
                 <br />
                 <br />
-                <p className="text-justify">
-                  Socializing twith people is a very healthy habit.
-                  Frequent socialisation is exceedingly important in maintaining
-                  quality of life.  Interact with colleagues that speak the same
-                  language, exchange ideas, learn, advice, relax. Check calendar
-                  for weekly activities.
-                </p>
+                <p className="text-justify">Socializing</p>
               </div>
               <div className="col-md-5 col-lg-4 ">
                 <img
