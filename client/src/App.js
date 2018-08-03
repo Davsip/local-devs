@@ -495,14 +495,14 @@ class App extends Component {
               Mission
             </h2>
             <hr className="star-dark mb-6" />
-            <blockquote class="blockquote">
+            <p className="text-justify">
               Local Devs was founded on strong values, integrity, communication
               and passion. We are not just another freelance company. Our
               company was created by passionate developers who believe that each
               project is unique and deserves a team setting to inspire the very
               passion that we possess. Our ultimate goal and mission is to
               connect local developers to quality projects.
-            </blockquote>
+            </p>
           </div>
         </div>
       </div>
