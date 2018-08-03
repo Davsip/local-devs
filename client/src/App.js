@@ -256,12 +256,7 @@ class App extends Component {
                   Clients, wheather a Company or Individual, can post projects
                   to our platform for review by our Solution Experts.{" "}
                   <b>Local Devs</b> can then apply to join a team responsible
-                  for developing the full scope of each project. With our easy,
-                  quick apply form, <b>Local Devs</b> have the opportunity to
-                  choose their preferred technologies and tell us why they are a
-                  perfect fit for the project. Our Solution Experts take it from
-                  there, contacting the developer for setting up an interview
-                  and providing more information about the project.
+                  for developing the full scope of each project.
                 </p>
               </div>
               <div className="col-md-5 col-lg-4">
