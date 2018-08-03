@@ -52,102 +52,167 @@ class App extends Component {
         {/* i.e. user logo dropdown login / signup, log out / mydashboard */}
 
         {isAuthenticated() && (
-        // {/* Nav bar */}
-        <nav className="navbar navbar-expand-lg navbar-dark bg-light" id="mainNav">
-            <a className="navbar-brand d-flex w-30 mr-auto" href="/">Hire Local</a>
-            <button className="navbar-toggler logged-in" type="button" data-toggle="collapse" data-target="#navbarNav">
-              <span className="navbar-toggler-icon"></span>
+          // {/* Nav bar */}
+          <nav
+            className="navbar navbar-expand-lg navbar-dark bg-light"
+            id="mainNav"
+          >
+            <a className="navbar-brand d-flex w-30 mr-auto" href="/">
+              Hire Local
+            </a>
+            <button
+              className="navbar-toggler logged-in"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+            >
+              <span className="navbar-toggler-icon" />
             </button>
             <div className="collapse navbar-collapse w-100" id="navbarNav">
               <ul className="navbar-nav ml-auto justify-content-end">
-              <li>
-                <div className="navbar-nav-link">
-                  <a href="#howitworks" className="nav-link text-nav">How it Works</a>
-                </div>
-              </li>
-              <li>
-                <div className="navbar-nav-link">
-                  <a className="nav-link text-nav" href="#projects">Browse Projects</a>
-                </div>
-              </li>
-              <li>
-                <div className="navbar-nav-link">
-                  <a className="nav-link text-nav" href="#social">Social</a>
-                </div>
-              </li>
-              <li>
-                <div className="navbar-nav-link">
-                  <a className="nav-link text-nav" href="#mission">Mission</a>
-                </div>
-              </li>
-              <li>
-                <div className="dropdown icon-tab">
-                  <button className="btn btn-secondary dropdown-toggle text-nav logged-in" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i className="fas fa-user-alt"></i>
-                  </button>
-                  <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                    <a className="dropdown-item" onClick={this.logout.bind(this)}>
-                    Log Out
-                    </a>
-                    <a className="dropdown-item" href="/myDashboard">
-                    My Dashboard
+                <li>
+                  <div className="navbar-nav-link">
+                    <a href="#howitworks" className="nav-link text-nav">
+                      How it Works
                     </a>
                   </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
+                </li>
+                <li>
+                  <div className="navbar-nav-link">
+                    <a className="nav-link text-nav" href="#projects">
+                      Browse Projects
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div className="navbar-nav-link">
+                    <a className="nav-link text-nav" href="#social">
+                      Social
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div className="navbar-nav-link">
+                    <a className="nav-link text-nav" href="#mission">
+                      Mission
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div className="dropdown icon-tab">
+                    <button
+                      className="btn btn-secondary dropdown-toggle text-nav logged-in"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <i className="fas fa-user-alt" />
+                    </button>
+                    <div
+                      className="dropdown-menu dropdown-menu-right"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <a
+                        className="dropdown-item"
+                        onClick={this.logout.bind(this)}
+                      >
+                        Log Out
+                      </a>
+                      <a className="dropdown-item" href="/myDashboard">
+                        My Dashboard
+                      </a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
         )}
 
         {!isAuthenticated() && (
           //   <!-- Nav bar  -->
-        <nav className="navbar navbar-expand-lg navbar-dark bg-light" id="mainNav">
-          <a className="navbar-brand d-flex w-30 mr-auto" href="/">Hire Local</a>
-          <button className="navbar-toggler not-logged-in" type="button" data-toggle="collapse" data-target="#navbarNav">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse w-100" id="navbarNav">
-            <ul className="navbar-nav ml-auto justify-content-end">
-              <li>
-                <div className="navbar-nav-link">
-                  <a href="#howitworks" className="nav-link text-nav">How it Works</a>
-                </div>
-              </li>
-              <li>
-                <div className="navbar-nav-link">
-                  <a className="nav-link text-nav" href="#projects">Browse Projects</a>
-                </div>
-              </li>
-              <li>
-                <div className="navbar-nav-link">
-                  <a className="nav-link text-nav" href="#social">Social</a>
-                </div>
-              </li>
-              <li>
-                <div className="navbar-nav-link">
-                  <a className="nav-link text-nav" href="#mission">Mission</a>
-                </div>
-              </li>
-              <li>
-                <div className="dropdown icon-tab">
-                  <button className="btn btn-secondary dropdown-toggle text-nav not-logged-in" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i className="fas fa-user-alt"></i>
-                  </button>
-                  <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                    <a className="dropdown-item" onClick={this.login.bind(this)}>
-                    Log In
-                    </a>
-                    <a className="dropdown-item" href="/userProfileForm" onClick={this.login.bind(this)}>
-                    Sign Up
+          <nav
+            className="navbar navbar-expand-lg navbar-dark bg-light"
+            id="mainNav"
+          >
+            <a className="navbar-brand d-flex w-30 mr-auto" href="/">
+              Hire Local
+            </a>
+            <button
+              className="navbar-toggler not-logged-in"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+            >
+              <span className="navbar-toggler-icon" />
+            </button>
+            <div className="collapse navbar-collapse w-100" id="navbarNav">
+              <ul className="navbar-nav ml-auto justify-content-end">
+                <li>
+                  <div className="navbar-nav-link">
+                    <a href="#howitworks" className="nav-link text-nav">
+                      How it Works
                     </a>
                   </div>
-                </div>
-              </li>
-          </ul>
-        </div>
-      </nav>
-
+                </li>
+                <li>
+                  <div className="navbar-nav-link">
+                    <a className="nav-link text-nav" href="#projects">
+                      Browse Projects
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div className="navbar-nav-link">
+                    <a className="nav-link text-nav" href="#social">
+                      Social
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div className="navbar-nav-link">
+                    <a className="nav-link text-nav" href="#mission">
+                      Mission
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div className="dropdown icon-tab">
+                    <button
+                      className="btn btn-secondary dropdown-toggle text-nav not-logged-in"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <i className="fas fa-user-alt" />
+                    </button>
+                    <div
+                      className="dropdown-menu dropdown-menu-right"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <a
+                        className="dropdown-item"
+                        onClick={this.login.bind(this)}
+                      >
+                        Log In
+                      </a>
+                      <a
+                        className="dropdown-item"
+                        href="/userProfileForm"
+                        onClick={this.login.bind(this)}
+                      >
+                        Sign Up
+                      </a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
         )}
 
         {/* <!-- SECTION 1 MAIN LANDING PAGE  --> */}
@@ -188,7 +253,15 @@ class App extends Component {
                 <br />
                 <br />
                 <p className="text-justify">
-                  Clients, wheather a Company or Individual, can post projects to our platform for review by our Solution Experts. <b>Local Devs</b> can then apply to join a team responsible for developing the full scope of each project. With our easy, quick apply form, <b>Local Devs</b> have the opportunity to choose their preferred technologies and tell us why they are a perfect fit for the project. Our Solution Experts take it from there, contacting the developer for setting  up an interview and providing more information about the project.
+                  Clients, wheather a Company or Individual, can post projects
+                  to our platform for review by our Solution Experts.{" "}
+                  <b>Local Devs</b> can then apply to join a team responsible
+                  for developing the full scope of each project. With our easy,
+                  quick apply form, <b>Local Devs</b> have the opportunity to
+                  choose their preferred technologies and tell us why they are a
+                  perfect fit for the project. Our Solution Experts take it from
+                  there, contacting the developer for setting up an interview
+                  and providing more information about the project.
                 </p>
               </div>
               <div className="col-md-5 col-lg-4">
@@ -200,7 +273,9 @@ class App extends Component {
                 <br />
                 <br />
                 <p className="text-justify">
-                  Once accepted to the project, our Solution Experts will connect the <b>Local Devs</b> and provide an in-depth review of the Client’s project. <b>Local  Devs</b> will be there from design to deployment, meeting all deliverables throughout the duration of the project. <b>Local Devs</b> can either work remote or work in our open space offices. With a great team in a healthy environment, our goal is to provide quality projects and experiences for local developers. 
+                  Once accepted to the project, our Solution Experts will
+                  connect the <b>Local Devs</b> and provide an in-depth review
+                  of the Client’s project.
                 </p>
               </div>
               <div className="col-md-5 col-lg-4 ">
@@ -212,7 +287,12 @@ class App extends Component {
                 <br />
                 <br />
                 <p className="text-justify">
-                  <b>Local Devs</b> will get paid as they complete sections of each project. Manage your own time, take on more projects, earn more money. The opportunities are endless. Our Solution Experts are here to make sure we always have meaningful projects for <b>Local Devs</b>. It will not be just work. It will be fun to work.
+                  <b>Local Devs</b> will get paid as they complete sections of
+                  each project. Manage your own time, take on more projects,
+                  earn more money. The opportunities are endless. Our Solution
+                  Experts are here to make sure we always have meaningful
+                  projects for <b>Local Devs</b>. It will not be just work. It
+                  will be fun to work.
                 </p>
               </div>
             </div>
@@ -391,7 +471,7 @@ class App extends Component {
                 >
                   Close
                 </button>
-                { !isAuthenticated() && 
+                {!isAuthenticated() && (
                   <button
                     type="button"
                     className="btn btn-primary"
@@ -400,8 +480,8 @@ class App extends Component {
                   >
                     Apply
                   </button>
-                }
-                { isAuthenticated() &&
+                )}
+                {isAuthenticated() && (
                   <button
                     type="button"
                     className="btn btn-primary"
@@ -409,8 +489,7 @@ class App extends Component {
                   >
                     Apply
                   </button>
-                }
-                
+                )}
               </div>
             </div>
             {/*   <!-- End Content --> */}
