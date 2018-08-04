@@ -504,5 +504,12 @@ button.modal-close {
 .icon-how {
   height: auto;
   width: 80px;
-  margin-top: 100px;
+  margin-top: 20px;
+  margin-right: 20px;
+  vertical-align: top;
+}
+
+.hiw-card {
+  padding: 8px;
+ /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }

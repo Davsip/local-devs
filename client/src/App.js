@@ -295,7 +295,7 @@ class App extends Component {
 
         <section className="section-2">
           <div className="container">
-            <h2 className="text-center text-uppercase text-secondary ">
+            <h2 className="text-center text-uppercase text-secondary">
               How it Works
             </h2>
             <hr className="star-dark mb-6" />
@@ -311,11 +311,8 @@ class App extends Component {
                   </div>
                   <div className="media-body">
                     <h4 className="media-heading">Are you a Developer?</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Deleniti neque quam at, exercitationem maiores explicabo
-                      veniam beatae voluptatum consequatur. Temporibus magni
-                      nulla corporis eaque non ducimus quod quia fugit error!
+                    <p class="hiw-card">
+                    <b>Local Devs</b> will create a team of developers for each project and the technologies need it. The developer can choose the technology that wants to work with an easy quick apply form.
                     </p>
                   </div>
                 </div>
@@ -329,11 +326,8 @@ class App extends Component {
                     />
                   </div>
                   <div className="media-body">
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Deleniti neque quam at, exercitationem maiores explicabo
-                      veniam beatae voluptatum consequatur. Temporibus magni
-                      nulla corporis eaque non ducimus quod quia fugit error!
+                    <p class="hiw-card">
+                    The developer will have a deadine for each project. You can either work remote or work on our open space offices, with a great team in a healthy environment. It will not be just work. It will be fun to work.
                     </p>
                   </div>
                 </div>
@@ -347,12 +341,9 @@ class App extends Component {
                     />
                   </div>
                   <div className="media-body">
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Deleniti neque quam at, exercitationem maiores explicabo
-                      veniam beatae voluptatum consequatur. Temporibus magni
-                      nulla corporis eaque non ducimus quod quia fugit error!
-                    </p>
+                  <p>
+                  The developer will get paid per project or sections of the project. Each day you will submit a quick update on your job through github or your personal dashboard. Communication with the team and the The Solution's Expert Manager will be requiredpw.
+                    </p>   
                   </div>
                 </div>
               </div>
