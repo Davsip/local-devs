@@ -236,7 +236,7 @@ class App extends Component {
         </div>
 
         {/* <!-- SECTION 2 / HOW IT WORKS --> */}
-        {/* <div className="howitworks" id="howitworks">
+        <div className="howitworks" id="howitworks">
           <div className="container">
             <h2 className="text-center text-uppercase text-secondary">
               How it Works
@@ -291,9 +291,9 @@ class App extends Component {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
 
-        <section className="section-2">
+       {/*  <section className="section-2">
           <div className="container">
             <h2 className="text-center text-uppercase text-secondary">
               How it Works
@@ -350,7 +350,13 @@ class App extends Component {
 
               <div className="col-sm-6 col-md-6 col-lg-6 ">
                 <div className="media">
-                  <div className="media-left media-middle" />
+                <div className="media-left media-middle">
+                    <img
+                      className="icon-how"
+                      src="./assets/images/icons/Asset-1.png"
+                      alt="Code Browser"
+                    />
+                  </div>
                   <div className="media-body">
                     <h4 className="media-heading">Are you a Company?</h4>
                     <p>
@@ -364,6 +370,13 @@ class App extends Component {
 
                 <div className="media">
                   <div className="media-left media-middle" />
+                  <div className="media-left media-middle">
+                    <img
+                      className="icon-how"
+                      src="./assets/images/icons/Asset-2.png"
+                      alt="Code Browser"
+                    />
+                  </div>
                   <div className="media-body">
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -376,6 +389,13 @@ class App extends Component {
 
                 <div className="media">
                   <div className="media-left media-middle" />
+                  <div className="media-left media-middle">
+                    <img
+                      className="icon-how"
+                      src="./assets/images/icons/Asset-3.png"
+                      alt="Code Browser"
+                    />
+                  </div>
                   <div className="media-body">
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -388,7 +408,7 @@ class App extends Component {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* <!-- SECTION 3 PROJECTS --> */}
         <div className="projects" id="projects">
