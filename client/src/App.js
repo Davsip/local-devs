@@ -342,7 +342,7 @@ class App extends Component {
                   </div>
                   <div className="media-body">
                   <p>
-                  The developer will get paid per project or sections of the project. Each day you will submit a quick update on your job through github or your personal dashboard. Communication with the team and the The Solution's Expert Manager will be required.
+                  The developer will get paid per project or sections of the project. Each day you will submit a quick update on your job through github or your personal dashboard. Communication with the team and the The Solution's Expert Manager will be requiredpw.
                     </p>   
                   </div>
                 </div>
