@@ -75,8 +75,13 @@ module.exports = {
       })
   },
   update: function(req, res) {
+
+    console.log('----- at /api/users/:id update method -----');
+    console.log(req.body);
+    console.log('-----            end method           -----');
+
     db.User
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .findOneAndUpdate({ email: req.params.id }, req.body)
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
   },

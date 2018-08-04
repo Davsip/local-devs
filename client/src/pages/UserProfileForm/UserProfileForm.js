@@ -4,6 +4,15 @@ import { Navbar, Button } from 'react-bootstrap';
 // import './App.css';
 
 class UserProfileForm extends Component {
+
+    // constructor(props) {
+    //   super();
+    //   this.state = {
+    //       profile: {}
+    //   };
+    // }
+    
+
     tempSkills = [];
 
     state = {
@@ -36,15 +45,33 @@ class UserProfileForm extends Component {
   
     handleInputChange = event => {
       const { name, value } = event.target;
+      
 
-      if ( name === 'technology' ) {
-  
-        this.tempSkills.push(value);
+      if ( name === 'technology') {
+
+        let isChecked = document.getElementById(value).checked;
+        console.log('------');
+        console.log(isChecked);
+        console.log('------');
+
+
+        if ( isChecked ) {
+          this.tempSkills.push(value);
+          document.getElementById(value).checked = true;
+        } else {
+          let index = this.tempSkills.indexOf(value);
+
+          if ( index !== -1 ) {
+            this.tempSkills.splice( index, 1 );
+            document.getElementById(value).checked = false;
+          }
+        }        
 
         this.setState({
             technologies: this.tempSkills
         })
 
+        console.log(this.tempSkills);
         console.log(this.state.technologies);
 
       } else {
@@ -61,17 +88,17 @@ class UserProfileForm extends Component {
       event.preventDefault();
 
       let updateUser = {
-        given_name: this.state.given_name,
-        family_name: this.state.family_name,
-        picture: this.state.picture,
-        nickname: this.state.nickname,
-        zip: this.state.zip,
-        phone: this.state.phone,
-        experience_level: this.state.experience_level,
-        technologies: this.state.technologies,
-        experience_desc: this.state.experience_desc,
-        bio_desc: this.state.bio_desc,
-        title: this.state.title,
+        given_name: this.state.given_name || this.state.profile.given_name,
+        family_name: this.state.family_name || this.state.profile.family_name,
+        picture: this.state.picture || this.state.profile.picture,
+        nickname: this.state.nickname || this.state.profile.nickname,
+        zip: this.state.zip || this.state.profile.zip,
+        phone: this.state.phone || this.state.profile.phone,
+        experience_level: this.state.experience_level || this.state.profile.experience_level,
+        technologies: this.state.technologies || this.state.profile.technologies,
+        experience_desc: this.state.experience_desc || this.state.profile.experience_desc,
+        bio_desc: this.state.bio_desc || this.state.profile.bio_desc,
+        title: this.state.title || this.state.profile.title,
         isProfileCompleted: true
       }
 
@@ -79,29 +106,36 @@ class UserProfileForm extends Component {
       console.log(updateUser);
       console.log('-----------------------------');
 
-      this.setState({
-        given_name: '',
-        family_name: '',
-        picture: '',
-        nickname: '',
-        zip: '',
-        phone: '',
-        experience_level: '',
-        technologies: [],
-        experience_desc: '',
-        bio_desc: '',
-        title: '',
-        isProfileCompleted: false
-      })
-  
-      // alert('need to handle user update here & in user controller')  
+      axios.put('/api/users/' + this.state.profile.email, updateUser)
+        .then( res => {
+          console.log(res);
+          
+          this.setState({
+            given_name: '',
+            family_name: '',
+            picture: '',
+            nickname: '',
+            zip: '',
+            phone: '',
+            experience_level: '',
+            technologies: [],
+            experience_desc: '',
+            bio_desc: '',
+            title: '',
+            isProfileCompleted: false
+          })
+
+          alert('User Profile successfully updated.');
+        })
+        .catch(err => alert(`There was an error while updating your profile: ${err}`));
+
     };
 
-    componentWillMount() {
+    componentDidMount() {
 
-      this.setState({ 
-        profile: {},
-      });
+      // this.setState({ 
+      //   profile: {},
+      // });
   
       // Get user profile from Auth0 API
       const { userProfile, getProfile } = this.props.auth;
@@ -124,6 +158,7 @@ class UserProfileForm extends Component {
                 } else {
                   console.log(`setting profile state`);
                   this.setState({ profile: res.data[0] });
+                  console.log(this.state.profile);
                 }
               });
             })
@@ -131,6 +166,7 @@ class UserProfileForm extends Component {
       } else {
         this.setState({ profile: userProfile });
       }
+
   }
   
   render() {
@@ -315,8 +351,11 @@ class UserProfileForm extends Component {
             <input className="form-check-input" type="checkbox" id="angular" value="angular" name="technology" onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox1">Angular</label>
         </div>
+        
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="bootstrap" value="bootstrap" name="technology" onChange={this.handleInputChange} />
+            <input className="form-check-input" type="checkbox" id="bootstrap" value="bootstrap" name="technology" 
+              // checked={ this.state.profile.technologies.includes("bootstrap") ? true : false}
+              onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox2">Bootstrap</label>
         </div>
         <div className="form-check form-check-inline tech">
@@ -405,7 +444,7 @@ class UserProfileForm extends Component {
         <label for="exampleFormControlTextarea1">Brief Profile Bio</label>
         <textarea className="form-control description" id="bio-desc" rows="5" value={this.state.bio_desc || profile.bio_desc} name="bio_desc" onChange={this.handleInputChange}></textarea>
     </div>
-    <button type="button" className="btn btn-primary btn-lg" id="submit-new-project" onClick={this.handleFormSubmit} >Submit Project</button>
+    <button type="button" className="btn btn-primary btn-lg" id="submit-new-project" onClick={this.handleFormSubmit} >Update Profile</button>
 </form>
 </div>
 
