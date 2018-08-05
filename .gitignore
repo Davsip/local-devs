@@ -1,1 +1,3 @@
 node_modules
+
+client/src/pages/Auth/auth0-variables.js
