@@ -348,90 +348,90 @@ class UserProfileForm extends Component {
         <label for="FormControlInput1">Technologies</label><br />
         
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="angular" value="angular" name="technology" onChange={this.handleInputChange} />
+            <input className="form-check-input" type="checkbox" id="angular" value="Angular" name="technology" onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox1">Angular</label>
         </div>
         
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="bootstrap" value="bootstrap" name="technology" 
+            <input className="form-check-input" type="checkbox" id="Bootstrap" value="bootstrap" name="technology" 
               // checked={ this.state.profile.technologies.includes("bootstrap") ? true : false}
               onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox2">Bootstrap</label>
         </div>
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="chart" value="chart" name="technology" onChange={this.handleInputChange} />
+            <input className="form-check-input" type="checkbox" id="chart" value="Chart" name="technology" onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox3">Chart</label>
         </div>
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="cplusplus" value="cplusplus" name="technology" onChange={this.handleInputChange} />
+            <input className="form-check-input" type="checkbox" id="cplusplus" value="C++" name="technology" onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox4">C++</label>
         </div>
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="csharp" value="csharp" name="technology" onChange={this.handleInputChange} />
+            <input className="form-check-input" type="checkbox" id="csharp" value="C#" name="technology" onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox5">C#</label>
         </div>
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="css" value="css" name="technology" onChange={this.handleInputChange} />
+            <input className="form-check-input" type="checkbox" id="css" value="CSS" name="technology" onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox6">CSS</label>
         </div>
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="github" value="github" name="technology" onChange={this.handleInputChange} />
+            <input className="form-check-input" type="checkbox" id="github" value="GitHub" name="technology" onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox7">GitHub</label>
         </div>
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="handlebars" value="handlebars" name="technology" onChange={this.handleInputChange} />
+            <input className="form-check-input" type="checkbox" id="handlebars" value="Handlebars" name="technology" onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox8">Handlebars</label>
         </div>
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="heroku" value="heroku" name="technology" onChange={this.handleInputChange} />
+            <input className="form-check-input" type="checkbox" id="heroku" value="Heroku" name="technology" onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox9">Heroku</label>
         </div>
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="html" value="html" name="technology" onChange={this.handleInputChange} />
+            <input className="form-check-input" type="checkbox" id="html" value="HTML" name="technology" onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox10">HTML</label>
         </div>
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="illustrator" value="illustrator" name="technology" onChange={this.handleInputChange} />
+            <input className="form-check-input" type="checkbox" id="illustrator" value="Illustrator" name="technology" onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox11">Illustrator</label>
         </div>
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="java" value="java" name="technology" onChange={this.handleInputChange} />
+            <input className="form-check-input" type="checkbox" id="java" value="Java" name="technology" onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox12">Java</label>
         </div>
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="javascript" value="javascript" name="technology" onChange={this.handleInputChange} />
+            <input className="form-check-input" type="checkbox" id="javascript" value="JavaScript" name="technology" onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox13">JavaScript</label>
         </div>
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="jquery" value="jquery" name="technology" onChange={this.handleInputChange} />
+            <input className="form-check-input" type="checkbox" id="jquery" value="JQuery" name="technology" onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox14">JQuery</label>
         </div>
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="mongodb" value="mongodb" name="technology" onChange={this.handleInputChange} />
+            <input className="form-check-input" type="checkbox" id="mongodb" value="MongoDB" name="technology" onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox15">MongoDB</label>
         </div>
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="mysql" value="mysql" name="technology" onChange={this.handleInputChange} />
+            <input className="form-check-input" type="checkbox" id="mysql" value="MySQL" name="technology" onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox16">MySQL</label>
         </div>
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="node" value="node" name="technology" onChange={this.handleInputChange} />
+            <input className="form-check-input" type="checkbox" id="node" value="Node" name="technology" onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox17">Node</label>
         </div>
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="photoshop" value="photoshop" name="technology" onChange={this.handleInputChange} />
+            <input className="form-check-input" type="checkbox" id="photoshop" value="Photoshop" name="technology" onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox18">PhotoShop</label>
         </div>
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="python" value="python" name="technology" onChange={this.handleInputChange} />
+            <input className="form-check-input" type="checkbox" id="python" value="Python" name="technology" onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox19">Python</label>
         </div>
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="react" value="react" name="technology" onChange={this.handleInputChange} />
+            <input className="form-check-input" type="checkbox" id="react" value="React" name="technology" onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox20">React</label>
         </div>
         <div className="form-check form-check-inline tech">
-            <input className="form-check-input" type="checkbox" id="sass" value="sass" name="technology" onChange={this.handleInputChange} />
+            <input className="form-check-input" type="checkbox" id="sass" value="Sass" name="technology" onChange={this.handleInputChange} />
             <label className="form-check-label" for="inlineCheckbox21">Sass</label>
         </div>
     </div>
