@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Navbar, Button } from "react-bootstrap";
 import API from "./utils/API";
+import ProjectCard from './components/ProjectCard';
 
 // put landing / home page css in App.css
 import "./App.css";
@@ -232,37 +233,16 @@ class App extends Component {
                 {projects.map((project, index) => {
                   if (project.projectStage === "pending") {
                     return (
-                      <div
-                        className="col-md-6 col-lg-4"
-                        key={index}
-                        data-id={project.sub}
-                      >
-                        <div className="card" style={{ width: 18 + "rem" }}>
-                          <div className="card-body">
-                            <h5 className="card-title">{project.name}</h5>
-                            <p className="card-text">
-                              {project.desc.substring(0, 50)}...
-                            </p>
-                            <p className="card-text" id="techNeeded">
-                              {project.reqSkills.join(", ")}
-                            </p>
-                            <a
-                              href="#"
-                              className="btn btn-primary"
-                              data-target="#projectModal"
-                              data-toggle="modal"
-                              data-desc={project.desc}
-                              data-team={project.teamSize}
-                              data-time={project.duration + "mo"}
-                              data-title={project.name}
-                            >
-                              View Details / Apply
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  }
+                    <ProjectCard
+                      key={index}
+                      dataId={project.sub}
+                      projectName={project.name}
+                      descSub={project.desc.substring(0, 50)}
+                      skills={project.reqSkills.join(", ")}
+                      desc={project.desc}
+                      teamSize={project.teamSize}
+                      duration={project.duration + "mo"} />
+                  )}
                 })}
               </div>
             </div>
@@ -427,7 +407,7 @@ class App extends Component {
               Mission
             </h2>
             <hr className="star-dark mb-6" />
-            <blockquote class="blockquote">
+            <blockquote className="blockquote">
               Local Devs was founded on strong values, integrity, communication
               and passion. We are not just another freelance company. Our
               company was created by passionate developers who believe that each
