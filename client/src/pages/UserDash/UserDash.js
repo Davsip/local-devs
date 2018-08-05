@@ -145,12 +145,15 @@ class UserDash extends Component {
         )}
         
         {/* <!-- Incomplete Profile Warning --> */}
-        <div className="alert alert-warning profile-incomplete" role="alert">
-            This is a friendly reminder to complete your profile. <a href="./userProfileForm" className="alert-link">Click here to get started.</a>
-            <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
+        { !profile.isProfileCompleted && (
+            <div className="alert alert-warning profile-incomplete" role="alert">
+                This is a friendly reminder to complete your profile. <a href="./userProfileForm" className="alert-link">Click here to get started.</a>
+                <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        )}
+        
 
         {/* <!-- Dashboard --> */}
         <section className="dashboard">
