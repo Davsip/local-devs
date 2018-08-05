@@ -1,41 +1,5 @@
-/*  HIDING DEFAULT STYLES
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.btn-margin {
-  margin: 7px 3px;
-}
-*/
-
 body {
-  font-family: "Lato" "sans-serif";
+  font-family: "Montserrat" "sans-serif";
   color: #777;
 }
 
@@ -47,7 +11,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   font-weight: 600;
   font-family: "Montserrat";
 }
@@ -55,7 +20,7 @@ h6 {
 /* NavBar */
 
 #mainNav {
-  background-color: #2c3e50!important;
+  background-color: #2c3e50 !important;
 }
 
 .navbar-brand {
@@ -64,12 +29,13 @@ h6 {
 }
 
 .text-nav {
-  color: #fff!important;
+  color: #fff !important;
 }
 
-.navbar-nav-link, .navbar-brand {
+.navbar-nav-link,
+.navbar-brand {
   font-size: 23px;
-  font-family: "Montserrat";
+  font-family: "Montserrat" "sans-serif";
   font-weight: bold;
 }
 
@@ -79,20 +45,21 @@ h6 {
 
 button#dropdownMenuButton {
   margin: 8px auto;
+  font-family: "Montserrat" "sans-serif";
 }
 
 button.navbar-toggler logged-in {
   /* border: 1px solid #ff7f50!important; */
-  background-color: #ff7f50; 
+  background-color: #ff7f50;
 }
 
 button.navbar-toggler not-logged-in {
-  border: 1px solid #ff7f50!important;
+  border: 1px solid #ff7f50 !important;
   /* background-color: #ff7f50;  */
 }
 
 .mr-auto {
-  background-color: #2c3e50!important;
+  background-color: #2c3e50 !important;
 }
 
 @media only screen and (max-width: 992px) {
@@ -104,15 +71,14 @@ button.navbar-toggler not-logged-in {
 
 /* Login Icon Colors */
 button.not-logged-in {
-  background-color: #2c3e50!important;
-  border: 1px solid #ff7f50!important;
+  background-color: #2c3e50 !important;
+  border: 1px solid #ff7f50 !important;
 }
 
 button.logged-in {
-  background-color: #ff7f50!important;
-  border: 1px solid #ff7f50!important;
+  background-color: #ff7f50 !important;
+  border: 1px solid #ff7f50 !important;
 }
-
 
 /* End NavBar */
 
@@ -121,7 +87,7 @@ button.logged-in {
   padding: 0 0 30px 0;
 }
 
-.img-logo  {
+.img-logo {
   padding-top: 60px;
 }
 
@@ -132,7 +98,6 @@ button.logged-in {
 .main-text-2 {
   font-size: 1.7rem;
 }
-
 
 hr.star-light,
 hr.star-dark {
@@ -210,7 +175,8 @@ div.card {
   margin: 10px auto;
 }
 
-a.btn, div.btn {
+a.btn,
+div.btn {
   position: absolute;
   bottom: 20px;
 }
@@ -251,8 +217,8 @@ button#update-project {
 
 /* Not sure if this is going to affect anything else!!!!!!!!!!! */
 .row {
-  margin-left: 0!important;
-  margin-right: 0!important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 ul.nav-pills {
@@ -281,7 +247,6 @@ button.btn-link {
 
 h6.projDetails {
   margin: 40px auto 20px auto;
-
 }
 
 button.btn-link:focus {
@@ -299,7 +264,7 @@ button.btn-sm {
 /* Increase size of modal from 500 to 700px */
 @media (min-width: 576px) {
   .modal-dialog {
-    max-width: 700px!important;
+    max-width: 700px !important;
   }
 }
 
@@ -518,10 +483,11 @@ section.dashboard {
   background-color: #128f76;
   border: 0px solid #128f76;
   color: #fff;
-
 }
 
-a:focus, a:hover, a:active {
+a:focus,
+a:hover,
+a:active {
   color: #128f76;
 }
 
@@ -535,4 +501,15 @@ button.modal-close {
   border: 1px solid #ff7f50 !important;
 }
 
+.icon-how {
+  height: auto;
+  width: 80px;
+  margin-top: 20px;
+  margin-right: 20px;
+  vertical-align: top;
+}
 
+.hiw-card {
+  padding: 8px;
+ /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
