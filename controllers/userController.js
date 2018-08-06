@@ -41,6 +41,7 @@ module.exports = {
   create: function(req, res) {
     const newUser = {
       email: req.body.email,
+      name: req.body.name,
       given_name: req.body.given_name,
       family_name: req.body.family_name,
       picture: req.body.picture,
