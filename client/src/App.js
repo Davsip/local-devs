@@ -426,7 +426,7 @@ class App extends Component {
                     return (
                     <ProjectCard
                       key={index}
-                      dataId={project.sub}
+                      dataId={project._id}
                       projectName={project.name}
                       descSub={project.desc.substring(0, 50)}
                       skills={project.reqSkills.join(", ")}

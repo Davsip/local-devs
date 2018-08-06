@@ -6,6 +6,7 @@ $(document).on('shown.bs.modal','#projectModal', function (e) {
     const reference = $(e.relatedTarget);
 
     // pull data from a tag and #tech
+    const dataID = reference.attr('data-id');
     const title = reference.attr('data-title');
     const numDevs = parseInt(reference.attr('data-team'));
     const description = reference.attr('data-desc');
@@ -14,7 +15,10 @@ $(document).on('shown.bs.modal','#projectModal', function (e) {
     const genderArray = ["female-icon.png", "male-icon.png"];
 
     // Load Apply Button Attributes (when user applies)
-    $('button#applyButton').attr('data-title', title). attr('data-desc', description).attr('data-tech', techArray);
+    $('button#applyButton').attr('data-title', title). attr('data-desc', description).attr('data-tech', techArray).attr('data-id', dataID);
+
+    // Project ID
+    $('#projectTitle').attr()
 
     // Project Overview
     $('p#description').html(`<p>${description}</p>`);
@@ -54,7 +58,7 @@ $(document).on('shown.bs.modal','#projectModal', function (e) {
         $('div#time').html('');
         $('div#tech').html('<h5>Technologies</h5>');
         $('#team-display').html('');
-        $('#applyButton').removeAttr('title').removeAttr('desc').removeAttr('tech');
+        $('#applyButton').removeAttr('title').removeAttr('desc').removeAttr('tech').removeAttr('data-id');
     });
 
     
