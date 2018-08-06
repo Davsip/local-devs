@@ -21,6 +21,14 @@ class UserDash extends Component {
     this.props.auth.logout();
   }
 
+  handleModalApply = event => {
+      event.preventDefault();
+
+      
+
+
+  }
+
   componentWillMount() {
 
     this.setState({ 
@@ -192,14 +200,13 @@ class UserDash extends Component {
                                         if ( project.teamMembers.includes(profile.email) && project.projectStage === 'started' ) {
                                         
                                             return (
-                                            <div className="col-md-6 col-lg-4" key={index} data-id={project.sub}>
+                                            <div className="col-md-6 col-lg-4" key={index} data-id={project._id}>
                                                 <div className="card" style={{width: 18 + 'rem'}}>
                                                     <div className="card-body">
                                                         <h5 className="card-title">{project.name}</h5>
                                                         <p className="card-text">{project.desc.substring(0,50)}...</p>
                                                         <p className="card-text" id="techNeeded">{project.reqSkills.join(', ')}</p>
-                                                        <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-desc={project.desc}
-                                                        data-team={project.teamSize} data-time={project.duration + 'mo'} data-title={project.name}>View Details / Apply</a>
+                                                        <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-id={project._id}data-desc={project.desc} data-team={project.teamSize} data-time={project.duration + 'mo'} data-title={project.name}>View Details / Apply</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -224,14 +231,13 @@ class UserDash extends Component {
                                         if ( project.teamApplicants.includes(profile.email) && project.projectStage === 'pending' ) {
                                                                                     
                                             return (
-                                                <div className="col-md-6 col-lg-4" key={index} data-id={project.sub}>
+                                                <div className="col-md-6 col-lg-4" key={index} data-id={project._id}>
                                                     <div className="card" style={{width: 18 + 'rem'}}>
                                                         <div className="card-body">
                                                             <h5 className="card-title">{project.name}</h5>
                                                             <p className="card-text">{project.desc.substring(0,50)}...</p>
                                                             <p className="card-text" id="techNeeded">{project.reqSkills.join(', ')}</p>
-                                                            <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-desc={project.desc}
-                                                            data-team={project.teamSize} data-time={project.duration + 'mo'} data-title={project.name}>View Details / Apply</a>
+                                                            <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-id={project._id} data-desc={project.desc} data-team={project.teamSize} data-time={project.duration + 'mo'} data-title={project.name}>View Details / Apply</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -255,14 +261,13 @@ class UserDash extends Component {
                                     if (project.projectStage === 'pending') {
                               
                                         return (
-                                        <div className="col-md-6 col-lg-4" key={index} data-id={project.sub}>
+                                        <div className="col-md-6 col-lg-4" key={index} data-id={project._id}>
                                             <div className="card" style={{width: 18 + 'rem'}}>
                                                 <div className="card-body">
                                                     <h5 className="card-title">{project.name}</h5>
                                                     <p className="card-text">{project.desc.substring(0,50)}...</p>
                                                     <p className="card-text" id="techNeeded">{project.reqSkills.join(', ')}</p>
-                                                    <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-desc={project.desc}
-                                                    data-team={project.teamSize} data-time={project.duration + 'mo'} data-title={project.name}>View Details / Apply</a>
+                                                    <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-id={project._id} data-desc={project.desc} data-team={project.teamSize} data-time={project.duration + 'mo'} data-title={project.name}>View Details / Apply</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -447,7 +452,7 @@ class UserDash extends Component {
                     </div>
                     <div className="modal-footer">
                         <button type="button" className="btn btn-secondary modal-close" data-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary" data-placement="top" id="applyButton">Apply</button>
+                        <button type="button" className="btn btn-primary" data-placement="top" id="applyButton" onClick={this.handleModalApply}>Apply</button>
                     </div>
                 </div>
                 {/* <!-- End Content --> */}
