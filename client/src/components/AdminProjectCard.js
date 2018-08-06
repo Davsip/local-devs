@@ -33,6 +33,8 @@ const AdminProjectCard = props => (
                     
                         <em>Duration</em>: <span className="projDuration">{props.duration} Months</span><br />
 
+                        <em>Team Size</em>: <span className="teamSize">{props.teamSize}</span><br />
+
                         <em>SE Led</em>: <span className="seLed">{props.seLed}</span>
                     </p>
                     

@@ -447,10 +447,11 @@ class AdminDash extends Component {
                                         budget={project.budget}
                                         location={project.locationZip}
                                         skills={project.reqSkills.join(", ")}
-                                        startDate={project.startDate}
+                                        startDate={project.startDate.substring(5,7) + '/' + project.startDate.substring(8,10) + '/' + project.startDate.substring(0,4)}
                                         duration={project.duration}
-                                        seLed={project.seLed}
+                                        seLed={String(project.seLed)}
                                         desc={project.desc}
+                                        teamSize={project.teamSize}
                                         applicants={project.teamApplicants}
                                         team={project.teamMembers}
                                         stage={project.projectStage}
