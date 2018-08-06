@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import API from '../../utils/API';
+import AdminProjectCard from '../../components/AdminProjectCard';
 import { join } from 'path';
 
 class AdminDash extends Component {
@@ -146,7 +147,7 @@ class AdminDash extends Component {
   }
 
   render() {
-    const { profile } = this.state;
+    const { profile, projects } = this.state;
     const { isAuthenticated } = this.props.auth;
 
     // console.log('--- component will mount ---');
@@ -436,7 +437,29 @@ class AdminDash extends Component {
 
                         {/* <!-- Proj 1 --> */}
 
-                        <div className="card card-proj">
+                        {projects.map((project, index) => {
+                            if (project.projectStage === "pending") {
+                                return (
+                                    <AdminProjectCard
+                                        key={index}
+                                        id={project._id}
+                                        name={project.name}
+                                        budget={project.budget}
+                                        location={project.locationZip}
+                                        skills={project.reqSkills.join(", ")}
+                                        startDate={project.startDate}
+                                        duration={project.duration}
+                                        seLed={project.seLed}
+                                        desc={project.desc}
+                                        applicants={project.teamApplicants}
+                                        team={project.teamMembers}
+                                        stage={project.projectStage}
+                                         />
+                                )
+                            }
+                        })}
+
+                        {/* <div className="card card-proj">
                             <div className="card-header" id="headingOne">
                                 <h5 className="mb-0">
                                 <button className="btn btn-link" data-toggle="collapse" data-target="#pendingCollapseOne" aria-expanded="true" aria-controls="pendingCollapseOne">
@@ -448,11 +471,11 @@ class AdminDash extends Component {
                             <div id="pendingCollapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                                 <div className="card-body">
                                     
-                                    {/* <!-- Begin Proj 1 Details --> */}
+                                    <!-- Begin Proj 1 Details -->
 
                                     <div className="row">
                                         <div className="col-sm-6">
-                                            {/* <!-- Details --> */}
+                                            <!-- Details -->
                                             <h6><span className="projTitle">AD Web App</span></h6>
                                             <p>
                                                 <em>Budget</em>: $<span className="projBudget">60,000</span><br />
@@ -470,17 +493,17 @@ class AdminDash extends Component {
                                             
                                         </div>
                                         <div className="col-sm-6">
-                                            {/* <!-- Desc --> */}
+                                            <!-- Desc -->
                                             <p>Client needs clean, dynamic Active Directory personnel resource site. This is an eleven month project and the team will consist of four developers. Client expects developers to have great teamwork and communication skills. Weekly deliverables are expected.</p>
                                         </div>
                                     </div>
                                     <div className="row">
                                         <div className="col-sm-12">
 
-                                            {/* <!-- Editable --> */}
+                                            <!-- Editable -->
                                             <h6 className="projDetails">Applicants</h6>
 
-                                            {/* <!-- Each Applicant 1 --> */}
+                                            <!-- Each Applicant 1 -->
                                             <span className="dropdown">
                                                 <button className="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     David Sipala
@@ -489,9 +512,9 @@ class AdminDash extends Component {
                                                     <a className="dropdown-item applicant-move">Copy to Team</a>
                                                 </div>
                                             </span>
-                                            {/* <!-- End Applicant 1 --> */}
+                                            <!-- End Applicant 1 -->
                                                     
-                                            {/* <!-- Applicant 2 --> */}
+                                            <!-- Applicant 2 -->
                                             <span className="dropdown">
                                                 <button className="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     Doug Henderson
@@ -500,8 +523,8 @@ class AdminDash extends Component {
                                                     <a className="dropdown-item applicant-move">Copy to Team</a>
                                                 </div>
                                             </span>
-                                            {/* <!-- End Applicant 2 --> */}
-                                            {/* <!-- Applicant 3 --> */}
+                                            <!-- End Applicant 2 -->
+                                            <!-- Applicant 3 -->
                                             <span className="dropdown">
                                                 <button className="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     Jason Warner
@@ -510,8 +533,8 @@ class AdminDash extends Component {
                                                     <a className="dropdown-item applicant-move">Copy to Team</a>
                                                 </div>
                                             </span>
-                                            {/* <!-- End Applicant 3 --> */}
-                                            {/* <!-- Applicant 4 --> */}
+                                            <!-- End Applicant 3 -->
+                                            <!-- Applicant 4 -->
                                             <span className="dropdown">
                                                 <button className="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     Bryan Aber
@@ -520,8 +543,8 @@ class AdminDash extends Component {
                                                     <a className="dropdown-item applicant-move">Copy to Team</a>
                                                 </div>
                                             </span>
-                                            {/* <!-- End Applicant 4 --> */}
-                                            {/* <!-- Applicant 5 --> */}
+                                            <!-- End Applicant 4 -->
+                                            <!-- Applicant 5 -->
                                             <span className="dropdown">
                                                 <button className="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     Bill Bradsky
@@ -530,17 +553,17 @@ class AdminDash extends Component {
                                                     <a className="dropdown-item applicant-move">Copy to Team</a>
                                                 </div>
                                             </span>
-                                            {/* <!-- End Applicant 5 --> */}
+                                            <!-- End Applicant 5 -->
 
                                         </div>
 
-                                        {/* <!-- Team Members --> */}
+                                        <!-- Team Members -->
 
                                         <div className="col-sm-12" id="team-members">
-                                            {/* <!-- Editable --> */}
+                                            <!-- Editable -->
                                             <h6 className="projDetails">Team Members</h6>
 
-                                            {/* <!-- Each Team Member 1 --> */}
+                                            <!-- Each Team Member 1 -->
                                             <span className="dropdown">
                                                 <button className="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     Bill Bradsky
@@ -549,9 +572,9 @@ class AdminDash extends Component {
                                                     <a className="dropdown-item member-remove">Remove From Team</a>
                                                 </div>
                                             </span>
-                                            {/* <!-- End Team Member 1 --> */}
+                                            <!-- End Team Member 1 -->
 
-                                            {/* <!-- Each Team Member 2 --> */}
+                                            <!-- Each Team Member 2 -->
                                             <span className="dropdown">
                                                 <button className="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     Doug Henderson
@@ -560,18 +583,18 @@ class AdminDash extends Component {
                                                     <a className="dropdown-item member-remove">Remove From Team</a>
                                                 </div>
                                             </span>
-                                            {/* <!-- End Team Member 2 --> */}
+                                            <!-- End Team Member 2 -->
                                             
                                         </div>
 
-                                        {/* <!-- End Team Members --> */}
+                                        <!-- End Team Members -->
 
-                                        {/* <!-- Project Stage --> */}
+                                        <!-- Project Stage -->
                                         <div className="col-sm-12">
 
                                             <h6 className="projDetails">Project Stage</h6>
 
-                                            {/* <!-- Each Applicant 1 --> */}
+                                            <!-- Each Applicant 1 -->
                                             <span className="dropdown">
                                                 <button className="btn btn-secondary btn-sm dropdown-toggle proj-state" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     Pending
@@ -581,7 +604,7 @@ class AdminDash extends Component {
                                                     <a className="dropdown-item pstage" id='Completed'>Completed</a>
                                                 </div>
                                             </span>
-                                            {/* <!-- End Applicant 1 --> */}
+                                            <!-- End Applicant 1 -->
 
                                         </div>
                                         <div className="col-sm-12">
@@ -591,13 +614,13 @@ class AdminDash extends Component {
                                 </div>
 
 
-                                    {/* <!-- End Proj 1 Details --> */}
+                                    <!-- End Proj 1 Details -->
                             </div>
-                        </div>
+                        </div> */}
 
                         {/* <!-- End Proj 1 / Beg Proj 2 --> */}
 
-                        <div className="card card-proj">
+                        {/* <div className="card card-proj">
                             <div className="card-header" id="headingTwo">
                                 <h5 className="mb-0">
                                 <button className="btn btn-link collapsed" data-toggle="collapse" data-target="#pendingCollapseTwo" aria-expanded="false" aria-controls="pendingCollapseTwo">
@@ -612,8 +635,8 @@ class AdminDash extends Component {
                             </div>
                         </div>
 
-                        {/* <!-- End Proj 2 --> */}
-                        {/* <!-- Proj 3 --> */}
+                        <!-- End Proj 2 -->
+                        <!-- Proj 3 -->
                         <div className="card card-proj">
                             <div className="card-header" id="headingThree">
                                 <h5 className="mb-0">
@@ -628,7 +651,7 @@ class AdminDash extends Component {
                                 </div>
                             </div>
                         </div>
-                        {/* <!-- End Proj 3 --> */}
+                        <!-- End Proj 3 --> */}
 
                     {/* <!-- End Accordian --> */}
                     </div>
