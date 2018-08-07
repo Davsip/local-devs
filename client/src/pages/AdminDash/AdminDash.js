@@ -466,7 +466,7 @@ class AdminDash extends Component {
                                             key={index}
                                             id={project._id}
                                             name={project.name}
-                                            budget={project.budget}
+                                            budget={Number(project.budget).toLocaleString()}
                                             location={project.locationZip}
                                             skills={project.reqSkills.join(", ")}
                                             startDate={project.startDate.substring(5,7) + '/' + project.startDate.substring(8,10) + '/' + project.startDate.substring(0,4)}
