@@ -2,7 +2,6 @@ import React from 'react';
 
 const AdminProjectCard = props => (
     
-
 <div className="card card-proj">
     <div className="card-header">
         <h5 className="mb-0">
@@ -53,7 +52,7 @@ const AdminProjectCard = props => (
                     {/* <!-- Each Applicant --> */}
 
                     {
-                        props.applicants && props.applicants.map(applicant => {
+                        props.applicants ? props.applicants.map(applicant => {
                             
                             return (
                                 <span className="dropdown">
@@ -67,7 +66,7 @@ const AdminProjectCard = props => (
                                 </span>
                             )
                         
-                        })
+                        }): <div></div>
                     }
 
                     
@@ -85,7 +84,9 @@ const AdminProjectCard = props => (
                     {/* <!-- Each Team Member --> */}
 
                 {
-                    props.team && props.team.map(member => {
+
+                    props.team ? props.team.map(member => {
+
                         
                         return (
                             <span className="dropdown">
@@ -98,8 +99,9 @@ const AdminProjectCard = props => (
                                 </div>
                             </span>
                         )
-                    }
-                )}
+                    }): <div></div>
+
+                }
 
 
                     
