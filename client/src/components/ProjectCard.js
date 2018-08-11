@@ -25,7 +25,12 @@ const ProjectCard = props => (
                     data-time={props.duration}
                     data-title={props.projectName}
                 >
-                    View Details / Apply
+                {
+                    props.status === 'started' || props.applicants ?
+                    'View Details'
+                    :
+                    'View Details / Apply'
+                }
                 </a>
             </div>
         </div>
