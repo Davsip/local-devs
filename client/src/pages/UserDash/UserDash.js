@@ -210,7 +210,9 @@ class UserDash extends Component {
                                                 skills={project.reqSkills.join(", ")}
                                                 desc={project.desc}
                                                 teamSize={project.teamSize}
-                                                duration={project.duration + "mo"} />
+                                                duration={project.duration + "mo"}
+                                                status={project.projectStage}
+                                                applicants={project.teamApplicants} />
                                             
                                             )                     
                                 
@@ -242,7 +244,9 @@ class UserDash extends Component {
                                                 skills={project.reqSkills.join(", ")}
                                                 desc={project.desc}
                                                 teamSize={project.teamSize}
-                                                duration={project.duration + "mo"} />
+                                                duration={project.duration + "mo"}
+                                                status={project.projectStage}
+                                                applicants={project.teamApplicants} />
                                            
                                             )                     
                                         
@@ -273,7 +277,9 @@ class UserDash extends Component {
                                             skills={project.reqSkills.join(", ")}
                                             desc={project.desc}
                                             teamSize={project.teamSize}
-                                            duration={project.duration + "mo"} />
+                                            duration={project.duration + "mo"} 
+                                            status={project.projectStage}
+                                             />
                                        
                                         )                     
                             
