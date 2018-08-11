@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import API from '../../utils/API';
+import ProjectCard from '../../components/ProjectCard';
 
 class UserDash extends Component {
 
@@ -200,16 +201,17 @@ class UserDash extends Component {
                                         if ( project.teamMembers.includes(profile.email) && project.projectStage === 'started' ) {
                                         
                                             return (
-                                            <div className="col-md-6 col-lg-4" key={index} data-id={project._id}>
-                                                <div className="card" style={{width: 18 + 'rem'}}>
-                                                    <div className="card-body">
-                                                        <h5 className="card-title">{project.name}</h5>
-                                                        <p className="card-text">{project.desc.substring(0,50)}...</p>
-                                                        <p className="card-text" id="techNeeded">{project.reqSkills.join(', ')}</p>
-                                                        <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-id={project._id}data-desc={project.desc} data-team={project.teamSize} data-time={project.duration + 'mo'} data-title={project.name}>View Details / Apply</a>
-                                                    </div>
-                                                </div>
-                                            </div>
+
+                                                <ProjectCard
+                                                key={index}
+                                                dataId={project._id}
+                                                projectName={project.name}
+                                                descSub={project.desc.substring(0, 50)}
+                                                skills={project.reqSkills.join(", ")}
+                                                desc={project.desc}
+                                                teamSize={project.teamSize}
+                                                duration={project.duration + "mo"} />
+                                            
                                             )                     
                                 
                                         }
@@ -231,16 +233,17 @@ class UserDash extends Component {
                                         if ( project.teamApplicants.includes(profile.email) && project.projectStage === 'pending' ) {
                                                                                     
                                             return (
-                                                <div className="col-md-6 col-lg-4" key={index} data-id={project._id}>
-                                                    <div className="card" style={{width: 18 + 'rem'}}>
-                                                        <div className="card-body">
-                                                            <h5 className="card-title">{project.name}</h5>
-                                                            <p className="card-text">{project.desc.substring(0,50)}...</p>
-                                                            <p className="card-text" id="techNeeded">{project.reqSkills.join(', ')}</p>
-                                                            <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-id={project._id} data-desc={project.desc} data-team={project.teamSize} data-time={project.duration + 'mo'} data-title={project.name}>View Details / Apply</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
+
+                                                <ProjectCard
+                                                key={index}
+                                                dataId={project._id}
+                                                projectName={project.name}
+                                                descSub={project.desc.substring(0, 50)}
+                                                skills={project.reqSkills.join(", ")}
+                                                desc={project.desc}
+                                                teamSize={project.teamSize}
+                                                duration={project.duration + "mo"} />
+                                           
                                             )                     
                                         
                                         }
@@ -261,16 +264,17 @@ class UserDash extends Component {
                                     if (project.projectStage === 'pending') {
                               
                                         return (
-                                        <div className="col-md-6 col-lg-4" key={index} data-id={project._id}>
-                                            <div className="card" style={{width: 18 + 'rem'}}>
-                                                <div className="card-body">
-                                                    <h5 className="card-title">{project.name}</h5>
-                                                    <p className="card-text">{project.desc.substring(0,50)}...</p>
-                                                    <p className="card-text" id="techNeeded">{project.reqSkills.join(', ')}</p>
-                                                    <a href="#" className="btn btn-primary" data-target="#projectModal" data-toggle="modal" data-id={project._id} data-desc={project.desc} data-team={project.teamSize} data-time={project.duration + 'mo'} data-title={project.name}>View Details / Apply</a>
-                                                </div>
-                                            </div>
-                                        </div>
+
+                                            <ProjectCard
+                                            key={index}
+                                            dataId={project._id}
+                                            projectName={project.name}
+                                            descSub={project.desc.substring(0, 50)}
+                                            skills={project.reqSkills.join(", ")}
+                                            desc={project.desc}
+                                            teamSize={project.teamSize}
+                                            duration={project.duration + "mo"} />
+                                       
                                         )                     
                             
                                     }                                    
