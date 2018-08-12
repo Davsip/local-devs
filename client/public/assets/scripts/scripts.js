@@ -17,6 +17,13 @@ $(document).on('shown.bs.modal','#projectModal', function (e) {
     // Load Apply Button Attributes (when user applies)
     $('button#applyButton').attr('data-title', title). attr('data-desc', description).attr('data-tech', techArray).attr('data-id', dataID);
 
+    // Hide Apply Button (if coming from button with 'View Details'), show otherwise
+    if (reference.text() === "View Details") {
+        $('button#applyButton').hide();
+    } else {
+        $('button#applyButton').show();
+    }
+
     // Project Overview
     $('p#description').html(`<p>${description}</p>`);
     
