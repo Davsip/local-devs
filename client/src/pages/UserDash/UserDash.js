@@ -25,8 +25,26 @@ class UserDash extends Component {
   handleModalApply = event => {
       event.preventDefault();
 
-      
+      let addApplicant = {
+          email: this.state.profile.email
+      }
 
+      console.log('--------------------');
+      console.log('--- handle apply ---');
+      console.log(event.target.getAttribute('data-id'));
+      console.log(this.state.profile);
+      console.log('--------------------');
+
+      axios.put('/api/projects/applicant/' + event.target.getAttribute('data-id'), addApplicant )
+        .then( res => {
+            console.log('----- apply res ------');
+            console.log(res);
+            console.log('----- apply res ------');
+
+            alert('Applicant Submitted Successfully!');
+
+        })
+        .catch(err => alert(`There was an error while adding you as an applicant: ${err}`));
 
   }
 
@@ -75,6 +93,12 @@ class UserDash extends Component {
       this.setState({ profile: userProfile });
     }
 
+  }
+
+  componentDidUpdate() {
+      console.log('--- component did update start ---');
+      console.log(this.state.profile);
+      console.log('--- component did update end ---');
   }
 
   render() {
@@ -265,7 +289,7 @@ class UserDash extends Component {
                         <div className='row'>
                             {
                                 projects.map( (project, index) => {
-                                    if (project.projectStage === 'pending') {
+                                    if ( !project.teamApplicants.includes(profile.email) && project.projectStage === 'pending') {
                               
                                         return (
 

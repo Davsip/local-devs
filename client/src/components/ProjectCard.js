@@ -24,6 +24,7 @@ const ProjectCard = props => (
                     data-team={props.teamSize}
                     data-time={props.duration}
                     data-title={props.projectName}
+                    data-id={props.dataId}
                 >
                 {
                     props.status === 'started' || props.applicants ?

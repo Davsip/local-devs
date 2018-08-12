@@ -8,13 +8,13 @@ const projectSchema = new Schema({
     locationZip: { type: String, required: true },
     budget: { type: String, required: true },
     img: { type: String, required: false },
-    reqSkills: [ String ], // Array of required skills
+    reqSkills: [], // Array of required skills
     seLed: { type: Boolean, required: true },
     startDate: { type: Date, required: true },
     duration: { type: String, required: true },
     compPerc: { type: Number, default: 0 },
-    teamMembers: [ String ], // Array of Accepted Team Member User ID's 
-    teamApplicants: [ String ], // Array of Applicant User ID's for Project
+    teamMembers: [], // Array of Accepted Team Member User ID's 
+    teamApplicants: [], // Array of Applicant User ID's for Project
     projectStage: { type: String, default: 'pending'},
     teamSize: { type: Number }
   });
