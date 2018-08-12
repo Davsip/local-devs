@@ -87,6 +87,23 @@ class UserProfileForm extends Component {
     handleFormSubmit = event => {
       event.preventDefault();
 
+      let tempTechnologies = [];
+
+      if (this.state.technologies.length === 0) {
+        tempTechnologies = this.state.profile.technologies;
+      } else {
+        tempTechnologies = this.state.profile.technologies;
+
+        this.state.technologies.forEach( tech => {
+          if ( !tempTechnologies.includes(tech) ) {
+            tempTechnologies.push(tech);
+          } else {
+            console.log(`tempTech already includes ${tech}`);
+          }
+        })
+
+      }
+
       let updateUser = {
         given_name: this.state.given_name || this.state.profile.given_name,
         family_name: this.state.family_name || this.state.profile.family_name,
@@ -95,7 +112,7 @@ class UserProfileForm extends Component {
         zip: this.state.zip || this.state.profile.zip,
         phone: this.state.phone || this.state.profile.phone,
         experience_level: this.state.experience_level || this.state.profile.experience_level,
-        technologies: this.state.technologies || this.state.profile.technologies,
+        technologies: tempTechnologies ,
         experience_desc: this.state.experience_desc || this.state.profile.experience_desc,
         bio_desc: this.state.bio_desc || this.state.profile.bio_desc,
         title: this.state.title || this.state.profile.title,
@@ -111,6 +128,7 @@ class UserProfileForm extends Component {
           console.log(res);
           
           this.setState({
+            profile: res.data,
             given_name: '',
             family_name: '',
             picture: '',
@@ -118,7 +136,7 @@ class UserProfileForm extends Component {
             zip: '',
             phone: '',
             experience_level: '',
-            technologies: [],
+            technologies: res.data.technologies,
             experience_desc: '',
             bio_desc: '',
             title: '',

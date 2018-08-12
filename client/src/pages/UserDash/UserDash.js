@@ -332,21 +332,12 @@ class UserDash extends Component {
 
                     {/* <!-- My Profile --> */}
                     <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="contact-tab">
-                        {/* <!-- Begin Profile --> */}
-                        {/* <div className="jumbotron jumbotron-fluid">
-                            <div className="container">
-                                <h1 className="display-4">My Profile!!!</h1>
-                                <p className="lead">Check Me Out!</p>
-                            </div>
-                        </div> */}
 
                         {/* <!-- Begin Profile --> */}
 
                         <div className="container">
                             <img className="img-fluid mb-1 d-block mx-auto img-logo" src={ profile.picture || './assets/images/icons/male-icon.png'} alt="Profile" style={{width: 80 + 'px'}}/>
-                            <h4 className="text-center text-uppercase text-secondary "></h4>
-
-                            {/* Set Default to Local Devs User */}
+                            <h4 className="text-center text-uppercase text-secondary ">{ profile.name }</h4>
                             <h5 className="text-center text-secondary ">{ profile.title || 'Local Devs User'}</h5>
                         </div>
 
