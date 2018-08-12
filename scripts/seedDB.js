@@ -24,7 +24,7 @@ const projectSeed = [
     duration: 3,
     compPerc: 0,
     teamMembers: [ 'jcwarner@gmail.com', 'baber9@gmail.com' ],
-    teamApplicants: null,
+    teamApplicants: [],
     projectStage: 'started',
     teamSize: 4
   },
@@ -55,7 +55,7 @@ const projectSeed = [
     startDate: new Date('August 1, 2018 03:24:00'),
     duration: 11,
     compPerc: 0,
-    teamMembers: null,
+    teamMembers: [],
     teamApplicants: [ 'jcwarner@gmail.com', 'baber9@gmail.com' ],
     projectStage: 'pending',
     teamSize: 4
@@ -71,8 +71,8 @@ const projectSeed = [
     startDate: new Date('August 13, 2018 03:24:00'),
     duration: 5,
     compPerc: 0,
-    teamMembers: null,
-    teamApplicants: null,
+    teamMembers: [],
+    teamApplicants: [],
     projectStage: 'pending',
     teamSize: 4
   },
@@ -87,8 +87,8 @@ const projectSeed = [
     startDate: new Date('September 10, 2018 03:24:00'),
     duration: 11,
     compPerc: 0,
-    teamMembers: null,
-    teamApplicants: null,
+    teamMembers: [],
+    teamApplicants: [],
     projectStage: 'pending',
     teamSize: 4
   },
@@ -103,8 +103,8 @@ const projectSeed = [
     startDate: new Date('July 23, 2018 03:24:00'),
     duration: 7,
     compPerc: 0,
-    teamMembers: null,
-    teamApplicants: null,
+    teamMembers: [],
+    teamApplicants: [],
     projectStage: 'pending',
     teamSize: 5
   },
@@ -119,8 +119,8 @@ const projectSeed = [
     startDate: new Date('July 20, 2018 03:24:00'),
     duration: 3,
     compPerc: 0,
-    teamMembers: null,
-    teamApplicants: null,
+    teamMembers: [],
+    teamApplicants: [],
     projectStage: 'pending',
     teamSize: 2
   },
@@ -135,8 +135,8 @@ const projectSeed = [
     startDate: new Date('October 11, 2018 03:24:00'),
     duration: 11,
     compPerc: 0,
-    teamMembers: null,
-    teamApplicants: null,
+    teamMembers: [],
+    teamApplicants: [],
     projectStage: 'pending',
     teamSize: 7
   },
@@ -151,8 +151,8 @@ const projectSeed = [
     startDate: new Date('July 1, 2018 03:24:00'),
     duration: 5,
     compPerc: 0,
-    teamMembers: null,
-    teamApplicants: null,
+    teamMembers: [],
+    teamApplicants: [],
     projectStage: 'pending',
     teamSize: 2
   },
@@ -168,7 +168,7 @@ const projectSeed = [
     duration: 5,
     compPerc: 0,
     teamMembers: [ 'jcwarner@gmail.com', 'baber9@gmail.com' ],
-    teamApplicants: null,
+    teamApplicants: [],
     projectStage: 'completed',
     teamSize: 3
   }

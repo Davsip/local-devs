@@ -51,9 +51,27 @@ module.exports = {
       })
 
   },
-  update: function(req, res) {
+  updateApplicant: function(req, res) {
+
+    console.log('----- at projectController updateApplicant -----');
+    console.log(req.body.email);
+    console.log(req.params.id);
+    console.log('----- at projectController updateApplicant -----');
+
+    // res.status(200).json('Successfully Added Applicant to Project');
+
     db.Project
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .findOneAndUpdate( 
+        { _id: req.params.id }, 
+        { $addToSet: { teamApplicants: req.body.email } },
+       
+        function (error, success) {
+             if (error) {
+                 console.log(error);
+             } else {
+                 console.log(success);
+             }
+        })
       .then(dbProject => res.json(dbProject))
       .catch(err => res.status(422).json(err));
   },

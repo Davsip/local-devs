@@ -7,13 +7,11 @@ router.route('/')
     .get(projectController.findAll)
     .post(projectController.create);
 
-// router.get('/', (req, res) => res.json( 'projects works' ));
-
-// Matches with '/api/projects/:id'
-// router.route('/:id')
-//     .get(projectController.findById)
-//     .put(projectController.update)
-//     .delete(projectController.remove);
+// Matches with '/api/projects/applicant/:id'
+router.route('/applicant/:id')
+    .get(projectController.findById)
+    .put(projectController.updateApplicant)
+    .delete(projectController.remove);
 
 
 module.exports = router;
