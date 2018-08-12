@@ -82,7 +82,7 @@ module.exports = {
     console.log('-----            end method           -----');
 
     db.User
-      .findOneAndUpdate({ email: req.params.id }, req.body)
+      .findOneAndUpdate({ email: req.params.id }, req.body, { upsert: true, new: true, returnNewDocument: true })
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
   },
