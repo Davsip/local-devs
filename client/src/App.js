@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Navbar, Button } from "react-bootstrap";
 import API from "./utils/API";
 import ProjectCard from './components/ProjectCard';
+import axios from 'axios';
 
 // put landing / home page css in App.css
 import "./App.css";
@@ -22,6 +23,32 @@ class App extends Component {
 
   logout() {
     this.props.auth.logout();
+  }
+
+  handleModalApply = event => {
+    event.preventDefault();
+
+    let addApplicant = {
+        email: this.state.profile.email
+    }
+
+    console.log('--------------------');
+    console.log('--- handle apply ---');
+    console.log(event.target.getAttribute('data-id'));
+    console.log(this.state.profile);
+    console.log('--------------------');
+
+    axios.put('/api/projects/applicant/' + event.target.getAttribute('data-id'), addApplicant )
+      .then( res => {
+          console.log('----- apply res ------');
+          console.log(res);
+          console.log('----- apply res ------');
+
+          alert('Applicant Submitted Successfully!');
+
+      })
+      .catch(err => alert(`There was an error while adding you as an applicant: ${err}`));
+
   }
 
   componentWillMount() {
@@ -571,6 +598,7 @@ class App extends Component {
                     type="button"
                     className="btn btn-primary"
                     id="applyButton"
+                    onClick={this.handleModalApply}
                   >
                     Apply
                   </button>
