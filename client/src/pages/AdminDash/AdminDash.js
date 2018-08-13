@@ -178,7 +178,7 @@ class AdminDash extends Component {
 
                 {isAuthenticated() && (
                     // {/* Nav bar */}
-                    <nav className="navbar navbar-expand-lg navbar-dark bg-light" id="mainNav">
+                    <nav className="navbar navbar-expand-lg navbar-dark bg-light fixed-top" id="mainNav">
                         <a className="navbar-brand d-flex w-30 mr-auto" href="/">Hire Local</a>
                         <button className="navbar-toggler logged-in" type="button" data-toggle="collapse" data-target="#navbarNav">
                             <span className="navbar-toggler-icon"></span>
@@ -207,7 +207,7 @@ class AdminDash extends Component {
 
                 {!isAuthenticated() && (
                     //   <!-- Nav bar  -->
-                    <nav className="navbar navbar-expand-lg navbar-dark bg-light" id="mainNav">
+                    <nav className="navbar navbar-expand-lg navbar-dark bg-light fixed-top" id="mainNav">
                         <a className="navbar-brand d-flex w-30 mr-auto" href="/">Hire Local</a>
                         <button className="navbar-toggler not-logged-in" type="button" data-toggle="collapse" data-target="#navbarNav">
                             <span className="navbar-toggler-icon"></span>
