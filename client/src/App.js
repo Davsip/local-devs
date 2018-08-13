@@ -55,7 +55,7 @@ class App extends Component {
         {isAuthenticated() && (
           // {/* Nav bar */}
           <nav
-            className="navbar navbar-expand-lg navbar-dark bg-light"
+            className="navbar navbar-expand-lg navbar-dark bg-light fixed-top"
             id="mainNav"
           >
             <a className="navbar-brand d-flex w-30 mr-auto" href="/">
@@ -135,7 +135,7 @@ class App extends Component {
         {!isAuthenticated() && (
           //   <!-- Nav bar  -->
           <nav
-            className="navbar navbar-expand-lg navbar-dark bg-light"
+            className="navbar navbar-expand-lg navbar-dark bg-light fixed-top"
             id="mainNav"
           >
             <a className="navbar-brand d-flex w-30 mr-auto" href="/">
