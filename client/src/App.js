@@ -5,7 +5,7 @@ import ProjectCard from './components/ProjectCard';
 import axios from 'axios';
 
 // put landing / home page css in App.css
-import "./App.css";
+// import "./App.css";
 // import Navigation from "./components/Navigation"
 
 class App extends Component {
