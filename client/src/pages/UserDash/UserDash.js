@@ -43,6 +43,8 @@ class UserDash extends Component {
 
             alert('Applicant Submitted Successfully!');
 
+            window.location.reload();
+
         })
         .catch(err => alert(`There was an error while adding you as an applicant: ${err}`));
 
