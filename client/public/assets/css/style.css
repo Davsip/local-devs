@@ -209,7 +209,7 @@ div.profile-section {
 }
 
 div.skillset-contact {
-  height: 200px;
+  height: 220px;
 }
 
 a.btn, div.btn {
@@ -540,7 +540,7 @@ button.modal-close {
   border: 1px solid #ff7f50!important;
 }
 
-.profile-section {
+.profile-section, .skillset-contact {
   background-color: #ccc;
   padding: 1.25rem;
 }
