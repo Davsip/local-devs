@@ -240,7 +240,8 @@ class ProjectForm extends Component {
                onChange={this.handleInputChange} 
         />
     </div>
-    <div className="form-group">
+   {/**  
+        <div className="form-group">
         <label for="FormControlInput1">Budget</label>
         <input type="text" 
                className="form-control" 
@@ -250,6 +251,7 @@ class ProjectForm extends Component {
                onChange={this.handleInputChange}
         />
     </div>
+    **/}
     <div className="form-group">
         <label for="FormControlInput1">Location Zip Code</label>
         <input type="text"
@@ -270,6 +272,7 @@ class ProjectForm extends Component {
                onChange={this.handleInputChange}
         />
     </div>
+    {/**  
     <div className="form-group">
         <label for="FormControlInput1">Team Size</label>
         <input type="text"
@@ -280,6 +283,8 @@ class ProjectForm extends Component {
                onChange={this.handleInputChange}
         />
     </div>
+    **/}
+    {/** 
     <div className="form-group">
         <label>Duration</label>
         <select className="form-control"
@@ -297,6 +302,8 @@ class ProjectForm extends Component {
             <option value="18">18 Months</option>
         </select>
     </div>
+     **/}
+     {/** 
     <div className="form-group">
         <label>SE Led</label><br />
         <div className="form-check form-check-inline seled">
@@ -308,7 +315,9 @@ class ProjectForm extends Component {
             <label className="form-check-label" for="inlineRadio2">False</label>
         </div>
     </div>
+    **/}
     {/* <!-- Technologies Checkboxes --> */}
+    {/** 
     <div className="form-group">
         <label for="FormControlInput1">Technologies</label><br />
         
@@ -397,6 +406,7 @@ class ProjectForm extends Component {
             <label className="form-check-label" for="inlineCheckbox21">Sass</label>
         </div>
     </div>
+    **/}
     {/* <!-- End Technologies Checkboxes --> */}
     <div className="form-group">
         <label for="exampleFormControlTextarea1">Full Project Description</label>

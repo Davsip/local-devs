@@ -538,18 +538,31 @@ button.modal-close {
   padding: 1.25rem;
 }
 
-/* .icon-how {
+.icon-how-1 {
+  height: auto;
+  width: 80px;
+  margin-top: 40px;
+  margin-right: 20px;
+  vertical-align: top;
+} 
+
+.icon-how {
   height: auto;
   width: 80px;
   margin-top: 20px;
   margin-right: 20px;
   vertical-align: top;
-} */
+} 
 
-/* .hiw-card {
-  padding: 8px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-} */
+.hiw-card {
+  padding: 12px 8px 10px 8px;
+ /* box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.10); */
+} 
+
+.hiw-card-2 {
+  padding: 25px 8px 10px 8px;
+ /* box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.10); */
+} 
 
 /* Jason Added */
 .tab-content {
