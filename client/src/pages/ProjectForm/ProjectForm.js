@@ -171,6 +171,12 @@ class ProjectForm extends Component {
                                 <a className="dropdown-item" href="/myDashboard">
                                 My Dashboard
                                 </a>
+                                {
+                                    profile.isAdmin && profile.isAdmin === true ? 
+                                    <a className="dropdown-item" href="/adminDashboard">
+                                    Admin Dashboard
+                                    </a> : ''
+                                }
                             </div>
                         </div>
                     </li>
