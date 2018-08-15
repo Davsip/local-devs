@@ -137,6 +137,12 @@ class UserDash extends Component {
                                     <a className="dropdown-item" href="/myDashboard">
                                     My Dashboard
                                     </a>
+                                    {
+                                        profile.isAdmin && profile.isAdmin === true ? 
+                                        <a className="dropdown-item" href="/adminDashboard">
+                                        Admin Dashboard
+                                        </a> : ''
+                                    }
                                 </div>
                             </div>
                         </li>
@@ -342,8 +348,8 @@ class UserDash extends Component {
                                 <div className="container ">
                                     <a id="profile-edit" href='/userProfileForm'>[Edit Profile]</a>
                                     <img className="img-fluid mb-1 d-block mx-auto" src={ profile.picture || './assets/images/icons/male-icon.png'} alt="Profile" style={{width:150+'px',borderRadius:50+'%'}}/>
-                                    <h4 className="text-center text-uppercase text-secondary ">{ profile.name }</h4>
-                                    <h5 className="text-center text-secondary ">{ profile.title || 'Local Devs User'}</h5>
+                                    <h4 className="text-center text-uppercase text-secondary">{ profile.name }</h4>
+                                    <h5 className="text-center text-secondary">{ profile.title || 'Local Devs User'}</h5>
                                 </div>
                             </div>
                         </div>

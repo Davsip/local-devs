@@ -193,10 +193,16 @@ class AdminDash extends Component {
                                         <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                                             <a className="dropdown-item" onClick={this.logout.bind(this)}>
                                                 Log Out
-                                </a>
+                                            </a>
                                             <a className="dropdown-item" href="/myDashboard">
                                                 My Dashboard
-                                </a>
+                                            </a>
+                                            {
+                                                profile.isAdmin && profile.isAdmin === true ? 
+                                                <a className="dropdown-item" href="/adminDashboard">
+                                                Admin Dashboard
+                                                </a> : ''
+                                            }
                                         </div>
                                     </div>
                                 </li>
