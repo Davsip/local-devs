@@ -181,6 +181,13 @@ class App extends Component {
                       <a className="dropdown-item" href="/myDashboard">
                         My Dashboard
                       </a>
+
+                      {
+                        this.state.profile.isAdmin === true ? 
+                        <a className="dropdown-item" href="/adminDashboard">
+                        Admin Dashboard
+                        </a>: ''
+                      }
                     </div>
                   </div>
                 </li>
