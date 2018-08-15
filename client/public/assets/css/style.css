@@ -170,13 +170,17 @@ hr.star-dark:after {
   background-color: #fff;
 }
 
-.social {
-  padding: 6rem 0;
+/* .social {
+  padding-bottom: 6rem;
+} */
+
+div.icons-section {
+  text-align: center;
 }
 
-.icons-work {
-  padding-left: 70px;
-}
+/* .icons-work {
+  padding-left: 35px;
+} */
 
 /* PROJECTS SECTION */
 
