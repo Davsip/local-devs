@@ -204,6 +204,14 @@ div.card {
   margin: 10px auto;
 }
 
+div.profile-section {
+  height: auto;
+}
+
+div.skillset-contact {
+  height: 200px;
+}
+
 a.btn, div.btn {
   position: absolute;
   bottom: 20px;
