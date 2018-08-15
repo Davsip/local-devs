@@ -308,7 +308,7 @@ class App extends Component {
             </h2>
             <hr className="star-dark mb-6" />
             <div className="row ">
-              <div className="col-sm-5 col-md-4 col-lg-4">
+              <div className="col-sm-5 col-md-4 col-lg-4 icons-section">
                 <img
                   className="icons-work "
                   src="./assets/images/icons/apply-icon.png "
@@ -323,7 +323,7 @@ class App extends Component {
                   for developing the full scope of each project.
                 </p>
               </div>
-              <div className="col-md-5 col-lg-4">
+              <div className="col-md-5 col-lg-4 icons-section">
                 <img
                   className="icons-work"
                   src="./assets/images/icons/code-browser.png"
@@ -337,9 +337,9 @@ class App extends Component {
                   of the Client’s project.
                 </p>
               </div>
-              <div className="col-md-5 col-lg-4 ">
+              <div className="col-md-5 col-lg-4 icons-section">
                 <img
-                  className="icons-work "
+                  className="icons-work"
                   src="./assets/images/icons/get-paid.png "
                   alt="Get Paid"
                 />
@@ -514,7 +514,7 @@ class App extends Component {
             </h2>
             <hr className="star-dark mb-6 " />
             <div className="row ">
-              <div className="col-sm-5 col-md-4 col-lg-4">
+              <div className="col-sm-5 col-md-4 col-lg-4 icons-section">
                 <img
                   className="icons-work "
                   src="./assets/images/icons/meet-dev.png"
@@ -524,9 +524,9 @@ class App extends Component {
                 <br />
                 <p className="text-justify">Socializing</p>
               </div>
-              <div className="col-md-5 col-lg-4 ">
+              <div className="col-md-5 col-lg-4 icons-section">
                 <img
-                  className="icons-work "
+                  className="icons-work"
                   src="./assets/images/icons/meet-comp.png"
                   alt=" "
                 />
@@ -538,7 +538,7 @@ class App extends Component {
                   interact, exchange ideas and socialize on a relax enviroment.
                 </p>
               </div>
-              <div className="col-md-5 col-lg-4">
+              <div className="col-md-5 col-lg-4 icons-section">
                 <img
                   className="icons-work"
                   src="./assets/images/icons/activities.png"
