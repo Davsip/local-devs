@@ -301,7 +301,7 @@ class App extends Component {
         </div>
 
         {/* <!-- SECTION 2 / HOW IT WORKS --> */}
-        <div className="howitworks" id="howitworks">
+        {/* <div className="howitworks" id="howitworks">
           <div className="container">
             <h2 className="text-center text-uppercase text-secondary">
               How it Works
@@ -356,9 +356,9 @@ class App extends Component {
               </div>
             </div>
           </div>
-        </div>
+        </div>  */}
 
-       {/*  <section className="section-2">
+        <section className="section-2">
           <div className="container">
             <h2 className="text-center text-uppercase text-secondary">
               How it Works
@@ -369,7 +369,7 @@ class App extends Component {
                 <div className="media">
                   <div className="media-left media-middle">
                     <img
-                      className="icon-how"
+                      className="icon-how-1"
                       src="./assets/images/icons/apply-icon.png"
                       alt="Code Browser"
                     />
@@ -377,7 +377,7 @@ class App extends Component {
                   <div className="media-body">
                     <h4 className="media-heading">Are you a Developer?</h4>
                     <p class="hiw-card">
-                    <b>Local Devs</b> will create a team of developers for each project and the technologies need it. The developer can choose the technology that wants to work with an easy quick apply form.
+                    <b>Local Devs</b> will create a team of developers with the appropriate skills for each project.  Sign up now{/** The developer can choose the technology that wants to work with an easy quick apply form.**/}
                     </p>
                   </div>
                 </div>
@@ -391,8 +391,8 @@ class App extends Component {
                     />
                   </div>
                   <div className="media-body">
-                    <p class="hiw-card">
-                    The developer will have a deadine for each project. You can either work remote or work on our open space offices, with a great team in a healthy environment. It will not be just work. It will be fun to work.
+                    <p class="hiw-card-2">
+                    You can either work remote or work on our open space offices, with a great team in a healthy environment. {/**  It will not be just work. It will be fun to work.*/}
                     </p>
                   </div>
                 </div>
@@ -406,8 +406,8 @@ class App extends Component {
                     />
                   </div>
                   <div className="media-body">
-                  <p>
-                  The developer will get paid per project or sections of the project. Each day you will submit a quick update on your job through github or your personal dashboard. Communication with the team and the The Solution's Expert Manager will be requiredpw.
+                  <p class="hiw-card-2">
+                  The developer will get paid per project based on submissions through github or your personal dashboard. {/** Communication with the team and the The Solution's Expert Manager will be required.  **/}
                     </p>   
                   </div>
                 </div>
@@ -417,18 +417,16 @@ class App extends Component {
                 <div className="media">
                 <div className="media-left media-middle">
                     <img
-                      className="icon-how"
+                      className="icon-how-1"
                       src="./assets/images/icons/Asset-1.png"
                       alt="Code Browser"
                     />
                   </div>
                   <div className="media-body">
                     <h4 className="media-heading">Are you a Company?</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Deleniti neque quam at, exercitationem maiores explicabo
-                      veniam beatae voluptatum consequatur. Temporibus magni
-                      nulla corporis eaque non ducimus quod quia fugit error!
+                    <p class="hiw-card">
+                      1- Lorem ipsum dolor sit amet consectetur adipisicing elit,
+                      deleniti neque quam.
                     </p>
                   </div>
                 </div>
@@ -443,11 +441,9 @@ class App extends Component {
                     />
                   </div>
                   <div className="media-body">
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Deleniti neque quam at, exercitationem maiores explicabo
-                      veniam beatae voluptatum consequatur. Temporibus magni
-                      nulla corporis eaque non ducimus quod quia fugit error!
+                    <p class="hiw-card-2">
+                      2- Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Deleniti neque quam.
                     </p>
                   </div>
                 </div>
@@ -462,18 +458,16 @@ class App extends Component {
                     />
                   </div>
                   <div className="media-body">
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Deleniti neque quam at, exercitationem maiores explicabo
-                      veniam beatae voluptatum consequatur. Temporibus magni
-                      nulla corporis eaque non ducimus quod quia fugit error!
+                    <p class="hiw-card-2">
+                      3- Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Deleniti neque quam.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section> */}
+        </section> 
 
         {/* <!-- SECTION 3 PROJECTS --> */}
         <div className="projects" id="projects">
