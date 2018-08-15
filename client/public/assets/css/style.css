@@ -368,10 +368,11 @@ section.dashboard {
 /* DOUG ADDED */
 /* APPLY-FORM SECTION */
 .apply-form {
-  padding: 6rem 0;
+  padding: 150px 0;
   background-color: #f7f9f9;
   margin-bottom: -15px;
 }
+
 .label {
   font-size: 1.5em;
   color: #18bc9ce6;

@@ -120,10 +120,27 @@ const AdminProjectCard = props => (
                         <button className="btn btn-secondary btn-sm dropdown-toggle proj-state" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {props.stage}
                         </button>
-                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a className="dropdown-item pstage" id='Started'>Started</a>
-                            <a className="dropdown-item pstage" id='Completed'>Completed</a>
-                        </div>
+                        
+                        {
+                            props.stage === "pending" 
+                            ?
+                                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a className="dropdown-item pstage" id='Started'>started</a>
+                                    <a className="dropdown-item pstage" id='Completed'>completed</a>
+                                </div>
+                            : props.stage === "started" ?
+                                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a className="dropdown-item pstage" id='Started'>pending</a>
+                                    <a className="dropdown-item pstage" id='Completed'>completed</a>
+                                </div>
+                            :
+                                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a className="dropdown-item pstage" id='Started'>pending</a>
+                                    <a className="dropdown-item pstage" id='Completed'>started</a>
+                                </div>
+
+                        }
+                            
                     </span>
 
                 </div>
