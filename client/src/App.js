@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Navbar, Button } from "react-bootstrap";
 import API from "./utils/API";
-import ProjectCard from './components/ProjectCard';
-import axios from 'axios';
+import ProjectCard from "./components/ProjectCard";
+import axios from "axios";
 
 // put landing / home page css in App.css
 // import "./App.css";
@@ -30,33 +30,36 @@ class App extends Component {
     event.preventDefault();
 
     let addApplicant = {
-        email: this.state.profile.email
-    }
+      email: this.state.profile.email
+    };
 
-    console.log('--------------------');
-    console.log('--- handle apply ---');
-    console.log(event.target.getAttribute('data-id'));
+    console.log("--------------------");
+    console.log("--- handle apply ---");
+    console.log(event.target.getAttribute("data-id"));
     console.log(this.state.profile);
-    console.log('--------------------');
+    console.log("--------------------");
 
-    axios.put('/api/projects/applicant/' + event.target.getAttribute('data-id'), addApplicant )
-      .then( res => {
-          console.log('----- apply res ------');
-          console.log(res);
-          console.log('----- apply res ------');
+    axios
+      .put(
+        "/api/projects/applicant/" + event.target.getAttribute("data-id"),
+        addApplicant
+      )
+      .then(res => {
+        console.log("----- apply res ------");
+        console.log(res);
+        console.log("----- apply res ------");
 
-          alert('Applicant Submitted Successfully!');
-
+        alert("Applicant Submitted Successfully!");
       })
-      .catch(err => alert(`There was an error while adding you as an applicant: ${err}`));
-
-  }
+      .catch(err =>
+        alert(`There was an error while adding you as an applicant: ${err}`)
+      );
+  };
 
   componentWillMount() {
     this.setState({
       projects: []
     });
-    
 
     // Get projects from Projects API
     API.getSavedProjects().then(res => {
@@ -76,22 +79,19 @@ class App extends Component {
 
         console.log(`---- profile sub ${profile.email} ------`);
 
-        axios.get('/api/users/' + profile.email)
-          .then( res => {
-              console.log(`profile view res.data.length = ${res.data.length}`);
-    
-              if ( res.data.length === 0 ) {
-                console.log(`dlafkjdkajfda`);
-                console.log(profile);
-                axios.post('/api/users', profile)
-                  .then( res => console.log(res));
-              } else {
-                console.log(`setting profile state`);
-                this.setState({ profile: res.data[0] });
-              }
-            });
-          })
+        axios.get("/api/users/" + profile.email).then(res => {
+          console.log(`profile view res.data.length = ${res.data.length}`);
 
+          if (res.data.length === 0) {
+            console.log(`dlafkjdkajfda`);
+            console.log(profile);
+            axios.post("/api/users", profile).then(res => console.log(res));
+          } else {
+            console.log(`setting profile state`);
+            this.setState({ profile: res.data[0] });
+          }
+        });
+      });
     } else {
       this.setState({ profile: userProfile });
     }
@@ -183,12 +183,13 @@ class App extends Component {
                         My Dashboard
                       </a>
 
-                      {
-                        this.state.profile.isAdmin === true ? 
+                      {this.state.profile.isAdmin === true ? (
                         <a className="dropdown-item" href="/adminDashboard">
-                        Admin Dashboard
-                        </a>: ''
-                      }
+                          Admin Dashboard
+                        </a>
+                      ) : (
+                        ""
+                      )}
                     </div>
                   </div>
                 </li>
@@ -360,117 +361,123 @@ class App extends Component {
         </div>  */}
 
         <section className="section-2">
-        <div className="howitworks" id="howitworks">
-          <div className="container">
-            <h2 className="text-center text-uppercase text-secondary">
-              How it Works
-            </h2>
-            <hr className="star-dark mb-6" />
-            <div className="row">
-              <div className="col-sm-6 col-md-6 col-lg-6 ">
-                <div className="media">
-                  <div className="media-left media-middle">
-                    <img
-                      className="icon-how-1"
-                      src="./assets/images/icons/apply-icon.png"
-                      alt="Code Browser"
-                    />
+          <div className="howitworks" id="howitworks">
+            <div className="container">
+              <h2 className="text-center text-uppercase text-secondary">
+                How it Works
+              </h2>
+              <hr className="star-dark mb-6" />
+              <div className="row">
+                <div className="col-sm-6 col-md-6 col-lg-6 ">
+                  <div className="media">
+                    <div className="media-left media-middle">
+                      <img
+                        className="icon-how-1"
+                        src="./assets/images/icons/apply-icon.png"
+                        alt="Code Browser"
+                      />
+                    </div>
+                    <div className="media-body">
+                      <h4 className="media-heading">Are you a Developer?</h4>
+                      <p className="hiw-card">
+                        <b>Local Devs</b> will create a team of developers with
+                        the appropriate skills for each project. Sign up now.
+                        {/** The developer can choose the technology that wants to work with an easy quick apply form.**/}
+                      </p>
+                    </div>
                   </div>
-                  <div className="media-body">
-                    <h4 className="media-heading">Are you a Developer?</h4>
-                    <p className="hiw-card">
-                    <b>Local Devs</b> will create a team of developers with the appropriate skills for each project.  Sign up now.{/** The developer can choose the technology that wants to work with an easy quick apply form.**/}
-                    </p>
+
+                  <div className="media">
+                    <div className="media-left media-middle">
+                      <img
+                        className="icon-how"
+                        src="./assets/images/icons/code-browser.png"
+                        alt="Code Browser"
+                      />
+                    </div>
+                    <div className="media-body">
+                      <p className="hiw-card-2">
+                        You can either work remote or work on our open space
+                        offices, with a great team in a healthy environment.{" "}
+                        {/**  It will not be just work. It will be fun to work.*/}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="media">
+                    <div className="media-left media-middle">
+                      <img
+                        className="icon-how"
+                        src="./assets/images/icons/code-browser.png"
+                        alt="Code Browser"
+                      />
+                    </div>
+                    <div className="media-body">
+                      <p className="hiw-card-2">
+                        The developer will get paid per project based on
+                        submissions through github or your personal dashboard.{" "}
+                        {/** Communication with the team and the The Solution's Expert Manager will be required.  **/}
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="media">
-                  <div className="media-left media-middle">
-                    <img
-                      className="icon-how"
-                      src="./assets/images/icons/code-browser.png"
-                      alt="Code Browser"
-                    />
+                <div className="col-sm-6 col-md-6 col-lg-6 ">
+                  <div className="media">
+                    <div className="media-left media-middle">
+                      <img
+                        className="icon-how-1"
+                        src="./assets/images/icons/Asset-1.png"
+                        alt="Code Browser"
+                      />
+                    </div>
+                    <div className="media-body">
+                      <h4 className="media-heading">Are you a Company?</h4>
+                      <p className="hiw-card">
+                        1- Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit, deleniti neque quam.
+                      </p>
+                    </div>
                   </div>
-                  <div className="media-body">
-                    <p className="hiw-card-2">
-                    You can either work remote or work on our open space offices, with a great team in a healthy environment. {/**  It will not be just work. It will be fun to work.*/}
-                    </p>
-                  </div>
-                </div>
 
-                <div className="media">
-                  <div className="media-left media-middle">
-                    <img
-                      className="icon-how"
-                      src="./assets/images/icons/code-browser.png"
-                      alt="Code Browser"
-                    />
+                  <div className="media">
+                    <div className="media-left media-middle" />
+                    <div className="media-left media-middle">
+                      <img
+                        className="icon-how"
+                        src="./assets/images/icons/Asset-2.png"
+                        alt="Code Browser"
+                      />
+                    </div>
+                    <div className="media-body">
+                      <p className="hiw-card-2">
+                        2- Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Deleniti neque quam.
+                      </p>
+                    </div>
                   </div>
-                  <div className="media-body">
-                  <p className="hiw-card-2">
-                  The developer will get paid per project based on submissions through github or your personal dashboard. {/** Communication with the team and the The Solution's Expert Manager will be required.  **/}
-                    </p>   
-                  </div>
-                </div>
-              </div>
 
-              <div className="col-sm-6 col-md-6 col-lg-6 ">
-                <div className="media">
-                <div className="media-left media-middle">
-                    <img
-                      className="icon-how-1"
-                      src="./assets/images/icons/Asset-1.png"
-                      alt="Code Browser"
-                    />
-                  </div>
-                  <div className="media-body">
-                    <h4 className="media-heading">Are you a Company?</h4>
-                    <p className="hiw-card">
-                      1- Lorem ipsum dolor sit amet consectetur adipisicing elit,
-                      deleniti neque quam.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="media">
-                  <div className="media-left media-middle" />
-                  <div className="media-left media-middle">
-                    <img
-                      className="icon-how"
-                      src="./assets/images/icons/Asset-2.png"
-                      alt="Code Browser"
-                    />
-                  </div>
-                  <div className="media-body">
-                    <p className="hiw-card-2">
-                      2- Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Deleniti neque quam.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="media">
-                  <div className="media-left media-middle" />
-                  <div className="media-left media-middle">
-                    <img
-                      className="icon-how"
-                      src="./assets/images/icons/Asset-3.png"
-                      alt="Code Browser"
-                    />
-                  </div>
-                  <div className="media-body">
-                    <p className="hiw-card-2">
-                      3- Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Deleniti neque quam.
-                    </p>
+                  <div className="media">
+                    <div className="media-left media-middle" />
+                    <div className="media-left media-middle">
+                      <img
+                        className="icon-how"
+                        src="./assets/images/icons/Asset-3.png"
+                        alt="Code Browser"
+                      />
+                    </div>
+                    <div className="media-body">
+                      <p className="hiw-card-2">
+                        3- Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Deleniti neque quam.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          </div>
-        </section> 
+        </section>
 
         {/* <!-- SECTION 3 PROJECTS --> */}
         <div className="projects" id="projects">
@@ -485,17 +492,25 @@ class App extends Component {
                 {projects.map((project, index) => {
                   if (project.projectStage === "pending") {
                     return (
-                    <ProjectCard
-                      key={index}
-                      dataId={project._id}
-                      projectName={project.name}
-                      descSub={project.desc.substring(0, 50)}
-                      skills={project.reqSkills.join(", ")}
-                      desc={project.desc}
-                      teamSize={project.teamSize}
-                      duration={project.duration + "mo"}
-                      startDate={project.startDate.substring(5,7) + '/' + project.startDate.substring(8,10) + '/' + project.startDate.substring(0,4)} />
-                  )}
+                      <ProjectCard
+                        key={index}
+                        dataId={project._id}
+                        projectName={project.name}
+                        descSub={project.desc.substring(0, 50)}
+                        skills={project.reqSkills.join(", ")}
+                        desc={project.desc}
+                        teamSize={project.teamSize}
+                        duration={project.duration + "mo"}
+                        startDate={
+                          project.startDate.substring(5, 7) +
+                          "/" +
+                          project.startDate.substring(8, 10) +
+                          "/" +
+                          project.startDate.substring(0, 4)
+                        }
+                      />
+                    );
+                  }
                 })}
               </div>
             </div>
@@ -520,7 +535,10 @@ class App extends Component {
                 />
                 <br />
                 <br />
-                <p className="text-justify">Socializing</p>
+                <p>
+                  Socialize, meet other developers. learn, share ideas, make new
+                  friends.{" "}
+                </p>
               </div>
               <div className="col-md-5 col-lg-4 icons-section">
                 <img
@@ -530,10 +548,9 @@ class App extends Component {
                 />
                 <br />
                 <br />
-                <p className="text-justify">
-                  Comnication, it's everything, as part of our work culture,
-                  developers will have the chance to meet the project owner,
-                  interact, exchange ideas and socialize on a relax enviroment.
+                <p>
+                  Meet the project owner. Exchange your experience on the
+                  project.
                 </p>
               </div>
               <div className="col-md-5 col-lg-4 icons-section">
@@ -544,10 +561,9 @@ class App extends Component {
                 />
                 <br />
                 <br />
-                <p className="text-justify">
-                  The human brain requires social stimulation on a regular
-                  basis. To have a balance healthy life, Local Devs will
-                  organize activities for recreation.
+                <p>
+                  To have a balance healthy life, Local Devs will organize
+                  activities for recreation.
                 </p>
               </div>
             </div>
@@ -592,9 +608,7 @@ class App extends Component {
                     </div>
                     <div className="row">
                       <h5>Start Date</h5>
-                      <p id="startDate">
-                      {/* Project Start Date Here */}
-                      </p>
+                      <p id="startDate">{/* Project Start Date Here */}</p>
                     </div>
                     <div className="row" id="time">
                       {/*  <!-- Project Time Img Here -->   */}
@@ -625,16 +639,17 @@ class App extends Component {
                   Close
                 </button>
                 {!isAuthenticated() && (
-                  <span 
+                  <span
                     className="d-inline-block"
                     tabIndex="0"
                     title="Please login or sign-up to apply"
-                    id="disabledButton">
+                    id="disabledButton"
+                  >
                     <button
                       type="button"
                       className="btn btn-primary"
                       id="applyButton"
-                      style={{pointerEvents: 'none'}}
+                      style={{ pointerEvents: "none" }}
                       disabled
                     >
                       Apply
