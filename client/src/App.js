@@ -283,7 +283,7 @@ class App extends Component {
         {/* <!-- SECTION 1 MAIN LANDING PAGE  --> */}
 
         <div className="section-1">
-          <div className="text-white text-center">
+          <div className="text-white text-center vert-ctr">
             <div className="container">
               <img
                 className="img-fluid mb-5 d-block mx-auto img-logo"
