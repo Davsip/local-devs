@@ -114,9 +114,11 @@ class AdminDash extends Component {
 
         let updateApplicants = [];
         let updateMembers = [];
-        let updateStatus = '';  
+        let updateStatus = ''; 
+        let updateProject = {};
         let applicants = document.getElementsByClassName('projectApplicants');
         let members = document.getElementsByClassName('projectMembers');
+        let status = document.getElementsByClassName('proj-state');
 
         for (let i = 0; i < applicants.length; i++) {
             if (applicants[i].getAttribute('data-proj') === id && applicants[i].innerHTML != '') {
@@ -129,9 +131,26 @@ class AdminDash extends Component {
                 updateMembers.push(members[i].innerHTML);
             }
         }
+
+        for (let i = 0; i < status.length; i++) {
+            if (status[i].getAttribute('data-proj') === id) {
+                updateStatus = status[i].innerHTML.toLocaleLowerCase();
+            }
+        }
     
         console.log(`update applicants: ${updateApplicants}`);
         console.log(`update members: ${updateMembers}`);
+        console.log(`update status: ${updateStatus}`);
+
+        updateProject = { updateApplicants, updateMembers, updateStatus };
+
+        axios.put('/api/projects/' + id, updateProject)
+            .then(res => {
+                console.log(res);
+
+                alert('Project succesfully updated in database.');
+            })
+            .catch(err => alert(`There was an error while updating the project: ${err}`));
     
     }
 

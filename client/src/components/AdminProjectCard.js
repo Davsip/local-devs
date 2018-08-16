@@ -120,7 +120,7 @@ class AdminProjectCard extends Component {
                                 <h6 className="projDetails">Project Stage</h6>
 
                                 <span className="dropdown">
-                                    <button className="btn btn-secondary btn-sm dropdown-toggle proj-state" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button className="btn btn-secondary btn-sm dropdown-toggle proj-state" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-proj={this.props.id}>
                                         {this.props.stage}
                                     </button>
 
