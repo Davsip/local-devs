@@ -11,11 +11,12 @@ $(document).on('shown.bs.modal','#projectModal', function (e) {
     const numDevs = parseInt(reference.attr('data-team'));
     const description = reference.attr('data-desc');
     const time = reference.attr('data-time');
+    const startDate = reference.attr('data-start');
     let techArray = reference.parent().find('p#techNeeded').html().replace(/,/g, '').toLowerCase().split(' ');
     const genderArray = ["female-icon.png", "male-icon.png"];
 
     // Load Apply Button Attributes (when user applies)
-    $('button#applyButton').attr('data-title', title). attr('data-desc', description).attr('data-tech', techArray).attr('data-id', dataID);
+    $('button#applyButton').attr('data-title', title). attr('data-desc', description).attr('data-tech', techArray).attr('data-id', dataID).attr('data-start', startDate);
 
     // Hide Apply Button (if coming from button with 'View Details'), show otherwise
     if (reference.text() === "View Details") {
@@ -25,13 +26,16 @@ $(document).on('shown.bs.modal','#projectModal', function (e) {
     }
 
     // Project Overview
-    $('p#description').html(`<p>${description}</p>`);
+    $('p#description').html(`${description}`);
     
     // Project Title
     $('#projectTitle').html(title);
     
     // Project Time
     $('div#time').append(`<img src="./assets/images/icons/${time}.png" />`);
+
+    // Project Start Date
+    $('p#startDate').html(`<br />${startDate}`);
     
     // Technologies
     techArray.forEach(el => {
@@ -62,7 +66,7 @@ $(document).on('shown.bs.modal','#projectModal', function (e) {
         $('div#time').html('');
         $('div#tech').html('<h5>Technologies</h5>');
         $('#team-display').html('');
-        $('#applyButton').removeAttr('title').removeAttr('desc').removeAttr('tech').removeAttr('data-id');
+        $('#applyButton').removeAttr('title').removeAttr('desc'). removeAttr('data-start').removeAttr('tech').removeAttr('data-id');
     });
 
     

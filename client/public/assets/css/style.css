@@ -226,6 +226,12 @@ p#description {
   text-align: left;
 }
 
+p#startDate {
+  text-align: left;
+  margin-left: -90px;
+  margin-top: 8px;
+}
+
 div.modal-body {
   text-align: center;
 }
