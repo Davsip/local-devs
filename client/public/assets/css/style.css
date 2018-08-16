@@ -160,8 +160,8 @@ hr.star-dark:after {
 }
 
 .blue-link  {
-  color: #0b1cd5;
-  cursor:pointer;
+  color: #0110b5 !important; 
+  cursor: pointer;
 
 }
 
@@ -298,7 +298,6 @@ button.btn-link {
 
 h6.projDetails {
   margin: 40px auto 20px auto;
-
 }
 
 button.btn-link:focus {
