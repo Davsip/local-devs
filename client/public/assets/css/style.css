@@ -159,6 +159,12 @@ hr.star-dark:after {
   background-color: #fff;
 }
 
+.blue-link  {
+  color: #0b1cd5;
+  cursor:pointer;
+
+}
+
 .projects {
   padding: 6rem 0;
   background-color: #fff;
