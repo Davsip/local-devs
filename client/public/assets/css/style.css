@@ -557,19 +557,19 @@ button.modal-close {
 }
 
 .icon-how-1 {
-  height: auto;
-  width: 80px;
-  margin-top: 40px;
-  margin-right: 20px;
-  vertical-align: top;
+  height: auto !important;
+  width: 80px !important;
+  margin-top: 40px !important;
+  margin-right: 20px !important;
+  vertical-align: top !important;
 } 
 
 .icon-how {
-  height: auto;
-  width: 80px;
-  margin-top: 20px;
-  margin-right: 20px;
-  vertical-align: top;
+  height: auto !important;
+  width: 80px !important;
+  margin-top: 20px !important;
+  margin-right: 20px !important;
+  vertical-align: top !important;
 } 
 
 .hiw-card {
