@@ -102,20 +102,38 @@ $(function () {
 $(document).on('click', '.applicant-move', (e) => {
     e.preventDefault();
 
-    // get name on clicked element
-    const name = e.currentTarget.parentNode.parentNode.children[0].innerHTML
+    // Get project id (to target specific proj)
+    const projectID = e.currentTarget.parentNode.parentNode.childNodes[0].getAttribute('data-proj');
 
-    // grab number of elements with clicked user in team members (if 0 then add, 1 = already present)
-    const numEls = $('#team-members').find(`button:contains(${name})`).length;
+    // get name of clicked element
+    const name = e.currentTarget.parentNode.parentNode.children[0].innerHTML;
+
+    // get parentElement of clicked button
+    const parentEl = document.getElementById(projectID);
+
+    // get elements to search for existing user
+    const memberEl = parentEl.childNodes[0].childNodes[1].childNodes[1].querySelectorAll('span');
+
+    // initialize match to false
+    let match = false;
+
+    // loop through members to see if match
+    for (i = 0; i < memberEl.length; i++) {
+
+        // if match, set match to true
+        if(memberEl[i].childNodes[0].innerHTML === name) {
+
+            match = true;
+            return;
+        }
+    }
+
 
     // only add user to team if not present
-    if (numEls === 0) {
+    if (!match) {
 
         // Set target
         const el = e.currentTarget.parentNode.parentNode;
-
-        // Get project id (to target specific proj)
-        const projectID = e.currentTarget.parentNode.parentNode.childNodes[0].getAttribute('data-proj');
 
         // Clone target
         let cln = el.cloneNode(true);
