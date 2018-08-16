@@ -517,7 +517,7 @@ class App extends Component {
                 />
                 <br />
                 <br />
-                <p className="text-justify">Socialize, meet other developers. Learn, share ideas and make new friends.
+                <p>Socialize, meet other developers. Learn, share ideas and make new friends.
                   </p>
               </div>
               <div className="col-md-5 col-lg-4 icons-section">
@@ -528,7 +528,7 @@ class App extends Component {
                 />
                 <br />
                 <br />
-                <p className="text-justify">
+                <p>
                   Meet the project owner. Exchange your experience on the
                   project.
                 </p>
@@ -541,7 +541,7 @@ class App extends Component {
                 />
                 <br />
                 <br />
-                <p className="text-justify">
+                <p>
                   To have a balance healthy life, Local Devs will organize
                   activities for recreation.
                 </p>
