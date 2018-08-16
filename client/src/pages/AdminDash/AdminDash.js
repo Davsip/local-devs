@@ -105,6 +105,36 @@ class AdminDash extends Component {
 
     };
 
+    handleUpdateProject = event => {
+
+        event.preventDefault();
+
+        console.log(event.target.getAttribute('data-proj'));
+        let id = event.target.getAttribute('data-proj');
+
+        let updateApplicants = [];
+        let updateMembers = [];
+        let updateStatus = '';  
+        let applicants = document.getElementsByClassName('projectApplicants');
+        let members = document.getElementsByClassName('projectMembers');
+
+        for (let i = 0; i < applicants.length; i++) {
+            if (applicants[i].getAttribute('data-proj') === id && applicants[i].innerHTML != '') {
+                updateApplicants.push(applicants[i].innerHTML);
+            }
+        }
+
+        for (let i = 0; i < members.length; i++) {
+            if (members[i].getAttribute('data-proj') === id && members[i].innerHTML != '') {
+                updateMembers.push(members[i].innerHTML);
+            }
+        }
+    
+        console.log(`update applicants: ${updateApplicants}`);
+        console.log(`update members: ${updateMembers}`);
+    
+    }
+
     goTo(route) {
         this.props.history.replace(`/${route}`)
     }
@@ -483,7 +513,8 @@ class AdminDash extends Component {
                                                     applicants={project.teamApplicants}
                                                     team={project.teamMembers}
                                                     stage={project.projectStage}
-                                                    />
+                                                    handleUpdate={this.handleUpdateProject}
+                                                />
                                             )
                                         }
                                     })}
