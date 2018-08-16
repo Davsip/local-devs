@@ -114,6 +114,9 @@ $(document).on('click', '.applicant-move', (e) => {
         // Set target
         const el = e.currentTarget.parentNode.parentNode;
 
+        // Get project id (to target specific proj)
+        const projectID = e.currentTarget.parentNode.parentNode.childNodes[0].getAttribute('data-proj');
+
         // Clone target
         let cln = el.cloneNode(true);
 
@@ -127,7 +130,13 @@ $(document).on('click', '.applicant-move', (e) => {
         cln.childNodes[1].setAttribute('class', 'dropdown-menu');
 
         // copy to team
-        $('div#team-members').append(cln);
+        // $('div#team-members').append(cln);
+
+        // find main div to clone to
+        var targetEl = document.getElementById(projectID);
+
+        // copy clone to this projects team
+        targetEl.childNodes[0].childNodes[1].childNodes[1].append(cln);
     }
 });
 
