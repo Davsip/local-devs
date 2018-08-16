@@ -244,7 +244,8 @@ class UserDash extends Component {
                                                 teamSize={project.teamSize}
                                                 duration={project.duration + "mo"}
                                                 status={project.projectStage}
-                                                applicants={project.teamApplicants} />
+                                                applicants={project.teamApplicants}
+                                                startDate={project.startDate.substring(5,7) + '/' + project.startDate.substring(8,10) + '/' + project.startDate.substring(0,4)} />
                                             
                                             )                     
                                 
@@ -278,7 +279,8 @@ class UserDash extends Component {
                                                 teamSize={project.teamSize}
                                                 duration={project.duration + "mo"}
                                                 status={project.projectStage}
-                                                applicants={project.teamApplicants} />
+                                                applicants={project.teamApplicants}
+                                                startDate={project.startDate.substring(5,7) + '/' + project.startDate.substring(8,10) + '/' + project.startDate.substring(0,4)} />
                                            
                                             )                     
                                         
@@ -310,7 +312,7 @@ class UserDash extends Component {
                                             desc={project.desc}
                                             teamSize={project.teamSize}
                                             duration={project.duration + "mo"} 
-                                            status={project.projectStage}
+                                            status={project.projectStage}startDate={project.startDate.substring(5,7) + '/' + project.startDate.substring(8,10) + '/' + project.startDate.substring(0,4)} 
                                              />
                                        
                                         )                     
@@ -458,6 +460,12 @@ class UserDash extends Component {
                                     <h5>Overview</h5>
                                     <p id="description">
                                         {/* <!-- Project Description Here --> */}
+                                    </p>
+                                </div>
+                                <div className="row">
+                                    <h5>Start Date</h5>
+                                    <p id="startDate">
+                                    {/* Project Start Date Here */}
                                     </p>
                                 </div>
                                 <div className="row" id="time">

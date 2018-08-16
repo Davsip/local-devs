@@ -490,7 +490,8 @@ class App extends Component {
                       skills={project.reqSkills.join(", ")}
                       desc={project.desc}
                       teamSize={project.teamSize}
-                      duration={project.duration + "mo"} />
+                      duration={project.duration + "mo"}
+                      startDate={project.startDate.substring(5,7) + '/' + project.startDate.substring(8,10) + '/' + project.startDate.substring(0,4)} />
                   )}
                 })}
               </div>
@@ -584,6 +585,12 @@ class App extends Component {
                       <h5>Overview</h5>
                       <p id="description">
                         {/*   <!-- Project Description Here -->  */}
+                      </p>
+                    </div>
+                    <div className="row">
+                      <h5>Start Date</h5>
+                      <p id="startDate">
+                      {/* Project Start Date Here */}
                       </p>
                     </div>
                     <div className="row" id="time">
