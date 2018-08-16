@@ -378,7 +378,7 @@ class App extends Component {
                   </div>
                   <div className="media-body">
                     <h4 className="media-heading">Are you a Developer?</h4>
-                    <p class="hiw-card">
+                    <p className="hiw-card">
                     <b>Local Devs</b> will create a team of developers with the appropriate skills for each project.  Sign up now.{/** The developer can choose the technology that wants to work with an easy quick apply form.**/}
                     </p>
                   </div>
@@ -393,7 +393,7 @@ class App extends Component {
                     />
                   </div>
                   <div className="media-body">
-                    <p class="hiw-card-2">
+                    <p className="hiw-card-2">
                     You can either work remote or work on our open space offices, with a great team in a healthy environment. {/**  It will not be just work. It will be fun to work.*/}
                     </p>
                   </div>
@@ -408,7 +408,7 @@ class App extends Component {
                     />
                   </div>
                   <div className="media-body">
-                  <p class="hiw-card-2">
+                  <p className="hiw-card-2">
                   The developer will get paid per project based on submissions through github or your personal dashboard. {/** Communication with the team and the The Solution's Expert Manager will be required.  **/}
                     </p>   
                   </div>
@@ -426,7 +426,7 @@ class App extends Component {
                   </div>
                   <div className="media-body">
                     <h4 className="media-heading">Are you a Company?</h4>
-                    <p class="hiw-card">
+                    <p className="hiw-card">
                       1- Lorem ipsum dolor sit amet consectetur adipisicing elit,
                       deleniti neque quam.
                     </p>
@@ -443,7 +443,7 @@ class App extends Component {
                     />
                   </div>
                   <div className="media-body">
-                    <p class="hiw-card-2">
+                    <p className="hiw-card-2">
                       2- Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Deleniti neque quam.
                     </p>
@@ -460,7 +460,7 @@ class App extends Component {
                     />
                   </div>
                   <div className="media-body">
-                    <p class="hiw-card-2">
+                    <p className="hiw-card-2">
                       3- Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Deleniti neque quam.
                     </p>
@@ -628,7 +628,6 @@ class App extends Component {
                   <span 
                     className="d-inline-block"
                     tabIndex="0"
-                    dataToggle="tooltip"
                     title="Please login or sign-up to apply"
                     id="disabledButton">
                     <button
