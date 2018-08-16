@@ -379,7 +379,7 @@ class App extends Component {
                   <div className="media-body">
                     <h4 className="media-heading">Are you a Developer?</h4>
                     <p className="hiw-card">
-                    <b>Local Devs</b> will create a team of developers with the appropriate skills for each project.  Sign up now.{/** The developer can choose the technology that wants to work with an easy quick apply form.**/}
+                    <b>Local Devs</b> will create a team of developers with the appropriate skills for each project.  <a className="blue-link">Sign up now</a>.{/** The developer can choose the technology that wants to work with an easy quick apply form.**/}
                     </p>
                   </div>
                 </div>
@@ -427,8 +427,7 @@ class App extends Component {
                   <div className="media-body">
                     <h4 className="media-heading">Are you a Company?</h4>
                     <p className="hiw-card">
-                      1- Lorem ipsum dolor sit amet consectetur adipisicing elit,
-                      deleniti neque quam.
+                    Do you have a project or idea?  <a className="blue-link" onClick={this.login.bind(this)}>Sign up now</a> to contact our Solution’s Expert Manager with details.
                     </p>
                   </div>
                 </div>
@@ -444,8 +443,7 @@ class App extends Component {
                   </div>
                   <div className="media-body">
                     <p className="hiw-card-2">
-                      2- Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Deleniti neque quam.
+                    Our team will hire local developers for your project.  No more comunication problems with online freelancers.
                     </p>
                   </div>
                 </div>
@@ -461,8 +459,7 @@ class App extends Component {
                   </div>
                   <div className="media-body">
                     <p className="hiw-card-2">
-                      3- Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Deleniti neque quam.
+                    You will work closely with our Solution’s Manager to plan the whole process and project requirements.
                     </p>
                   </div>
                 </div>
