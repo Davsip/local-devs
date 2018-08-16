@@ -10,7 +10,7 @@ body {
 /* New NavBar */
 
 #mainNav {
-  background-color: #2c3e50!important;
+  background-color: #2c3e50 !important;
 }
 
 .navbar-brand {
@@ -19,10 +19,11 @@ body {
 }
 
 .text-nav {
-  color: #fff!important;
+  color: #fff !important;
 }
 
-.navbar-nav-link, .navbar-brand {
+.navbar-nav-link,
+.navbar-brand {
   font-size: 23px;
   font-family: "Montserrat";
 }
@@ -38,12 +39,11 @@ button#dropdownMenuButton {
 
 .navbar-toggler {
   /* border: 1px solid #ff7f50!important; */
-  background-color: #ff7f50; 
+  background-color: #ff7f50;
 }
 
-
 .mr-auto {
-  background-color: #2c3e50!important;
+  background-color: #2c3e50 !important;
   margin-top: 10px;
 }
 
@@ -62,7 +62,7 @@ a.nav-link:hover {
 }
 
 .dropdown {
-  margin-left: 10px!important;
+  margin-left: 10px !important;
 }
 
 .post-tab {
@@ -71,7 +71,7 @@ a.nav-link:hover {
 }
 
 .work-tab {
-  margin: 10px; 
+  margin: 10px;
   font-size: 23px;
 }
 
@@ -95,7 +95,7 @@ a.nav-link:hover {
   padding: 0 0 30px 0;
 }
 
-.img-logo  {
+.img-logo {
   padding-top: 60px;
 }
 
@@ -106,7 +106,6 @@ a.nav-link:hover {
 .main-text-2 {
   font-size: 1.7rem;
 }
-
 
 hr.star-light,
 hr.star-dark {
@@ -219,7 +218,8 @@ div.skillset-contact {
   height: 220px;
 }
 
-a.btn, div.btn {
+a.btn,
+div.btn {
   position: absolute;
   bottom: 20px;
 }
@@ -266,14 +266,13 @@ button#update-project {
 
 /* Not sure if this is going to affect anything else!!!!!!!!!!! */
 .row {
-  margin-left: 0!important;
-  margin-right: 0!important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 ul.nav-pills {
   margin-bottom: 50px;
 }
-
 
 a.nav-dashboard {
   color: #777;
@@ -283,7 +282,6 @@ a.nav-dashboard:hover {
   background-color: white;
   color: #777;
 }
-
 
 /* Admin Dashboard Card */
 
@@ -309,13 +307,13 @@ button.btn-link:hover {
 }
 
 button.btn-sm {
-  margin: 5px 5px!important;
+  margin: 5px 5px !important;
 }
 
 /* Increase size of modal from 500 to 700px */
 @media (min-width: 576px) {
   .modal-dialog {
-    max-width: 700px!important;
+    max-width: 700px !important;
   }
 }
 
@@ -526,19 +524,21 @@ section.dashboard {
   background: white;
 }
 
-a:focus, a:hover, a:active {
+a:focus,
+a:hover,
+a:active {
   color: #128f76;
 }
 
 /* Login Icon Colors */
 button.not-logged-in {
-  background-color: #2c3e50!important;
-  border: 1px solid #ff7f50!important;
+  background-color: #2c3e50 !important;
+  border: 1px solid #ff7f50 !important;
 }
 
 button.logged-in {
-  background-color: #ff7f50!important;
-  border: 1px solid #ff7f50!important;
+  background-color: #ff7f50 !important;
+  border: 1px solid #ff7f50 !important;
 }
 
 .btn-primary,
@@ -547,11 +547,12 @@ button.logged-in {
 .btn-primary:visited,
 .nav-link.active,
 button.modal-close {
-  background-color: #ff7f50!important;
-  border: 1px solid #ff7f50!important;
+  background-color: #ff7f50 !important;
+  border: 1px solid #ff7f50 !important;
 }
 
-.profile-section, .skillset-contact {
+.profile-section,
+.skillset-contact {
   background-color: #ccc;
   padding: 1.25rem;
 }
@@ -574,15 +575,16 @@ button.modal-close {
 
 .hiw-card {
   padding: 12px 8px 10px 8px;
- /* box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.10); */
-} 
+  /* box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.10); */
+}
 
 .hiw-card-2 {
   padding: 25px 8px 10px 8px;
- /* box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.10); */
-} 
+  /* box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.10); */
+}
 
 /* Jason Added */
 .tab-content {
-  margin-bottom: 50px!important;
+  margin-bottom: 50px !important;
 }
+
