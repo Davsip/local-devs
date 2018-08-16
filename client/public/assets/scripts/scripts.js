@@ -138,6 +138,9 @@ $(document).on('click', '.applicant-move', (e) => {
         // Clone target
         let cln = el.cloneNode(true);
 
+        // Change button class
+        cln.childNodes[0].setAttribute('class', 'btn btn-secondary btn-sm dropdown-toggle projectMembers');
+
         // Change dropdown class
         cln.childNodes[1].childNodes[0].setAttribute('class', 'dropdown-item member-remove')
 
