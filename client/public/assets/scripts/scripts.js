@@ -95,7 +95,7 @@ $('button#applyButton').on('click', (evt) => {
 // ToolTip for Project Modal (Apply Btn)
 
 $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
+    $('#disabledButton').tooltip()
 });
 
 

@@ -56,6 +56,7 @@ class App extends Component {
     this.setState({
       projects: []
     });
+    
 
     // Get projects from Projects API
     API.getSavedProjects().then(res => {
@@ -622,14 +623,22 @@ class App extends Component {
                   Close
                 </button>
                 {!isAuthenticated() && (
-                  <button
-                    type="button"
-                    className="btn btn-primary"
-                    id="applyButton"
-                    disabled
-                  >
-                    Apply
-                  </button>
+                  <span 
+                    className="d-inline-block"
+                    tabIndex="0"
+                    dataToggle="tooltip"
+                    title="Please login or sign-up to apply"
+                    id="disabledButton">
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      id="applyButton"
+                      style={{pointerEvents: 'none'}}
+                      disabled
+                    >
+                      Apply
+                    </button>
+                  </span>
                 )}
                 {isAuthenticated() && (
                   <button
