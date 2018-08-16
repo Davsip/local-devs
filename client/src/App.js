@@ -359,6 +359,7 @@ class App extends Component {
         </div>  */}
 
         <section className="section-2">
+        <div className="howitworks" id="howitworks">
           <div className="container">
             <h2 className="text-center text-uppercase text-secondary">
               How it Works
@@ -377,7 +378,7 @@ class App extends Component {
                   <div className="media-body">
                     <h4 className="media-heading">Are you a Developer?</h4>
                     <p class="hiw-card">
-                    <b>Local Devs</b> will create a team of developers with the appropriate skills for each project.  Sign up now{/** The developer can choose the technology that wants to work with an easy quick apply form.**/}
+                    <b>Local Devs</b> will create a team of developers with the appropriate skills for each project.  Sign up now.{/** The developer can choose the technology that wants to work with an easy quick apply form.**/}
                     </p>
                   </div>
                 </div>
@@ -466,6 +467,7 @@ class App extends Component {
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </section> 
 
