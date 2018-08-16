@@ -379,7 +379,7 @@ class App extends Component {
                   <div className="media-body">
                     <h4 className="media-heading">Are you a Developer?</h4>
                     <p className="hiw-card">
-                    <b>Local Devs</b> will create a team of developers with the appropriate skills for each project.  <a className="blue-link">Sign up now</a>.{/** The developer can choose the technology that wants to work with an easy quick apply form.**/}
+                    <b>Local Devs</b> will create a team of developers with the appropriate skills for each project.  <a className="blue-link" onClick={this.login.bind(this)}>Sign up now</a>.{/** The developer can choose the technology that wants to work with an easy quick apply form.**/}
                     </p>
                   </div>
                 </div>
