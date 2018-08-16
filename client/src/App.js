@@ -517,7 +517,8 @@ class App extends Component {
                 />
                 <br />
                 <br />
-                <p className="text-justify">Socializing</p>
+                <p className="text-justify">Socialize, meet other developers. Learn, share ideas and make new friends.
+                  </p>
               </div>
               <div className="col-md-5 col-lg-4 icons-section">
                 <img
@@ -528,9 +529,8 @@ class App extends Component {
                 <br />
                 <br />
                 <p className="text-justify">
-                  Comnication, it's everything, as part of our work culture,
-                  developers will have the chance to meet the project owner,
-                  interact, exchange ideas and socialize on a relax enviroment.
+                  Meet the project owner. Exchange your experience on the
+                  project.
                 </p>
               </div>
               <div className="col-md-5 col-lg-4 icons-section">
@@ -542,9 +542,8 @@ class App extends Component {
                 <br />
                 <br />
                 <p className="text-justify">
-                  The human brain requires social stimulation on a regular
-                  basis. To have a balance healthy life, Local Devs will
-                  organize activities for recreation.
+                  To have a balance healthy life, Local Devs will organize
+                  activities for recreation.
                 </p>
               </div>
             </div>

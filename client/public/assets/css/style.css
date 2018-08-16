@@ -558,20 +558,20 @@ button.modal-close {
 }
 
 .icon-how-1 {
-  height: auto;
-  width: 80px;
-  margin-top: 40px;
-  margin-right: 20px;
-  vertical-align: top;
-}
+  height: auto !important;
+  width: 80px !important;
+  margin-top: 40px !important;
+  margin-right: 20px !important;
+  vertical-align: top !important;
+} 
 
 .icon-how {
-  height: auto;
-  width: 80px;
-  margin-top: 20px;
-  margin-right: 20px;
-  vertical-align: top;
-}
+  height: auto !important;
+  width: 80px !important;
+  margin-top: 20px !important;
+  margin-right: 20px !important;
+  vertical-align: top !important;
+} 
 
 .hiw-card {
   padding: 12px 8px 10px 8px;
@@ -588,59 +588,3 @@ button.modal-close {
   margin-bottom: 50px !important;
 }
 
-/* David - landing page companies */
-
-.icon-how {
-  height: auto;
-  width: 80px;
-  margin-top: 100px;
-}
-
-.icons-landing {
-  font-size: 48px;
-  color: #18bc9ce6;
-}
-
-.icon-how-1 {
-  height: auto;
-  width: 80px;
-  margin-top: -10px;
-  margin-right: 10px;
-  vertical-align: top;
-}
-.icon-how {
-  height: auto;
-  width: 80px;
-  margin-top: -10px;
-  margin-right: -10px;
-  vertical-align: top;
-}
-
-.title-2 {
-  padding-left: 70px;
-
-  width: 400px;
-}
-
-.app-icon {
-  padding-top: 50px;
-  margin-left: 70px;
-}
-
-.web-icon {
-  padding-top: 70px;
-  margin-right: 70px;
-}
-
-.bottom-text {
-  color: #2c3e50;
-  font-family: "Lato" "sans-serif";
-}
-
-.landing-btn {
-  position: absolute;
-  bottom: 20px;
-  background: #ff7f50;
-  border: 0;
-  margin-left: 650px;
-}
