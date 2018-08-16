@@ -577,6 +577,7 @@ class AdminDash extends Component {
                                                     applicants={project.teamApplicants}
                                                     team={project.teamMembers}
                                                     stage={project.projectStage}
+                                                    handleUpdate={this.handleUpdateProject}
                                                     />
                                             )
                                         }
@@ -619,6 +620,7 @@ class AdminDash extends Component {
                                                     applicants={project.teamApplicants}
                                                     team={project.teamMembers}
                                                     stage={project.projectStage}
+                                                    handleUpdate={this.handleUpdateProject}
                                                     />
                                             )
                                         }
